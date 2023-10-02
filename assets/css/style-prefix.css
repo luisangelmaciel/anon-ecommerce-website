@@ -243,8 +243,8 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   visibility: hidden;
   pointer-events: none;
   z-index: 10;
-  -webkit-animation: popup 1s ease-in-out 5s forwards;
-          animation: popup 1s ease-in-out 5s forwards;
+  -webkit-animation: popup 1s ease-in-out 30s forwards;
+          animation: popup 1s ease-in-out 30s forwards;
 }
 
 @-webkit-keyframes popup {
@@ -301,8 +301,8 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
           border-radius: var(--border-radius-md);
   overflow: hidden;
   z-index: 2;
-  -webkit-animation: scaleUp 0.5s ease-in-out 5s forwards;
-          animation: scaleUp 0.5s ease-in-out 5s forwards;
+  -webkit-animation: scaleUp 30s ease-in-out 30s forwards;
+          animation: scaleUp 30s ease-in-out 30s forwards;
 }
 
 @-webkit-keyframes scaleUp {
@@ -2191,11 +2191,12 @@ footer {
 
   .header-alert-news {
     color: var(--sonic-silver);
+    text-align: center;
     font-size: var(--fs-9);
     text-transform: uppercase;
   }
 
-  .header-alert-news b { font-weight: var(--weight-500); }
+  .header-alert-news b { font-weight: var(--weight-500);     text-align: center; }
 
   .header-main { padding: 25px 0; }
 

@@ -1,25 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-MX">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anon - eCommerce Website</title>
-
-  <!--
-    - favicon
-  -->
+  <title>eCommerce Website</title>
   <link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
   <link rel="stylesheet" href="./assets/css/style-prefix.css">
-
-  <!--
-    - google font link
-  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -29,12 +17,9 @@
 
 <body>
 
-
   <div class="overlay" data-overlay></div>
 
-  <!--
-    - MODAL
-  -->
+  <!--  - MODAL  -->
 
   <div class="modal" data-modal>
 
@@ -78,11 +63,8 @@
 
 
 
-
-
-  <!--
-    - NOTIFICATION TOAST
-  -->
+  <!-- - NOTIFICATION TOAST
+  
 
   <div class="notification-toast" data-toast>
 
@@ -110,15 +92,10 @@
 
     </div>
 
-  </div>
+  </div> -->
 
 
-
-
-
-  <!--
-    - HEADER
-  -->
+  <!--- HEADER-->
 
   <header>
 
@@ -161,21 +138,19 @@
           </p>
         </div>
 
-        <div class="header-top-actions">
+        <div class="header-top-actions" style="display:none">
 
           <select name="currency">
-
+            <option value="mx">MX &dollar;</option>
             <option value="usd">USD &dollar;</option>
             <option value="eur">EUR &euro;</option>
 
           </select>
 
           <select name="language">
-
-            <option value="en-US">English</option>
             <option value="es-ES">Espa&ntilde;ol</option>
+            <option value="en-US">English</option>            
             <option value="fr">Fran&ccedil;ais</option>
-
           </select>
 
         </div>
@@ -483,6 +458,11 @@
             <a href="#" class="menu-title">Hot Offers</a>
           </li>
 
+          <li class="menu-category">
+            <a href="#" class="menu-title">Sing in </a>
+          </li>
+
+
         </ul>
 
       </div>
@@ -763,8 +743,7 @@
 
 
   <!--
-    - MAIN
-  -->
+    - MAIN-->
 
   <main>
 
@@ -850,7 +829,7 @@
 
     <!--
       - CATEGORY
-    -->
+
 
     <div class="category">
 
@@ -1024,7 +1003,7 @@
 
     </div>
 
-
+    -->
 
 
 
@@ -1038,8 +1017,7 @@
 
 
         <!--
-          - SIDEBAR
-        -->
+          - SIDEBAR -->
 
         <div class="sidebar  has-scrollbar" data-mobile-menu>
 
@@ -1539,8 +1517,7 @@
         <div class="product-box">
 
           <!--
-            - PRODUCT MINIMAL
-          -->
+            - PRODUCT MINIMAL          -->
 
           <div class="product-minimal">
 
@@ -2174,8 +2151,7 @@
 
 
           <!--
-            - PRODUCT FEATURED
-          -->
+            - PRODUCT FEATURED -->
 
           <div class="product-featured">
 
@@ -2357,9 +2333,7 @@
 
 
 
-          <!--
-            - PRODUCT GRID
-          -->
+          <!-- - PRODUCT GRID -->
 
           <div class="product-main">
 
@@ -2580,6 +2554,7 @@
               
               </div>
 
+             <!-- 
               <div class="showcase">
               
                 <div class="showcase-banner">
@@ -2785,7 +2760,7 @@
               
                 </div>
               
-              </div>
+              </div> --> 
 
               <div class="showcase">
               
@@ -3009,9 +2984,8 @@
 
 
 
-    <!--
-      - TESTIMONIALS, CTA & SERVICE
-    -->
+    <!--- TESTIMONIALS, CTA & SERVICE  
+  
 
     <div>
 
@@ -3019,9 +2993,7 @@
 
         <div class="testimonials-box">
 
-          <!--
-            - TESTIMONIALS
-          -->
+        
 
           <div class="testimonial">
 
@@ -3048,9 +3020,6 @@
 
 
 
-          <!--
-            - CTA
-          -->
 
           <div class="cta-container">
 
@@ -3072,9 +3041,7 @@
 
 
 
-          <!--
-            - SERVICE
-          -->
+       
 
           <div class="service">
 
@@ -3166,14 +3133,126 @@
       </div>
 
     </div>
-
-
-
-
-
-    <!--
-      - BLOG
     -->
+
+    <div>
+          <style>
+        
+        .modal2 {
+  width: 100%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+
+}
+
+            .modal-content2 {
+              position: relative;
+              max-width: 100%;
+              margin: 20px;
+              background: var(--white);
+              border-radius: var(--border-radius-md);
+              overflow: hidden;
+              z-index: 5;
+         
+            }
+            
+            
+            .newsletter2 {
+              padding: 50px 30px;
+              text-align: center;
+            }
+            
+            .newsletter-header2 { margin-bottom: 20px; }
+            
+            .newsletter-title2 {
+              color: var(--onyx);
+              font-size: var(--fs-2);
+              font-weight: var(--weight-600);
+              margin-bottom: 10px;
+            }
+            
+            .newsletter-desc2 {
+              color: var(--sonic-silver);
+              font-size: var(--fs-7);
+              line-height: 1.6;
+            }
+            
+            .email-field2 {
+              font-size: var(--fs-7);
+              padding: 8px 16px;
+              border-radius: var(--border-radius-sm);
+              border: 1px solid var(--cultured);
+              margin-bottom: 16px;
+            }
+            
+            .btn-newsletter2 {
+              background: var(--eerie-black);
+              color: var(--white);
+              font-size: var(--fs-7);
+              font-weight: var(--weight-600);
+              text-transform: uppercase;
+              padding: 10px 15px;
+              border-radius: var(--border-radius-sm);
+              margin: auto;
+              transition: var(--transition-timing);
+            }
+            
+            .btn-newsletter2:hover { background: var(--salmon-pink); }
+            
+            .border-new{  padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid var(--cultured);
+    background-color:  rgba(255, 102, 102, 0.295);
+
+    border-radius: var(--border-radius-md);}
+    .el-border{  padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--cultured);   
+
+    border-radius: var(--border-radius-md);}
+            
+            </style>
+              
+        <div class="container">
+          <div class="modal2 border-new">
+            <div class="modal-content2">
+             
+              <div class="newsletter2">
+          
+                <form action="#">
+          
+                  <div class="newsletter-header2">
+          
+                    <h3 class="newsletter-title2">Subscribe Newsletter.</h3>
+          
+                    <p class="newsletter-desc2">
+                      Subscribe the <b>Anon</b> to get latest products and discount update.
+                    </p>
+                    <p> Quisiera recibir actualizaciones y materiales de mercadotecnia relacionados con la Investigación de Usuario Google, tales como nuevos lanzamiento, ofertas y eventos.                          
+                    </p>
+                    <p>Le informamos que sus datos personales serán tratados por Envialov. con la finalidad de enviarte mis publicaciones, noticias, vídeos, imágenes y cualquier novedad relacionada con Dragon Ball, en base al consentimiento otorgado por usted. Del mismo modo le informamos que puede ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad de sus datos en shenronz.db@gmail.com
+
+                      • Su participación en nuestros estudios de Investigación de experiencia del usuario es totalmente voluntaria, y puede optar por no ser contactado para estos estudios en cualquier momento en este sitio web. Su elección de no participar entrará en vigor en 10 días hábiles.
+                      También reconoce que usted tiene por lo menos 18 años de edad.</p>
+          
+                  </div>
+          
+                  <input type="email" name="email" class="email-field2" placeholder="Email Address" required>
+          
+                  <button type="submit" class="btn-newsletter2">Subscribe</button>
+          
+                </form>
+          
+              </div>                                         
+            </div>
+          </div>
+        </div>
+      
+    </div>      
+
+
+    <!-- - BLOG  -->
 
     <div class="blog">
 
@@ -3280,7 +3359,111 @@
 
   </main>
 
+<main>
+  
+        
+  <div class="container">
+    <div class="el-border">
+      <div  style="text-align: justify; margin: 40px;">      
+        <h1  style="text-align: center;">Terms And Conditions</h1>
+    
+       <br>
+      <p class="">
+        Subscribe the <b>Anon</b> to get latest products and discount update.
+      </p>
+                                         
+      </div>
+    </div>
+  </div>
 
+  <div class="banner">
+
+    <div class="container">
+
+      <div class="slider-container ">
+
+        <div class="slider-item">
+
+          <img src="./assets/images/banner-1.jpg" alt="women's latest fashion sale" class="banner-img">
+
+          <div class="banner-content">
+
+            <p class="banner-subtitle" style="display: none;">Trending item</p>
+
+            <h2 class="banner-title">Women's latest fashion sale</h2>
+<style>
+  
+  .blog-text {
+    display: block;
+    color: var(--sonic-silver);
+    font-size: var(--fs-6);
+    font-weight: var(--weight-500);
+    margin-bottom: 10px;
+  }
+  
+  @media (min-width: 480px) {
+    .blog-text {display: block;color: var(--sonic-silver);font-size: var(--fs-6);font-weight: var(--weight-500);margin-bottom: 10px;}
+    .el-border{  padding: 0px;margin-bottom: 20px;}
+  }
+
+
+ 
+@media (min-width: 768px) {
+
+.blog-text { --fs-6: 1rem; }
+
+.el-border{  padding: 5px;    margin-bottom: 20px;    }
+}
+
+@media (min-width: 1024px) {
+
+.blog-text { --fs-6: 1.125rem; }
+
+}
+
+
+@media (min-width: 480px) {
+  .container { padding: 0 0px; }
+}
+
+
+</style>
+            <p class="banner-text">
+              Autor: Equipo Envialove
+            </p>
+
+            <p class="banner-btn" style="display: none;">Autor: Equipo Envialove</p>
+
+          </div>
+
+        </div>
+
+  
+
+  
+      </div>
+
+    </div>
+
+  </div>
+  
+
+  <div class="container">
+    <div class="el-border">
+      <div  style="text-align: justify; margin: 40px;">      
+    
+      <p class="">
+        Subscribe the <b>Anon</b> to get latest products and discount update.
+      </p>
+
+      
+                                         
+      </div>
+    </div>
+  </div>
+
+
+</main>
 
 
 
@@ -3290,7 +3473,7 @@
 
   <footer>
 
-    <div class="footer-category">
+   <!-- <div class="footer-category">
 
       <div class="container">
 
@@ -3364,13 +3547,13 @@
 
       </div>
 
-    </div>
+    </div> -->
 
     <div class="footer-nav">
 
       <div class="container">
 
-        <ul class="footer-nav-list">
+        <ul class="footer-nav-list" style="display:none">
 
           <li class="footer-nav-item">
             <h2 class="nav-title">Popular Categories</h2>
@@ -3398,7 +3581,7 @@
 
         </ul>
 
-        <ul class="footer-nav-list">
+        <ul class="footer-nav-list"  style="display:none">
         
           <li class="footer-nav-item">
             <h2 class="nav-title">Products</h2>
@@ -3431,15 +3614,36 @@
           <li class="footer-nav-item">
             <h2 class="nav-title">Our Company</h2>
           </li>
+
+          <li class="footer-nav-item">
+            <a href="#SingIn " class="footer-nav-link">Sing in </a>
+          </li> 
+          <li class="footer-nav-item">
+            <a href="#SingUp " class="footer-nav-link">Sing up </a>
+          </li> 
+
+          <li class="footer-nav-item">
+            <a href="#PreguntasFrecuentes"  class="footer-nav-link">Preguntas frecuentes </a>
+          </li> 
         
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Delivery</a>
+            <a href="#" class="footer-nav-link">Entregas discretas y devoluciones </a>
           </li>
-        
-          <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Legal Notice</a>
-          </li>
-        
+          Envialov
+          SHOP
+          All products 
+          Our favorites 
+          Featured Partners 
+          Acerca de 
+          Politica de privacidad 
+          
+          
+          Raestrear mi pedido  
+          Envio 
+          Sobre nosotros
+          Terminos de servicio 
+          Avisolo Legal 
+          
           <li class="footer-nav-item">
             <a href="#" class="footer-nav-link">Terms and conditions</a>
           </li>
@@ -3455,17 +3659,19 @@
         </ul>
 
         <ul class="footer-nav-list">
-        
+         
+          
+          
           <li class="footer-nav-item">
-            <h2 class="nav-title">Services</h2>
+            <h2 class="nav-title"> SELL </h2>
           </li>
         
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">Prices drop</a>
+            <a href="#" class="footer-nav-link"> Submit a desing</a>
           </li>
         
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">New products</a>
+            <a href="#" class="footer-nav-link">How it works </a>
           </li>
         
           <li class="footer-nav-item">
@@ -3577,6 +3783,19 @@
 
 
 
+  
+  
+  
+  <button onclick="myFunction()">Go Back</button>
+  
+  <script>
+  function myFunction() {
+    window.history.back();
+  }
+  </script>
+  
+
+  
 
 
 
@@ -3586,10 +3805,11 @@
   <script src="./assets/js/script.js"></script>
 
   <!--
-    - ionicon link
+    - ionicon link   <script type="module" src="./assets/js/ionicons.esm.js"></script>  <script nomodule src="./assets/js/ionicons.js"></script>
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 
 </body>
 

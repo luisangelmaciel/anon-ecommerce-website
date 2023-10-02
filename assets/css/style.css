@@ -220,7 +220,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   visibility: hidden;
   pointer-events: none;
   z-index: 10;
-  animation: popup 1s ease-in-out 5s forwards;
+  animation: popup 15s ease-in-out 5s forwards;
 }
 
 @keyframes popup {
@@ -260,7 +260,7 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   border-radius: var(--border-radius-md);
   overflow: hidden;
   z-index: 2;
-  animation: scaleUp 0.5s ease-in-out 5s forwards;
+  animation: scaleUp 015s ease-in-out 5s forwards;
 }
 
 @keyframes scaleUp {
@@ -349,9 +349,9 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
   border-radius: var(--border-radius-md);
   box-shadow: 0 5px 20px hsla(0, 0%, 0%, 0.15);
   transform: translateX(calc(-100% - 40px));
-  transition: 0.5s ease-in-out;
-  z-index: 5;
-  animation: slideInOut 10s ease-in-out infinite;
+  transition: 90s ease-in-out;
+  z-index: 6;
+  animation: slideInOut 5000s ease-in-out infinite;
 }
 
 @keyframes slideInOut {
