@@ -2,13 +2,6 @@
   #style.css
 \*-----------------------------------*/
 
-/**
- * copyright 2022 @codewithsadee 
- */
-
-
-
-
 
 /*-----------------------------------*\
   #CUSTOM PROPERTY
@@ -1393,15 +1386,28 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 .product-featured .showcase-title {
-  font-size: var(--fs-7);
+  font-size: var(--fs-5);
   color: var(--eerie-black);
   overflow: hidden;
   white-space: nowrap;
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
-  text-transform: uppercase;
+
   margin-bottom: 3px;
 }
+
+
+.small{
+
+  color: var(--eerie-black);
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+
+  margin-bottom: 3px;
+}
+
 
 .product-featured .showcase-desc {
   color: var(--sonic-silver);
