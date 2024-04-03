@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eCommerce Website</title>
+  <link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style-prefix.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+ <style>
+      .containerimg {
+        position: relative;
+        /*width: 50%;*/
+      }
+      
+      .imageimg {
+        display: block;
+      /*  width: 100%;
+        height: auto;*/
+      }
+      
+      .overlayimg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+      }
+      
+      .containerimg:hover .overlayimg {
+        opacity: 1;
+      }
+      
+      
+      </style>
+</head>
+
+<body>
+
+
+
+
+
+  <!--
+    - MAIN-->
+
+  <main>
+
+    <!--
+      - BANNER
+    -->
+
+     
+      
+      
+      
+     
+     
+      
+   
+
+
+
+    <!--
+      - PRODUCT
+    -->
+
+    <div class="product-container">
+
+      <div class="container">
+
+
+        <!--
+          - SIDEBAR -->
+
+        <div class="sidebar  has-scrollbar" data-mobile-menu style="display:none">
+
+      
+
+          <div class="product-showcase">
+
+            <br>
+            <h3 class="showcase-heading">Los más regalados</h3>
+            <br>
+            <div class="showcase-wrapper">
+
+              <div class="showcase-container">
+
+                <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg" >
+                    <img src="./assets/images/products/1.jpg" alt="baby fabric shoes" width="75" height="75"
+                      class="showcase-img">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">baby fabric shoes</h4>
+                    </a>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$5.00</del>
+                      <p class="price">$4.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg" >
+                    <img src="./assets/images/products/2.jpg" alt="men's hoodies t-shirt" class="showcase-img"
+                      width="75" height="75">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">men's hoodies t-shirt</h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-half-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$17.00</del>
+                      <p class="price">$7.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase">
+
+                  <a href="#" class="showcase-img-box">
+                    <img src="./assets/images/products/3.jpg" alt="girls t-shirt" class="showcase-img" width="75"
+                      height="75">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">girls t-shirt</h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-half-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$5.00</del>
+                      <p class="price">$3.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase">
+
+                  <a href="#" class="showcase-img-box">
+                    <img src="./assets/images/products/4.jpg" alt="woolen hat for men" class="showcase-img" width="75"
+                      height="75">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">woolen hat for men</h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$15.00</del>
+                      <p class="price">$12.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="product-box">
+
+       
+
+
+          <!--
+            - PRODUCT FEATURED -->
+
+          <div class="product-featured">
+
+            <div class="showcase-wrapper has-scrollbar" width="100%" height="auto">
+
+              <div class="showcase-container" width="100%" height="auto" style="display:top">
+                <div class="showcase" width="100%" height="auto">
+                  
+                                   <div class="" width="100%" height="auto">
+                    <div class="container" width="100%" height="auto">
+              
+                      <div class="slider-container has-scrollbar" width="100%" height="auto">
+              
+                        <div class="slider-item  " width="100%" height="auto">
+                          <div class="" width="100%" height="auto">
+                            <img src="./assets/images/products/a-huevo-chinga-charmander-lamp.jpg" alt="shampoo, conditioner & facewash packs" class=" " width="100%" height="auto">
+                          </div> 
+                          </div>
+              
+                        <div class="slider-item">
+              
+                          <img src="./assets/images/products/a-huevo-chinga-charmander.jpg" alt="modern sunglasses" class="banner-img">                      
+                       
+                        </div>
+              
+                        <div class="slider-item">                      
+                          <img src="./assets/images/products/a-huevo-chinga-charmander-frente.jpg" alt="new fashion summer sale" class="banner-img">                      
+                       
+                        </div>
+                       
+              
+                        <div class="slider-item containerimg">              
+                          <img src="./assets/images/products/medidas-m1.svg" alt="modern sunglasses" class="banner-img containerimg">
+                          <div class="overlayimg">
+                           <img src="./assets/images/image.jpg" alt="Image" class="imageimg" style="opacity: 0;">
+                         </div>
+                       
+              
+                        </div>
+              
+                        <div class="slider-item containerimg">
+              
+                          <img src="./assets/images/products/a-huevo-chinga-charmander-trasero.jpg" alt="new fashion summer sale" class="banner-img containerimg">
+                          <div class="overlayimg">
+                            <img src="./assets/images/image.jpg" alt="Image" class="imageimg" style="opacity: 0;">
+                         </div>
+              
+                     
+              
+                        </div>
+              
+                      </div>
+              
+                    </div>
+              
+                  </div>
+
+
+                  <div class="showcase-content">
+                    
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <!--ion-icon name="star-outline"></ion-icon-->
+                    </div>
+
+                    <a href="#">
+                      <h3 class="showcase-title">Charmander 1987 - A guevo chinga <br>
+                          <small hidden>C0354</small></h3>
+                    </a>
+              
+                    <p class="showcase-desc">
+                      <b> Caballero. </b> Playera cuello redondo manga larga. <br>
+                      <b>Peso</b> 170 gr/m2. <br>
+                      <b>Tejido</b> Chifón. <br>
+                      <b>Composición</b> 50% algodon, 50% poliéster
+                    </p>
+
+                    <div class="price-box">
+                      <p class="price">$250.00</p>  
+                      <del>$350.00</del>
+                    </div>
+
+                    <button class="add-cart-btn">Comprar</button>
+
+                    <div class="showcase-status">
+                      <div class="wrapper">
+                        <p>
+                         Piezas: <b>20</b>
+                        </p>
+
+                        <p>
+                          Disponibles: <b>5</b>
+                        </p>
+                      </div>
+
+                      <div class="showcase-status-bar"></div>
+                    </div>
+
+                    <div class="countdown-box">
+
+                      <p class="countdown-desc">
+                       Tallas
+                      </p>
+
+                      <div class="countdown">
+
+                        <div class="countdown-content">  
+                          <p class="display-number">CH</p>   
+                        </div>
+
+                        <div class="countdown-content">
+                          <p class="display-number">M</p>
+                        </div>
+
+                        <div class="countdown-content">
+                          <p class="display-number">G</p>                            
+                        </div>
+
+                        <div class="countdown-content">
+                          <p class="display-number">EG</p>
+                        </div>
+
+                        <div class="countdown-content 120PESOSMAS">
+                          <p class="display-number">EEG + </p>
+                        </div>
+
+
+                      </div>                      
+
+                    </div>
+                    <br>
+                    
+                    <div class="countdown-box">
+
+                      <p class="countdown-desc">
+                      Colores 
+                      </p>
+
+                     
+                      <div class="countdown COLOR-JASPE">
+
+                          <div class="countdown-content" style="background-color:#4D5456">  
+                            <p class="display-number" ><span style="color:white">Negro</span></p>   
+                          </div>
+  
+                          <div class="countdown-content"  style="background-color:#965667"> 
+                            <p class="display-number"><span style="color:white">Marrón</span></p>
+                          </div>
+  
+                          <div class="countdown-content"  style="background-color:#EA6E66"> 
+                              <p class="display-number"><span style="color:white">Rojo</span></p>                          
+                          </div>
+                      </div> <br>
+                          <div class="countdown COLOR-JASPE">
+  
+                          <div class="countdown-content"  style="background-color:#3F7C4D"> 
+                              <p class="display-number"><span style="color:white">Jade</span></p>                          
+                          </div>
+  
+                          <div class="countdown-content"  style="background-color:#4F6884"> 
+                              <p class="display-number"><span style="color:white">Marino</span></p>                          
+                          </div>
+                          <div class="countdown-content"  style="background-color:#6689C3"> 
+                              <p class="display-number"><span style="color:white">Royal</span></p>                          
+                          </div>
+
+                        </div>
+
+                    </div>
+                  <br>
+                    <a href="#">
+                      <h3 class="showcase-title">shampoo, conditioner & facewash packs</h3>
+                    </a>
+
+                    <p class="showcase-desc">
+                      Lorem ipsum dolor sit amet consectetur Lorem ipsum
+                      dolor dolor sit amet consectetur Lorem ipsum dolor
+                    </p>
+
+
+                  </div>
+
+                </div>
+
+              </div>
+
+             
+
+            </div>
+
+          </div>
+
+
+
+          <!-- - PRODUCT GRID -->
+
+          <div class="product-main">
+
+            <div class="">
+
+              <div class="">
+                <div class="el-border">
+                  <div  style="text-align: justify; margin: 40px;">      
+                    <h1  style="text-align: center;">Terms And Conditions</h1>                
+                   <br>
+                  <p class="">
+                    Subscribe the <b>Anon</b> to get latest products and discount update.
+                  </p>
+                                                     
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <!--- TESTIMONIALS, CTA & SERVICE  
+  
+
+    <div>
+
+      <div class="container">
+
+        <div class="testimonials-box">
+
+        
+
+          <div class="testimonial">
+
+            <h2 class="title">testimonial</h2>
+
+            <div class="testimonial-card">
+
+              <img src="./assets/images/testimonial-1.jpg" alt="alan doe" class="testimonial-banner" width="80" height="80">
+
+              <p class="testimonial-name">Alan Doe</p>
+
+              <p class="testimonial-title">CEO & Founder Invision</p>
+
+              <img src="./assets/images/icons/quotes.svg" alt="quotation" class="quotation-img" width="26">
+
+              <p class="testimonial-desc">
+                Lorem ipsum dolor sit amet consectetur Lorem ipsum
+                dolor dolor sit amet.
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+
+          <div class="cta-container">
+
+            <img src="./assets/images/cta-banner.jpg" alt="summer collection" class="cta-banner">
+
+            <a href="#" class="cta-content">
+
+              <p class="discount">25% Discount</p>
+
+              <h2 class="cta-title">Summer collection</h2>
+
+              <p class="cta-text">Starting @ $10</p>
+
+              <button class="cta-btn">Shop now</button>
+
+            </a>
+
+          </div>
+
+
+
+       
+
+          <div class="service">
+
+            <h2 class="title">Our Services</h2>
+
+            <div class="service-container">
+
+              <a href="#" class="service-item">
+
+                <div class="service-icon">
+                  <ion-icon name="boat-outline"></ion-icon>
+                </div>
+
+                <div class="service-content">
+
+                  <h3 class="service-title">Worldwide Delivery</h3>
+                  <p class="service-desc">For Order Over $100</p>
+
+                </div>
+
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="rocket-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">Next Day delivery</h3>
+                  <p class="service-desc">UK Orders Only</p>
+              
+                </div>
+              
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="call-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">Best Online Support</h3>
+                  <p class="service-desc">Hours: 8AM - 11PM</p>
+              
+                </div>
+              
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="arrow-undo-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">Return Policy</h3>
+                  <p class="service-desc">Easy & Free Return</p>
+              
+                </div>
+              
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="ticket-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">30% money back</h3>
+                  <p class="service-desc">For Order Over $100</p>
+              
+                </div>
+              
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    -->
+
+    <div>
+          <style>
+        
+        .modal2 {
+  width: 100%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+
+}
+
+            .modal-content2 {
+              position: relative;
+              max-width: 100%;
+              margin: 20px;
+              background: var(--white);
+              border-radius: var(--border-radius-md);
+              overflow: hidden;
+              z-index: 5;
+         
+            }
+            
+            
+            .newsletter2 {
+              padding: 50px 30px;
+              text-align: center;
+            }
+            
+            .newsletter-header2 { margin-bottom: 20px; }
+            
+            .newsletter-title2 {
+              color: var(--onyx);
+              font-size: var(--fs-2);
+              font-weight: var(--weight-600);
+              margin-bottom: 10px;
+            }
+            
+            .newsletter-desc2 {
+              color: var(--sonic-silver);
+              font-size: var(--fs-7);
+              line-height: 1.6;
+            }
+            
+            .email-field2 {
+              font-size: var(--fs-7);
+              padding: 8px 16px;
+              border-radius: var(--border-radius-sm);
+              border: 1px solid var(--cultured);
+              margin-bottom: 16px;
+            }
+            
+            .btn-newsletter2 {
+              background: var(--eerie-black);
+              color: var(--white);
+              font-size: var(--fs-7);
+              font-weight: var(--weight-600);
+              text-transform: uppercase;
+              padding: 10px 15px;
+              border-radius: var(--border-radius-sm);
+              margin: auto;
+              transition: var(--transition-timing);
+            }
+            
+            .btn-newsletter2:hover { background: var(--salmon-pink); }
+            
+            .border-new{  padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid var(--cultured);
+    background-color:  rgba(255, 102, 102, 0.295);
+
+    border-radius: var(--border-radius-md);}
+    .el-border{  padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--cultured);   
+
+    border-radius: var(--border-radius-md);}
+            
+            </style>
+              
+       
+      
+    </div>      
+
+
+
+  </main>
+
+
+
+    
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link   <script type="module" src="./assets/js/ionicons.esm.js"></script>  <script nomodule src="./assets/js/ionicons.js"></script>
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

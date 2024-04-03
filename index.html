@@ -12,51 +12,399 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
- <style>
-      .containerimg {
-        position: relative;
-        /*width: 50%;*/
-      }
-      
-      .imageimg {
-        display: block;
+  <style>
+    .containerimg {
+      position: relative;
+      /*width: 50%;*/
+    }
+
+    .imageimg {
+      display: block;
       /*  width: 100%;
         height: auto;*/
+    }
+
+    .overlayimg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .5s ease;
+    }
+
+    .containerimg:hover .overlayimg {
+      opacity: 1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  </style>
+  
+  <style>
+    body {
+      * {
+        box-sizing: border-box;
       }
-      
-      .overlayimg {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+
+      .openBtn {
+        background: #f1f1f1;
+        border: none;
+        padding: 10px 15px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .openBtn:hover {
+        background: #bbb;
+      }
+
+      .overlays {
         height: 100%;
         width: 100%;
-        opacity: 0;
-        transition: .5s ease;
+        display: none;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
       }
-      
-      .containerimg:hover .overlayimg {
-        opacity: 1;
+
+      .overlays-content {
+        position: relative;
+        top: 46%;
+        width: 80%;
+        text-align: center;
+        margin-top: 30px;
+        margin: auto;
       }
-      
-      
-      </style>
+
+      .overlays .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+        cursor: pointer;
+        color: white;
+      }
+
+      .overlays .closebtn:hover {
+        color: #ccc;
+      }
+
+      .overlays input[type=text] {
+        padding: 15px;
+        font-size: 17px;
+        border: none;
+        float: left;
+        width: 75%;
+        background: white;
+        height: 50px;
+      }
+
+      .overlays input[type=text]:hover {
+        background: #f1f1f1;
+        height: 50px;
+      }
+
+      /* .overlays button {
+    float: left;
+    width: 25%;
+    padding: 15px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;height: 40px;
+  }
+  
+  .overlay button:hover {
+    background: #bbb;height: 40px;
+  }*/
+  </style>
+
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+
+    /*the container must be positioned relative:*/
+    .autocomplete {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    input {
+      border: 1px solid transparent;
+      background-color: #f1f1f1;
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    input[type=text] {
+      background-color: #f1f1f1;
+      width: 100%;
+    }
+
+    input[type=submit] {
+      background-color: DodgerBlue;
+      color: #fff;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .autocomplete-items {
+      position: absolute;
+      border: 1px solid #d4d4d4;
+      border-bottom: none;
+      border-top: none;
+      z-index: 99;
+      /*position the autocomplete items to be the same width as the container:*/
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+
+    .autocomplete-items div {
+      padding: 10px;
+      cursor: pointer;
+      background-color: #fff;
+      border-bottom: 1px solid #d4d4d4;
+      width: 100%;
+    }
+
+    /*when hovering an item:*/
+    .autocomplete-items div:hover {
+      background-color: #e9e9e9;
+      width: 100%;
+    }
+
+    /*when navigating through the items using the arrow keys:*/
+    .autocomplete-active {
+      background-color: DodgerBlue !important;
+      color: #ffffff;
+      width: 100%;
+    }
+  </style>
+
+<style>
+  .blog-text {
+    display: block;
+    color: var(--sonic-silver);
+    font-size: var(--fs-6);
+    font-weight: var(--weight-500);
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: 480px) {
+    .blog-text {
+      display: block;
+      color: var(--sonic-silver);
+      font-size: var(--fs-6);
+      font-weight: var(--weight-500);
+      margin-bottom: 10px;
+    }
+
+    .el-border {
+      padding: 0px;
+      margin-bottom: 20px;
+    }
+  }
+
+
+
+  @media (min-width: 768px) {
+
+    .blog-text {
+      --fs-6: 1rem;
+    }
+
+    .el-border {
+      padding: 5px;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+
+    .blog-text {
+      --fs-6: 1.125rem;
+    }
+
+  }
+
+
+  @media (min-width: 480px) {
+    .container {
+      padding: 0 0px;
+    }
+  }
+</style>
+<style>
+  .modal2 {
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .modal-content2 {
+    position: relative;
+    max-width: 100%;
+    margin: 20px;
+    background: var(--white);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    z-index: 5;
+
+  }
+
+
+  .newsletter2 {
+    padding: 50px 30px;
+    text-align: center;
+  }
+
+  .newsletter-header2 {
+    margin-bottom: 20px;
+  }
+
+  .newsletter-title2 {
+    color: var(--onyx);
+    font-size: var(--fs-2);
+    font-weight: var(--weight-600);
+    margin-bottom: 10px;
+  }
+
+  .newsletter-desc2 {
+    color: var(--sonic-silver);
+    font-size: var(--fs-7);
+    line-height: 1.6;
+  }
+
+  .email-field2 {
+    font-size: var(--fs-7);
+    padding: 8px 16px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--cultured);
+    margin-bottom: 16px;
+  }
+
+  .btn-newsletter2 {
+    background: var(--eerie-black);
+    color: var(--white);
+    font-size: var(--fs-7);
+    font-weight: var(--weight-600);
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border-radius: var(--border-radius-sm);
+    margin: auto;
+    transition: var(--transition-timing);
+  }
+
+  .btn-newsletter2:hover {
+    background: var(--salmon-pink);
+  }
+
+  .border-new {
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid var(--cultured);
+    background-color: rgba(255, 102, 102, 0.295);
+
+    border-radius: var(--border-radius-md);
+  }
+
+  .el-border {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--cultured);
+
+    border-radius: var(--border-radius-md);
+  }
+</style>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+  /*  background-color: #000;
+    color: white;*/
+    height: 100%;
+    width: 100%;
+  }
+
+  .modalFull {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    overflow: hidden;
+  }
+
+  .closeModalFull {
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 1;
+    color: #aaaaaa;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: 0.5;
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: none;
+  }
+
+  .closeModalFull:hover,
+  .closeModalFull:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+
+  .closeModalFull:focus {
+    outline: none;
+  }
+</style>
+
+
 </head>
 
 <body>
-  <div class="containerimg"  style="display: none;">
-    <img src="./assets/images/banner-1.jpg" alt="Avatar" class="imageimg">
-    <div class="overlayimg">
-       <img src="https://www.w3schools.com/howto/pineapple.jpg" alt="Avatar" class="imageimg" style="  opacity: 0;">
-    </div>
-  </div>      
-
+ 
   <div class="overlay" data-overlay></div>
 
   <!--  - MODAL  -->
 
-  <div class="modal" data-modal>
+  <div class="modal" data-modal style="display: none;">
     <div class="modal-close-overlay" data-modal-overlay></div>
 
     <div class="modal-content">
@@ -96,128 +444,111 @@
 
 
 
-  <!-- - NOTIFICATION TOAST  
-
-  <div class="notification-toast" data-toast>
-
-    <button class="toast-close-btn" data-toast-close>
-      <ion-icon name="close-outline"></ion-icon>
-    </button>
-
-    <div class="toast-banner">
-      <img src="./assets/images/products/jewellery-1.jpg" alt="Rose Gold Earrings" width="80" height="70">
-    </div>
-
-    <div class="toast-detail">
-
-      <p class="toast-message">
-        Someone in new just bought
-      </p>
-
-      <p class="toast-title">
-        Rose Gold Earrings
-      </p>
-
-      <p class="toast-meta">
-        <time datetime="PT2M">2 Minutes</time> ago
-      </p>
-
-    </div>
-
-  </div> -->
-
-
   <!--- HEADER-->
   <div style="display: none;">
     <style>
-    .headersticky {
-      background-color: #f1f1f1;
-      padding: 30px;
-      text-align: center;
-    }
-    
-    #navbarsticky {
-      overflow: hidden;
-      background-color: #333;
-    }
-    
-    #navbarsticky a {
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-    
-    #navbarsticky a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    
-    #navbarsticky a.active {
-      background-color: #04AA6D;
-      color: white;
-    }
-    
-    .contentsticky {
-      padding: 16px;
-    }
-    
-    .sticky {
-      position: fixed;
-      top: 0;
-      width: 100%;
-    }
-    
-    .sticky + .contentsticky {
-      padding-top: 60px;
-    }
+      .headersticky {
+        background-color: #f1f1f1;
+        padding: 30px;
+        text-align: center;
+      }
+
+      #navbarsticky {
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      #navbarsticky a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      #navbarsticky a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      #navbarsticky a.active {
+        background-color: #04AA6D;
+        color: white;
+      }
+
+      .contentsticky {
+        padding: 16px;
+      }
+
+      .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+
+      .sticky+.contentsticky {
+        padding-top: 60px;
+      }
     </style>
-    
-    
-    
+
+
+
     <div class="headersticky">
       <h2>Scroll Down</h2>
       <p>Scroll down to see the sticky effect.</p>
     </div>
-    
+
     <div id="navbarsticky">
       <a class="active" href="javascript:void(0)">Home</a>
       <a href="javascript:void(0)">News</a>
       <a href="javascript:void(0)">Contact</a>
     </div>
-    
+
     <div class="contentsticky">
       <h3>Sticky Navigation Example</h3>
       <p>The navbar will stick to the top when you reach its scroll position.</p>
-      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+        et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+        repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+        et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+        repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+        et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+        repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+        et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+        repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+        et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+        repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+        et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+        repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+        et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+        repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
     </div>
-    
+
     <script>
-    window.onscroll = function() {myFunction()};
-    
-    var navbar = document.getElementById("navbarsticky");
-    var sticky = navbar.offsetTop;
-    
-    function myFunction() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-      } else {
-        navbar.classList.remove("sticky");
+      window.onscroll = function () { myFunction() };
+
+      var navbar = document.getElementById("navbarsticky");
+      var sticky = navbar.offsetTop;
+
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky")
+        } else {
+          navbar.classList.remove("sticky");
+        }
       }
-    }
     </script>
-    
-    </div>
-    
+
+  </div>
+
   <header>
 
     <div class="header-top">
@@ -268,7 +599,7 @@
 
           <select name="language">
             <option value="es-ES">Espa&ntilde;ol</option>
-            <option value="en-US">English</option>            
+            <option value="en-US">English</option>
             <option value="fr">Fran&ccedil;ais</option>
           </select>
         </div>
@@ -344,7 +675,7 @@
                 <li class="panel-list-item">
                   <a href="#">Harry Potter</a>
                 </li>
-              
+
 
                 <li class="panel-list-item">
                   <a href="#">Solicita tu diseño</a>
@@ -403,7 +734,7 @@
                   <a href="#">Piratas del Caribe</a>
                 </li>
 
-              
+
                 <li class="panel-list-item">
                   <a href="#">
                     <img src="./assets/images/womens-banner.jpg" alt="women's fashion" width="250" height="119">
@@ -429,7 +760,7 @@
                 <li class="panel-list-item">
                   <a href="#">Spiderman</a>
                 </li>
-            
+
 
                 <li class="panel-list-item">
                   <a href="#">
@@ -532,8 +863,8 @@
         <span class="count">0</span>
       </button>
 
-      <button class="action-btn" data-mobile-menu-open-btn  class="openBtn" onclick="openSearch()">
-        <ion-icon name="search-outline" ></ion-icon>
+      <button class="action-btn" data-mobile-menu-open-btn class="openBtn" onclick="openSearch()">
+        <ion-icon name="search-outline"></ion-icon>
       </button>
 
     </div>
@@ -780,289 +1111,140 @@
   </header>
 
   <div>
-    
-    <style>
-    body {
-    * {
-      box-sizing: border-box;
-    }
-    
-    .openBtn {
-      background: #f1f1f1;
-      border: none;
-      padding: 10px 15px;
-      font-size: 20px;
-      cursor: pointer;
-    }
-    
-    .openBtn:hover {
-      background: #bbb;
-    }
-    
-    .overlays {
-      height: 100%;
-      width: 100%;
-      display: none;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: rgb(0,0,0);
-      background-color: rgba(0,0,0, 0.9);
-    }
-    
-    .overlays-content {
-      position: relative;
-      top: 46%;
-      width: 80%;
-      text-align: center;
-      margin-top: 30px;
-      margin: auto;
-    }
-    
-    .overlays .closebtn {
-      position: absolute;
-      top: 20px;
-      right: 45px;
-      font-size: 60px;
-      cursor: pointer;
-      color: white;
-    }
-    
-    .overlays .closebtn:hover {
-      color: #ccc;
-    }
-    
-    .overlays input[type=text] {
-      padding: 15px;
-      font-size: 17px;
-      border: none;
-      float: left;
-      width: 75%;
-      background: white;
-      height: 50px;
-    }
-    
-    .overlays input[type=text]:hover {
-      background: #f1f1f1;height: 50px;
-    }
-    
-   /* .overlays button {
-      float: left;
-      width: 25%;
-      padding: 15px;
-      background: #ddd;
-      font-size: 17px;
-      border: none;
-      cursor: pointer;height: 40px;
-    }
-    
-    .overlay button:hover {
-      background: #bbb;height: 40px;
-    }*/
-    </style>
 
-    
-<style>
-  * {
-    box-sizing: border-box;
-  }
-  
-  
-  /*the container must be positioned relative:*/
-  .autocomplete {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-  }
- 
-  input {
-    border: 1px solid transparent;
-    background-color: #f1f1f1;
-    padding: 10px;
-    font-size: 16px;  width: 100%;
-  }
-  
-  input[type=text] {
-    background-color: #f1f1f1;
-    width: 100%;
-  }
-  
-  input[type=submit] {
-    background-color: DodgerBlue;
-    color: #fff;
-   cursor: pointer;width: 100%;
-  }
-  
-  .autocomplete-items {
-    position: absolute;
-    border: 1px solid #d4d4d4;
-    border-bottom: none;
-    border-top: none;
-    z-index: 99;
-    /*position the autocomplete items to be the same width as the container:*/
-    top: 100%;
-    left: 0;
-    right: 0;  width: 100%;
-  }
-  
-  .autocomplete-items div {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #fff; 
-    border-bottom: 1px solid #d4d4d4;   width: 100%;
-  }
-  
-  /*when hovering an item:*/
-  .autocomplete-items div:hover {
-    background-color: #e9e9e9;   width: 100%;
-  }
-  
-  /*when navigating through the items using the arrow keys:*/
-  .autocomplete-active {
-    background-color: DodgerBlue !important; 
-    color: #ffffff;   width: 100%;
-  }
-  </style>
-  
-  
 
-  
-      
-    
+
+
+
     <div id="myOverlay" class="overlays">
       <span class="closebtn" onclick="closeSearch()" title="Close Overlays">×</span>
       <div class="overlays-content">
-  <form autocomplete="off" >
-    <div class="autocomplete" style="width: 100%;">
-      <input id="myInput" type="text" name="myCountry" placeholder="Buscar" style="width: 100%;">
+        <form autocomplete="off">
+          <div class="autocomplete" style="width: 100%;">
+            <input id="myInput" type="text" name="myCountry" placeholder="Buscar" style="width: 100%;">
+          </div>
+          <input type="submit">
+        </form>
+      </div>
     </div>
-    <input type="submit">
-  </form>
 
-        <!--input type="search" name="search" class="email-field" placeholder="Buscar" required>
-        <button type="submit" class="btn-search">       Buscar </button-->      
-      </div>         
-    </div>    
-    
-  
-    
+
+
     <script>
-    function openSearch() {
-      document.getElementById("myOverlay").style.display = "block";
-    }
-    
-    function closeSearch() {
-      document.getElementById("myOverlay").style.display = "none";
-    }
+      function openSearch() {
+        document.getElementById("myOverlay").style.display = "block";
+      }
+
+      function closeSearch() {
+        document.getElementById("myOverlay").style.display = "none";
+      }
     </script>
-<script>
-  function autocomplete(inp, arr) {
-    /*the autocomplete function takes two arguments,
-    the text field element and an array of possible autocompleted values:*/
-    var currentFocus;
-    /*execute a function when someone writes in the text field:*/
-    inp.addEventListener("input", function(e) {
-        var a, b, i, val = this.value;
-        /*close any already open lists of autocompleted values*/
-        closeAllLists();
-        if (!val) { return false;}
-        currentFocus = -1;
-        /*create a DIV element that will contain the items (values):*/
-        a = document.createElement("DIV");
-        a.setAttribute("id", this.id + "autocomplete-list");
-        a.setAttribute("class", "autocomplete-items");
-        /*append the DIV element as a child of the autocomplete container:*/
-        this.parentNode.appendChild(a);
-        /*for each item in the array...*/
-        for (i = 0; i < arr.length; i++) {
-          /*check if the item starts with the same letters as the text field value:*/
-          if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-            /*create a DIV element for each matching element:*/
-            b = document.createElement("DIV");
-            /*make the matching letters bold:*/
-            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-            b.innerHTML += arr[i].substr(val.length);
-            /*insert a input field that will hold the current array item's value:*/
-            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-            /*execute a function when someone clicks on the item value (DIV element):*/
-            b.addEventListener("click", function(e) {
+    <script>
+      function autocomplete(inp, arr) {
+        /*the autocomplete function takes two arguments,
+        the text field element and an array of possible autocompleted values:*/
+        var currentFocus;
+        /*execute a function when someone writes in the text field:*/
+        inp.addEventListener("input", function (e) {
+          var a, b, i, val = this.value;
+          /*close any already open lists of autocompleted values*/
+          closeAllLists();
+          if (!val) { return false; }
+          currentFocus = -1;
+          /*create a DIV element that will contain the items (values):*/
+          a = document.createElement("DIV");
+          a.setAttribute("id", this.id + "autocomplete-list");
+          a.setAttribute("class", "autocomplete-items");
+          /*append the DIV element as a child of the autocomplete container:*/
+          this.parentNode.appendChild(a);
+          /*for each item in the array...*/
+          for (i = 0; i < arr.length; i++) {
+            /*check if the item starts with the same letters as the text field value:*/
+            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+              /*create a DIV element for each matching element:*/
+              b = document.createElement("DIV");
+              /*make the matching letters bold:*/
+              b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+              b.innerHTML += arr[i].substr(val.length);
+              /*insert a input field that will hold the current array item's value:*/
+              b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+              /*execute a function when someone clicks on the item value (DIV element):*/
+              b.addEventListener("click", function (e) {
                 /*insert the value for the autocomplete text field:*/
                 inp.value = this.getElementsByTagName("input")[0].value;
                 /*close the list of autocompleted values,
                 (or any other open lists of autocompleted values:*/
                 closeAllLists();
-            });
-            a.appendChild(b);
+              });
+              a.appendChild(b);
+            }
+          }
+        });
+        /*execute a function presses a key on the keyboard:*/
+        inp.addEventListener("keydown", function (e) {
+          var x = document.getElementById(this.id + "autocomplete-list");
+          if (x) x = x.getElementsByTagName("div");
+          if (e.keyCode == 40) {
+            /*If the arrow DOWN key is pressed,
+            increase the currentFocus variable:*/
+            currentFocus++;
+            /*and and make the current item more visible:*/
+            addActive(x);
+          } else if (e.keyCode == 38) { //up
+            /*If the arrow UP key is pressed,
+            decrease the currentFocus variable:*/
+            currentFocus--;
+            /*and and make the current item more visible:*/
+            addActive(x);
+          } else if (e.keyCode == 13) {
+            /*If the ENTER key is pressed, prevent the form from being submitted,*/
+            e.preventDefault();
+            if (currentFocus > -1) {
+              /*and simulate a click on the "active" item:*/
+              if (x) x[currentFocus].click();
+            }
+          }
+        });
+        function addActive(x) {
+          /*a function to classify an item as "active":*/
+          if (!x) return false;
+          /*start by removing the "active" class on all items:*/
+          removeActive(x);
+          if (currentFocus >= x.length) currentFocus = 0;
+          if (currentFocus < 0) currentFocus = (x.length - 1);
+          /*add class "autocomplete-active":*/
+          x[currentFocus].classList.add("autocomplete-active");
+        }
+        function removeActive(x) {
+          /*a function to remove the "active" class from all autocomplete items:*/
+          for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
           }
         }
-    });
-    /*execute a function presses a key on the keyboard:*/
-    inp.addEventListener("keydown", function(e) {
-        var x = document.getElementById(this.id + "autocomplete-list");
-        if (x) x = x.getElementsByTagName("div");
-        if (e.keyCode == 40) {
-          /*If the arrow DOWN key is pressed,
-          increase the currentFocus variable:*/
-          currentFocus++;
-          /*and and make the current item more visible:*/
-          addActive(x);
-        } else if (e.keyCode == 38) { //up
-          /*If the arrow UP key is pressed,
-          decrease the currentFocus variable:*/
-          currentFocus--;
-          /*and and make the current item more visible:*/
-          addActive(x);
-        } else if (e.keyCode == 13) {
-          /*If the ENTER key is pressed, prevent the form from being submitted,*/
-          e.preventDefault();
-          if (currentFocus > -1) {
-            /*and simulate a click on the "active" item:*/
-            if (x) x[currentFocus].click();
+        function closeAllLists(elmnt) {
+          /*close all autocomplete lists in the document,
+          except the one passed as an argument:*/
+          var x = document.getElementsByClassName("autocomplete-items");
+          for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+              x[i].parentNode.removeChild(x[i]);
+            }
           }
         }
-    });
-    function addActive(x) {
-      /*a function to classify an item as "active":*/
-      if (!x) return false;
-      /*start by removing the "active" class on all items:*/
-      removeActive(x);
-      if (currentFocus >= x.length) currentFocus = 0;
-      if (currentFocus < 0) currentFocus = (x.length - 1);
-      /*add class "autocomplete-active":*/
-      x[currentFocus].classList.add("autocomplete-active");
-    }
-    function removeActive(x) {
-      /*a function to remove the "active" class from all autocomplete items:*/
-      for (var i = 0; i < x.length; i++) {
-        x[i].classList.remove("autocomplete-active");
+        /*execute a function when someone clicks in the document:*/
+        document.addEventListener("click", function (e) {
+          closeAllLists(e.target);
+        });
       }
-    }
-    function closeAllLists(elmnt) {
-      /*close all autocomplete lists in the document,
-      except the one passed as an argument:*/
-      var x = document.getElementsByClassName("autocomplete-items");
-      for (var i = 0; i < x.length; i++) {
-        if (elmnt != x[i] && elmnt != inp) {
-          x[i].parentNode.removeChild(x[i]);
-        }
-      }
-    }
-    /*execute a function when someone clicks in the document:*/
-    document.addEventListener("click", function (e) {
-        closeAllLists(e.target);
-    });
-  }
-  
-  /*An array containing all the country names in the world:*/
-  var countries = ["Gorras","Tazas", "Termos"];
-  
-  /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-  autocomplete(document.getElementById("myInput"), countries);
-  </script>
-         
-    </div>
-    
+
+      /*An array containing all the country names in the world:*/
+      var countries = ["Gorras", "Tazas", "Termos"];
+
+      /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+      autocomplete(document.getElementById("myInput"), countries);
+    </script>
+
+  </div>
 
 
 
@@ -1075,13 +1257,9 @@
       - BANNER
     -->
 
-     
-      
-      
-      
-     
-     
-      
+
+
+
     <div class="banner">
       <div class="container">
 
@@ -1089,10 +1267,12 @@
 
           <div class="slider-item containerimg">
 
-            <img src="./assets/images/banner-1.jpg" alt="REBAJAS DE ÚLTIMA MODA PARA MUJER." class="banner-img containerimg">
+            <img src="./assets/images/banner-1.jpg" alt="REBAJAS DE ÚLTIMA MODA PARA MUJER."
+              class="banner-img containerimg">
             <div class="overlayimg">
-              <img src="https://www.w3schools.com/howto/pineapple.jpg" alt="Avatar" class="imageimg" style="  opacity: 0;">
-           </div>
+              <img src="https://www.w3schools.com/howto/pineapple.jpg" alt="Avatar" class="imageimg"
+                style="  opacity: 0;">
+            </div>
             <div class="banner-content">
 
               <p class="banner-subtitle">Artículo De Tendencia</p>
@@ -1113,8 +1293,8 @@
 
             <img src="./assets/images/banner-2.jpg" alt="modern sunglasses" class="banner-img containerimg">
             <div class="overlayimg">
-             <img src="./assets/images/image.jpg" alt="Image" class="imageimg" style="opacity: 0;">
-           </div>
+              <img src="./assets/images/image.jpg" alt="Image" class="imageimg" style="opacity: 0;">
+            </div>
             <div class="banner-content">
 
               <p class="banner-subtitle">Pokemon</p>
@@ -1136,7 +1316,7 @@
             <img src="./assets/images/banner-3.jpg" alt="new fashion summer sale" class="banner-img containerimg">
             <div class="overlayimg">
               <img src="./assets/images/image.jpg" alt="Image" class="imageimg" style="opacity: 0;">
-           </div>
+            </div>
 
             <div class="banner-content">
 
@@ -1426,8 +1606,7 @@
                 <button class="sidebar-accordion-menu" data-accordion-btn>
 
                   <div class="menu-title-flex">
-                    <img src="./assets/images/icons/cup.svg" alt="Termos" class="menu-title-img" width="20"
-                      height="20">
+                    <img src="./assets/images/icons/cup.svg" alt="Termos" class="menu-title-img" width="20" height="20">
 
                     <p class="menu-title">Termos</p>
                   </div>
@@ -1675,7 +1854,7 @@
 
                 <div class="showcase">
 
-                    <a href="#" class="showcase-img-box containerimg" >
+                  <a href="#" class="showcase-img-box containerimg">
                     <img src="./assets/images/products/1.jpg" alt="baby fabric shoes" width="75" height="75"
                       class="showcase-img">
                   </a>
@@ -1705,7 +1884,7 @@
 
                 <div class="showcase">
 
-                    <a href="#" class="showcase-img-box containerimg" >
+                  <a href="#" class="showcase-img-box containerimg">
                     <img src="./assets/images/products/2.jpg" alt="men's hoodies t-shirt" class="showcase-img"
                       width="75" height="75">
                   </a>
@@ -1761,40 +1940,14 @@
 
                 </div>
 
-                <div class="showcase">
-
-                  <a href="#" class="showcase-img-box">
-                    <img src="./assets/images/products/4.jpg" alt="woolen hat for men" class="showcase-img" width="75"
-                      height="75">
-                  </a>
-
-                  <div class="showcase-content">
-
-                    <a href="#">
-                      <h4 class="showcase-title">woolen hat for men</h4>
-                    </a>
-                    <div class="showcase-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </div>
-
-                    <div class="price-box">
-                      <del>$15.00</del>
-                      <p class="price">$12.00</p>
-                    </div>
-
-                  </div>
-
-                </div>
+         
 
               </div>
 
             </div>
 
           </div>
+
 
         </div>
 
@@ -1809,486 +1962,492 @@
 
             <div class="product-showcase">
 
-              <h2 class="title">&nbsp; Nuevos productos</h2>
-              <div class="showcase-wrapper has-scrollbar">
-
-                <div class="showcase-container">
-
-                  <div class="showcase">
-                 
-                    <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/clothes-1.jpg" alt="relaxed short full sleeve t-shirt" width="70" class="showcase-img imageimg">
-                      <div class="overlayimg">
-                        <img src="./assets/images/image.jpg" alt="Image" class="imageimg" style="opacity: 0;">
-                      </div>
-                    </a>
-
-                    <div class="showcase-content">
-
-                      <a href="#">
-                        <h4 class="showcase-title">Taza mágica</h4>
-                      </a>
-
-                      <a href="#" class="showcase-category">Harry Potter</a>
-
-                      <div class="price-box">
-                        <p class="price">$150.00</p><del hidden>$210.00</del>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="showcase">
-                  
-                    <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/clothes-2.jpg" alt="girls pink embro design top" class="showcase-img" width="70">
-                    </a>
-                  
-                    <div class="showcase-content">
-                  
-                      <a href="#">
-                        <h4 class="showcase-title">Girls pnk Embro design Top</h4>
-                      </a>
-                  
-                      <a href="#" class="showcase-category">Clothes</a>
-                  
-                      <div class="price-box">
-                        <p class="price">$61.00</p>
-                        <del>$9.00</del>
-                      </div>
-                  
-                    </div>
-                  
-                  </div>
-
-                  <div class="showcase">
-                  
-                    <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/clothes-3.jpg" alt="black floral wrap midi skirt" class="showcase-img"
-                        width="70">
-                    </a>
-                  
-                    <div class="showcase-content">
-                  
-                      <a href="#">
-                        <h4 class="showcase-title">Black Floral Wrap Midi Skirt</h4>
-                      </a>
-                  
-                      <a href="#" class="showcase-category">Clothes</a>
-                  
-                      <div class="price-box">
-                        <p class="price">$76.00</p>
-                        <del>$25.00</del>
-                      </div>
-                  
-                    </div>
-                  
-                  </div>
-
-                </div>
-
-                <div class="showcase-container">
-                
-                  <div class="showcase">
-                
-                    <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/jacket-5.jpg" alt="men yarn fleece full-zip jacket" class="showcase-img"
-                        width="70">
-                    </a>
-                
-                    <div class="showcase-content">
-                
-                      <a href="#">
-                        <h4 class="showcase-title">MEN Yarn Fleece Full-Zip Jacket</h4>
-                      </a>
-                
-                      <a href="#" class="showcase-category">Winter wear</a>
-                
-                      <div class="price-box">
-                        <p class="price">$61.00</p>
-                        <del>$11.00</del>
-                      </div>
-                
-                    </div>
-                
-                  </div>
-                
-                  <div class="showcase">
-                
-                    <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/jacket-1.jpg" alt="mens winter leathers jackets" class="showcase-img"
-                        width="70">
-                    </a>
-                
-                    <div class="showcase-content">
-                
-                      <a href="#">
-                        <h4 class="showcase-title">Mens Winter Leathers Jackets</h4>
-                      </a>
-                
-                      <a href="#" class="showcase-category">Winter wear</a>
-                
-                      <div class="price-box">
-                        <p class="price">$32.00</p>
-                        <del>$20.00</del>
-                      </div>
-                
-                    </div>
-                
-                  </div>
-                
-                  <div class="showcase">
-                
-                    <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/jacket-3.jpg" alt="mens winter leathers jackets" class="showcase-img"
-                        width="70">
-                    </a>
-                
-                    <div class="showcase-content">
-                
-                      <a href="#">
-                        <h4 class="showcase-title">Mens Winter Leathers Jackets</h4>
-                      </a>
-                
-                      <a href="#" class="showcase-category">Jackets</a>
-                
-                      <div class="price-box">
-                        <p class="price">$50.00</p>
-                        <del>$25.00</del>
-                      </div>
-                
-                    </div>
-                
-                  </div>                
-                  
-                
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="product-showcase">
-            
-              <h2 class="title">&nbsp;Trending</h2>
+              <h2 class="title" >&nbsp; Nuevos productos</h2>
+       
+              
+              
             
               <div class="showcase-wrapper  has-scrollbar">
-            
-                <div class="showcase-container">
-            
-                  <div class="showcase">
-            
-                    <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/sports-1.jpg" alt="running & trekking shoes - white" class="showcase-img"
-                        width="70">
-                    </a>
-            
-                    <div class="showcase-content">
-            
-                      <a href="#">
-                        <h4 class="showcase-title">Running & Trekking Shoes - White</h4>
-                      </a>
-            
-                      <a href="#" class="showcase-category">Sports</a>
-            
-                      <div class="price-box">
-                        <p class="price">$49.00</p>
-                        <del>$15.00</del>
-                      </div>
-            
-                    </div>
-            
-                  </div>
-            
-                  <div class="showcase">
-            
-                      <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/sports-2.jpg" alt="trekking & running shoes - black" class="showcase-img"
-                        width="70">
-                    </a>
-            
-                    <div class="showcase-content">
-            
-                      <a href="#">
-                        <h4 class="showcase-title">Trekking & Running Shoes - black</h4>
-                      </a>
-            
-                      <a href="#" class="showcase-category">Sports</a>
-            
-                      <div class="price-box">
-                        <p class="price">$78.00</p>
-                        <del>$36.00</del>
-                      </div>
-            
-                    </div>
-            
-                  </div>
-            
-                  <div class="showcase">
-            
-                      <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/party-wear-1.jpg" alt="womens party wear shoes" class="showcase-img"
-                        width="70">
-                    </a>
-            
-                    <div class="showcase-content">
-            
-                      <a href="#">
-                        <h4 class="showcase-title">Womens Party Wear Shoes</h4>
-                      </a>
-            
-                      <a href="#" class="showcase-category">Party wear</a>
-            
-                      <div class="price-box">
-                        <p class="price">$94.00</p>
-                        <del>$42.00</del>
-                      </div>
-            
-                    </div>
-            
-                  </div>            
-            
-                </div>
-            
-                <div class="showcase-container">
-            
-                  <div class="showcase">
-            
-                      <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/sports-6.jpg" alt="air tekking shoes - white" class="showcase-img"
-                        width="70">
-                    </a>
-            
-                    <div class="showcase-content">
-            
-                      <a href="#">
-                        <h4 class="showcase-title">Air Trekking Shoes - white</h4>
-                      </a>
-            
-                      <a href="#" class="showcase-category">Sports</a>
-            
-                      <div class="price-box">
-                        <p class="price">$52.00</p>
-                        <del>$55.00</del>
-                      </div>
-            
-                    </div>
-            
-                  </div>
-            
-                  <div class="showcase">
-            
-                      <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/shoe-3.jpg" alt="Boot With Suede Detail" class="showcase-img" width="70">
-                    </a>
-            
-                    <div class="showcase-content">
-            
-                      <a href="#">
-                        <h4 class="showcase-title">Boot With Suede Detail</h4>
-                      </a>
-            
-                      <a href="#" class="showcase-category">boots</a>
-            
-                      <div class="price-box">
-                        <p class="price">$20.00</p>
-                        <del>$30.00</del>
-                      </div>
-            
-                    </div>
-            
-                  </div>
-            
-                  <div class="showcase">
-            
-                      <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/shoe-1.jpg" alt="men's leather formal wear shoes" class="showcase-img"
-                        width="70">
-                    </a>
-            
-                    <div class="showcase-content">
-            
-                      <a href="#">
-                        <h4 class="showcase-title">Men's Leather Formal Wear shoes</h4>
-                      </a>
-            
-                      <a href="#" class="showcase-category">formal</a>
-            
-                      <div class="price-box">
-                        <p class="price">$56.00</p>
-                        <del>$78.00</del>
-                      </div>
-            
-                    </div>
-            
-                  </div>
-            
-                </div>
-            
-              </div>
-            
-            </div>
 
-            <div class="product-showcase">
-            
-              <h2 class="title">&nbsp; Top Rated</h2>
-            
-              <div class="showcase-wrapper  has-scrollbar">
-            
                 <div class="showcase-container">
-            
+
                   <div class="showcase">
-            
-                      <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/watch-3.jpg" alt="pocket watch leather pouch" class="showcase-img"
-                        width="70">
+
+                    <a href="#" class="showcase-img-box containerimg modalLink" data-src="./go/axxel/index.html">
+                      <img src="./assets/images/products/watch-3.jpg" alt="pocket watch leather pouch"
+                        class="showcase-img" width="70">
                     </a>
-            
+
                     <div class="showcase-content">
-            
-                      <a href="#">
+
+                      <a href="#" class="modalLink" data-src="./go/axxel/index.html">
                         <h4 class="showcase-title">Pocket Watch Leather Pouch</h4>
                       </a>
-            
+
                       <a href="#" class="showcase-category">Watches</a>
-            
+
                       <div class="price-box">
                         <p class="price">$50.00</p>
                         <del>$34.00</del>
                       </div>
-            
+
                     </div>
-            
+
                   </div>
-            
+
                   <div class="showcase">
-            
-                      <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/jewellery-3.jpg" alt="silver deer heart necklace" class="showcase-img"
-                        width="70">
+
+                    <a href="#" class="showcase-img-box containerimg" class="modalLink" data-src="./go/axxel/taza-clasica-11onz(2).jpg">
+                      <img src="./assets/images/products/jewellery-3.jpg" alt="silver deer heart necklace"
+                        class="showcase-img" width="70">
                     </a>
-            
+
                     <div class="showcase-content">
-            
-                      <a href="#">
+
+                      <a href="#"  class="modalLink" data-src="./go/axxel/index.html">
                         <h4 class="showcase-title">Silver Deer Heart Necklace</h4>
                       </a>
-            
+
                       <a href="#" class="showcase-category">Jewellery</a>
-            
+
                       <div class="price-box">
                         <p class="price">$84.00</p>
                         <del>$30.00</del>
                       </div>
-            
+
                     </div>
-            
+
                   </div>
-            
+
                   <div class="showcase">
-            
-                      <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/perfume.jpg" alt="titan 100 ml womens perfume" class="showcase-img"
-                        width="70">
+
+                    <a href="#" class="showcase-img-box containerimg" >
+                      <img src="./assets/images/products/perfume.jpg" alt="titan 100 ml womens perfume"
+                        class="showcase-img" width="70">
                     </a>
-            
+
                     <div class="showcase-content">
-            
-                      <a href="#">
+
+                      <a href="#"  class="modalLink" data-src="./go/axxel/index.html">
                         <h4 class="showcase-title">Titan 100 Ml Womens Perfume</h4>
                       </a>
-            
+
                       <a href="#" class="showcase-category">Perfume</a>
-            
+
                       <div class="price-box">
                         <p class="price">$42.00</p>
                         <del>$10.00</del>
                       </div>
-            
+
                     </div>
-            
-                  </div>            
-        
+
+                  </div>
+
                 </div>
-            
+
                 <div class="showcase-container">
-            
+
                   <div class="showcase">
-            
-                      <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/jewellery-2.jpg" alt="platinum zircon classic ring" class="showcase-img"
-                        width="70">
+
+                    <a href="#" class="showcase-img-box containerimg">
+                      <img src="./assets/images/products/jewellery-2.jpg" alt="platinum zircon classic ring"
+                        class="showcase-img" width="70">
                     </a>
-            
+
                     <div class="showcase-content">
-            
+
                       <a href="#">
                         <h4 class="showcase-title">platinum Zircon Classic Ring</h4>
                       </a>
-            
+
                       <a href="#" class="showcase-category">jewellery</a>
-            
+
                       <div class="price-box">
                         <p class="price">$62.00</p>
                         <del>$65.00</del>
                       </div>
-            
+
                     </div>
-            
+
                   </div>
-            
+
                   <div class="showcase">
-            
-                      <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/watch-1.jpg" alt="smart watche vital plus" class="showcase-img" width="70">
+
+                    <a href="#" class="showcase-img-box containerimg">
+                      <img src="./assets/images/products/watch-1.jpg" alt="smart watche vital plus" class="showcase-img"
+                        width="70">
                     </a>
-            
+
                     <div class="showcase-content">
-            
+
                       <a href="#">
                         <h4 class="showcase-title">Smart watche Vital Plus</h4>
                       </a>
-            
+
                       <a href="#" class="showcase-category">Watches</a>
-            
+
                       <div class="price-box">
                         <p class="price">$56.00</p>
                         <del>$78.00</del>
                       </div>
-            
+
                     </div>
-            
+
                   </div>
-            
+
                   <div class="showcase">
-            
-                      <a href="#" class="showcase-img-box containerimg" >
-                      <img src="./assets/images/products/shampoo.jpg" alt="shampoo conditioner packs" class="showcase-img"
-                        width="70">
+
+                    <a href="#" class="showcase-img-box containerimg">
+                      <img src="./assets/images/products/shampoo.jpg" alt="shampoo conditioner packs"
+                        class="showcase-img" width="70">
                     </a>
-            
+
                     <div class="showcase-content">
-            
+
                       <a href="#">
                         <h4 class="showcase-title">shampoo conditioner packs</h4>
                       </a>
-            
+
                       <a href="#" class="showcase-category">cosmetics</a>
-            
+
                       <div class="price-box">
                         <p class="price">$20.00</p>
                         <del>$30.00</del>
                       </div>
-            
+
                     </div>
-            
-                  </div>            
-            
+
+                  </div>
+
                 </div>
-            
+
               </div>
-            
+
+            </div>
+
+
+            <div class="product-showcase">
+
+              <h2 class="title">&nbsp;Trending</h2>
+
+              <div class="showcase-wrapper  has-scrollbar">
+
+                <div class="showcase-container">
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg">
+                      <img src="./assets/images/products/sports-1.jpg" alt="running & trekking shoes - white"
+                        class="showcase-img" width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Running & Trekking Shoes - White</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Sports</a>
+
+                      <div class="price-box">
+                        <p class="price">$49.00</p>
+                        <del>$15.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg">
+                      <img src="./assets/images/products/sports-2.jpg" alt="trekking & running shoes - black"
+                        class="showcase-img" width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Trekking & Running Shoes - black</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Sports</a>
+
+                      <div class="price-box">
+                        <p class="price">$78.00</p>
+                        <del>$36.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg">
+                      <img src="./assets/images/products/party-wear-1.jpg" alt="womens party wear shoes"
+                        class="showcase-img" width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Womens Party Wear Shoes</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Party wear</a>
+
+                      <div class="price-box">
+                        <p class="price">$94.00</p>
+                        <del>$42.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase-container">
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg">
+                      <img src="./assets/images/products/sports-6.jpg" alt="air tekking shoes - white"
+                        class="showcase-img" width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Air Trekking Shoes - white</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Sports</a>
+
+                      <div class="price-box">
+                        <p class="price">$52.00</p>
+                        <del>$55.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg">
+                      <img src="./assets/images/products/shoe-3.jpg" alt="Boot With Suede Detail" class="showcase-img"
+                        width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Boot With Suede Detail</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">boots</a>
+
+                      <div class="price-box">
+                        <p class="price">$20.00</p>
+                        <del>$30.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg">
+                      <img src="./assets/images/products/shoe-1.jpg" alt="men's leather formal wear shoes"
+                        class="showcase-img" width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Men's Leather Formal Wear shoes</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">formal</a>
+
+                      <div class="price-box">
+                        <p class="price">$56.00</p>
+                        <del>$78.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="product-showcase">
+
+              <h2 class="title">&nbsp; Top Rated</h2>
+
+              <div class="showcase-wrapper  has-scrollbar">
+
+                <div class="showcase-container">
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg">
+                      <img src="./assets/images/products/watch-3.jpg" alt="pocket watch leather pouch"
+                        class="showcase-img" width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Pocket Watch Leather Pouch</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Watches</a>
+
+                      <div class="price-box">
+                        <p class="price">$50.00</p>
+                        <del>$34.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg">
+                      <img src="./assets/images/products/jewellery-3.jpg" alt="silver deer heart necklace"
+                        class="showcase-img" width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Silver Deer Heart Necklace</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Jewellery</a>
+
+                      <div class="price-box">
+                        <p class="price">$84.00</p>
+                        <del>$30.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg">
+                      <img src="./assets/images/products/perfume.jpg" alt="titan 100 ml womens perfume"
+                        class="showcase-img" width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Titan 100 Ml Womens Perfume</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Perfume</a>
+
+                      <div class="price-box">
+                        <p class="price">$42.00</p>
+                        <del>$10.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase-container">
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg">
+                      <img src="./assets/images/products/jewellery-2.jpg" alt="platinum zircon classic ring"
+                        class="showcase-img" width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">platinum Zircon Classic Ring</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">jewellery</a>
+
+                      <div class="price-box">
+                        <p class="price">$62.00</p>
+                        <del>$65.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg">
+                      <img src="./assets/images/products/watch-1.jpg" alt="smart watche vital plus" class="showcase-img"
+                        width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">Smart watche Vital Plus</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Watches</a>
+
+                      <div class="price-box">
+                        <p class="price">$56.00</p>
+                        <del>$78.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg">
+                      <img src="./assets/images/products/shampoo.jpg" alt="shampoo conditioner packs"
+                        class="showcase-img" width="70">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">shampoo conditioner packs</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">cosmetics</a>
+
+                      <div class="price-box">
+                        <p class="price">$20.00</p>
+                        <del>$30.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
             </div>
 
           </div>
@@ -2306,13 +2465,14 @@
 
               <div class="showcase-container">
                 <div class="showcase">
-                  
+
                   <div class="showcase-banner">
-                    <img src="./assets/images/products/shampoo.jpg" alt="shampoo, conditioner & facewash packs" class="showcase-img">
+                    <img src="./assets/images/products/shampoo.jpg" alt="shampoo, conditioner & facewash packs"
+                      class="showcase-img">
                   </div>
 
                   <div class="showcase-content">
-                    
+
                     <div class="showcase-rating">
                       <ion-icon name="star"></ion-icon>
                       <ion-icon name="star"></ion-icon>
@@ -2395,15 +2555,16 @@
               </div>
 
               <div class="showcase-container">
-              
+
                 <div class="showcase">
-              
+
                   <div class="showcase-banner">
-                    <img src="./assets/images/products/jewellery-1.jpg" alt="Rose Gold diamonds Earring" class="showcase-img">
+                    <img src="./assets/images/products/jewellery-1.jpg" alt="Rose Gold diamonds Earring"
+                      class="showcase-img">
                   </div>
-              
+
                   <div class="showcase-content">
-              
+
                     <div class="showcase-rating">
                       <ion-icon name="star"></ion-icon>
                       <ion-icon name="star"></ion-icon>
@@ -2411,65 +2572,65 @@
                       <ion-icon name="star-outline"></ion-icon>
                       <ion-icon name="star-outline"></ion-icon>
                     </div>
-              
+
                     <h3 class="showcase-title">
                       <a href="#" class="showcase-title">Rose Gold diamonds Earring</a>
                     </h3>
-              
+
                     <p class="showcase-desc">
                       Lorem ipsum dolor sit amet consectetur Lorem ipsum
                       dolor dolor sit amet consectetur Lorem ipsum dolor
                     </p>
-              
+
                     <div class="price-box">
                       <p class="price">$1990.00</p>
                       <del>$2000.00</del>
                     </div>
-              
+
                     <button class="add-cart-btn">add to cart</button>
-              
+
                     <div class="showcase-status">
                       <div class="wrapper">
                         <p> already sold: <b>15</b> </p>
-              
+
                         <p> available: <b>40</b> </p>
                       </div>
-              
+
                       <div class="showcase-status-bar"></div>
                     </div>
-              
+
                     <div class="countdown-box">
-              
+
                       <p class="countdown-desc">Hurry Up! Offer ends in:</p>
-              
+
                       <div class="countdown">
                         <div class="countdown-content">
                           <p class="display-number">360</p>
                           <p class="display-text">Days</p>
                         </div>
-              
+
                         <div class="countdown-content">
                           <p class="display-number">24</p>
                           <p class="display-text">Hours</p>
                         </div>
-              
+
                         <div class="countdown-content">
                           <p class="display-number">59</p>
                           <p class="display-text">Min</p>
                         </div>
-              
+
                         <div class="countdown-content">
                           <p class="display-number">00</p>
                           <p class="display-text">Sec</p>
                         </div>
                       </div>
-              
+
                     </div>
-              
+
                   </div>
-              
+
                 </div>
-              
+
               </div>
 
             </div>
@@ -2490,8 +2651,10 @@
 
                 <div class="showcase-banner">
 
-                  <img src="./assets/images/products/jacket-3.jpg" alt="Mens Winter Leathers Jackets" width="300" class="product-img default">
-                  <img src="./assets/images/products/jacket-4.jpg" alt="Mens Winter Leathers Jackets" width="300" class="product-img hover">
+                  <img src="./assets/images/products/jacket-3.jpg" alt="Mens Winter Leathers Jackets" width="300"
+                    class="product-img default">
+                  <img src="./assets/images/products/jacket-4.jpg" alt="Mens Winter Leathers Jackets" width="300"
+                    class="product-img hover">
 
                   <p class="showcase-badge">15%</p>
 
@@ -2543,41 +2706,41 @@
               </div>
 
               <div class="showcase">
-              
+
                 <div class="showcase-banner">
-                  <img src="./assets/images/products/shirt-1.jpg" alt="Pure Garment Dyed Cotton Shirt" class="product-img default"
-                    width="300">
-                  <img src="./assets/images/products/shirt-2.jpg" alt="Pure Garment Dyed Cotton Shirt" class="product-img hover"
-                    width="300">
-              
+                  <img src="./assets/images/products/shirt-1.jpg" alt="Pure Garment Dyed Cotton Shirt"
+                    class="product-img default" width="300">
+                  <img src="./assets/images/products/shirt-2.jpg" alt="Pure Garment Dyed Cotton Shirt"
+                    class="product-img hover" width="300">
+
                   <p class="showcase-badge angle black">sale</p>
-              
+
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-              
+
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">shirt</a>
-              
+
                   <h3>
                     <a href="#" class="showcase-title">Pure Garment Dyed Cotton Shirt</a>
                   </h3>
-              
+
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -2585,50 +2748,50 @@
                     <ion-icon name="star-outline"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-              
+
                   <div class="price-box">
                     <p class="price">$45.00</p>
                     <del>$56.00</del>
                   </div>
-              
+
                 </div>
-              
+
               </div>
 
               <div class="showcase">
-              
+
                 <div class="showcase-banner">
-                  <img src="./assets/images/products/jacket-5.jpg" alt="MEN Yarn Fleece Full-Zip Jacket" class="product-img default"
-                    width="300">
-                  <img src="./assets/images/products/jacket-6.jpg" alt="MEN Yarn Fleece Full-Zip Jacket" class="product-img hover"
-                    width="300">
-              
+                  <img src="./assets/images/products/jacket-5.jpg" alt="MEN Yarn Fleece Full-Zip Jacket"
+                    class="product-img default" width="300">
+                  <img src="./assets/images/products/jacket-6.jpg" alt="MEN Yarn Fleece Full-Zip Jacket"
+                    class="product-img hover" width="300">
+
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-              
+
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">Jacket</a>
-              
+
                   <h3>
                     <a href="#" class="showcase-title">MEN Yarn Fleece Full-Zip Jacket</a>
                   </h3>
-              
+
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -2636,52 +2799,52 @@
                     <ion-icon name="star-outline"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-              
+
                   <div class="price-box">
                     <p class="price">$58.00</p>
                     <del>$65.00</del>
                   </div>
-              
+
                 </div>
-              
+
               </div>
 
               <div class="showcase">
-              
+
                 <div class="showcase-banner">
-                  <img src="./assets/images/products/clothes-3.jpg" alt="Black Floral Wrap Midi Skirt" class="product-img default"
-                    width="300">
-                  <img src="./assets/images/products/clothes-4.jpg" alt="Black Floral Wrap Midi Skirt" class="product-img hover"
-                    width="300">
-              
+                  <img src="./assets/images/products/clothes-3.jpg" alt="Black Floral Wrap Midi Skirt"
+                    class="product-img default" width="300">
+                  <img src="./assets/images/products/clothes-4.jpg" alt="Black Floral Wrap Midi Skirt"
+                    class="product-img hover" width="300">
+
                   <p class="showcase-badge angle pink">new</p>
-              
+
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-              
+
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">skirt</a>
-              
+
                   <h3>
                     <a href="#" class="showcase-title">Black Floral Wrap Midi Skirt</a>
                   </h3>
-              
+
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -2689,258 +2852,50 @@
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
                   </div>
-              
+
                   <div class="price-box">
                     <p class="price">$25.00</p>
                     <del>$35.00</del>
                   </div>
-              
+
                 </div>
-              
+
               </div>
 
-             <!-- 
-              <div class="showcase">
-              
-                <div class="showcase-banner">
-                  <img src="./assets/images/products/shoe-2.jpg" alt="Casual Men's Brown shoes" class="product-img default"
-                    width="300">
-                  <img src="./assets/images/products/shoe-2_1.jpg" alt="Casual Men's Brown shoes" class="product-img hover"
-                    width="300">
-              
-                  <div class="showcase-actions">
-                    <button class="btn-action">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-              
-                    <button class="btn-action">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </button>
-              
-                    <button class="btn-action">
-                      <ion-icon name="repeat-outline"></ion-icon>
-                    </button>
-              
-                    <button class="btn-action">
-                      <ion-icon name="bag-add-outline"></ion-icon>
-                    </button>
-                  </div>
-                </div>
-              
-                <div class="showcase-content">
-                  <a href="#" class="showcase-category">casual</a>
-              
-                  <h3>
-                    <a href="#" class="showcase-title">Casual Men's Brown shoes</a>
-                  </h3>
-              
-                  <div class="showcase-rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-              
-                  <div class="price-box">
-                    <p class="price">$99.00</p>
-                    <del>$105.00</del>
-                  </div>
-              
-                </div>
-              
-              </div>
+             <div class="showcase">
 
-              <div class="showcase">
-              
                 <div class="showcase-banner">
-                  <img src="./assets/images/products/watch-3.jpg" alt="Pocket Watch Leather Pouch" class="product-img default"
-                    width="300">
-                  <img src="./assets/images/products/watch-4.jpg" alt="Pocket Watch Leather Pouch" class="product-img hover"
-                    width="300">
-              
-                  <p class="showcase-badge angle black">sale</p>
-              
-                  <div class="showcase-actions">
-                    <button class="btn-action">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-              
-                    <button class="btn-action">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </button>
-              
-                    <button class="btn-action">
-                      <ion-icon name="repeat-outline"></ion-icon>
-                    </button>
-              
-                    <button class="btn-action">
-                      <ion-icon name="bag-add-outline"></ion-icon>
-                    </button>
-                  </div>
-                </div>
-              
-                <div class="showcase-content">
-                  <a href="#" class="showcase-category">watches</a>
-              
-                  <h3>
-                    <a href="#" class="showcase-title">Pocket Watch Leather Pouch</a>
-                  </h3>
-              
-                  <div class="showcase-rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                  </div>
-              
-                  <div class="price-box">
-                    <p class="price">$150.00</p>
-                    <del>$170.00</del>
-                  </div>
-              
-                </div>
-              
-              </div>
+                  <img src="./assets/images/products/jacket-1.jpg" alt="Mens Winter Leathers Jackets"
+                    class="product-img default" width="300">
+                  <img src="./assets/images/products/jacket-2.jpg" alt="Mens Winter Leathers Jackets"
+                    class="product-img hover" width="300">
 
-              <div class="showcase">
-              
-                <div class="showcase-banner">
-                  <img src="./assets/images/products/watch-1.jpg" alt="Smart watche Vital Plus" class="product-img default"
-                    width="300">
-                  <img src="./assets/images/products/watch-2.jpg" alt="Smart watche Vital Plus" class="product-img hover" width="300">
-              
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-              
-                    <button class="btn-action">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </button>
-              
-                    <button class="btn-action">
-                      <ion-icon name="repeat-outline"></ion-icon>
-                    </button>
-              
-                    <button class="btn-action">
-                      <ion-icon name="bag-add-outline"></ion-icon>
-                    </button>
-                  </div>
-                </div>
-              
-                <div class="showcase-content">
-                  <a href="#" class="showcase-category">watches</a>
-              
-                  <h3>
-                    <a href="#" class="showcase-title">Smart watche Vital Plus</a>
-                  </h3>
-              
-                  <div class="showcase-rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                  </div>
-              
-                  <div class="price-box">
-                    <p class="price">$100.00</p>
-                    <del>$120.00</del>
-                  </div>
-              
-                </div>
-              
-              </div>
 
-              <div class="showcase">
-              
-                <div class="showcase-banner">
-                  <img src="./assets/images/products/party-wear-1.jpg" alt="Womens Party Wear Shoes" class="product-img default"
-                    width="300">
-                  <img src="./assets/images/products/party-wear-2.jpg" alt="Womens Party Wear Shoes" class="product-img hover"
-                    width="300">
-              
-                  <p class="showcase-badge angle black">sale</p>
-              
-                  <div class="showcase-actions">
-                    <button class="btn-action">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-              
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-              
-                    <button class="btn-action">
-                      <ion-icon name="repeat-outline"></ion-icon>
-                    </button>
-              
-                    <button class="btn-action">
-                      <ion-icon name="bag-add-outline"></ion-icon>
-                    </button>
-                  </div>
-                </div>
-              
-                <div class="showcase-content">
-                  <a href="#" class="showcase-category">party wear</a>
-              
-                  <h3>
-                    <a href="#" class="showcase-title">Womens Party Wear Shoes</a>
-                  </h3>
-              
-                  <div class="showcase-rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                  </div>
-              
-                  <div class="price-box">
-                    <p class="price">$25.00</p>
-                    <del>$30.00</del>
-                  </div>
-              
-                </div>
-              
-              </div> --> 
 
-              <div class="showcase">
-              
-                <div class="showcase-banner">
-                  <img src="./assets/images/products/jacket-1.jpg" alt="Mens Winter Leathers Jackets" class="product-img default"
-                    width="300">
-                  <img src="./assets/images/products/jacket-2.jpg" alt="Mens Winter Leathers Jackets" class="product-img hover"
-                    width="300">
-              
-                  <div class="showcase-actions">
-                    <button class="btn-action">
-                      <ion-icon name="heart-outline"></ion-icon>
-                    </button>
-              
-                    <button class="btn-action">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </button>
-              
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-              
+
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">jacket</a>
-              
+
                   <h3>
                     <a href="#" class="showcase-title">Mens Winter Leathers Jackets</a>
                   </h3>
-              
+
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -2948,52 +2903,52 @@
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-              
+
                   <div class="price-box">
                     <p class="price">$32.00</p>
                     <del>$45.00</del>
                   </div>
-              
+
                 </div>
-              
+
               </div>
 
               <div class="showcase">
-              
+
                 <div class="showcase-banner">
-                  <img src="./assets/images/products/sports-2.jpg" alt="Trekking & Running Shoes - black" class="product-img default"
-                    width="300">
-                  <img src="./assets/images/products/sports-4.jpg" alt="Trekking & Running Shoes - black" class="product-img hover"
-                    width="300">
-              
+                  <img src="./assets/images/products/sports-2.jpg" alt="Trekking & Running Shoes - black"
+                    class="product-img default" width="300">
+                  <img src="./assets/images/products/sports-4.jpg" alt="Trekking & Running Shoes - black"
+                    class="product-img hover" width="300">
+
                   <p class="showcase-badge angle black">sale</p>
-              
+
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-              
+
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">sports</a>
-              
+
                   <h3>
                     <a href="#" class="showcase-title">Trekking & Running Shoes - black</a>
                   </h3>
-              
+
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -3001,50 +2956,50 @@
                     <ion-icon name="star-outline"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-              
+
                   <div class="price-box">
                     <p class="price">$58.00</p>
                     <del>$64.00</del>
                   </div>
-              
+
                 </div>
-              
+
               </div>
 
               <div class="showcase">
-              
+
                 <div class="showcase-banner">
-                  <img src="./assets/images/products/shoe-1.jpg" alt="Men's Leather Formal Wear shoes" class="product-img default"
-                    width="300">
-                  <img src="./assets/images/products/shoe-1_1.jpg" alt="Men's Leather Formal Wear shoes" class="product-img hover"
-                    width="300">
-              
+                  <img src="./assets/images/products/shoe-1.jpg" alt="Men's Leather Formal Wear shoes"
+                    class="product-img default" width="300">
+                  <img src="./assets/images/products/shoe-1_1.jpg" alt="Men's Leather Formal Wear shoes"
+                    class="product-img hover" width="300">
+
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-              
+
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">formal</a>
-              
+
                   <h3>
                     <a href="#" class="showcase-title">Men's Leather Formal Wear shoes</a>
                   </h3>
-              
+
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -3052,52 +3007,52 @@
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-              
+
                   <div class="price-box">
                     <p class="price">$50.00</p>
                     <del>$65.00</del>
                   </div>
-              
+
                 </div>
-              
+
               </div>
 
               <div class="showcase">
-              
+
                 <div class="showcase-banner">
                   <img src="./assets/images/products/shorts-1.jpg" alt="Better Basics French Terry Sweatshorts"
                     class="product-img default" width="300">
                   <img src="./assets/images/products/shorts-2.jpg" alt="Better Basics French Terry Sweatshorts"
                     class="product-img hover" width="300">
-              
+
                   <p class="showcase-badge angle black">sale</p>
-              
+
                   <div class="showcase-actions">
                     <button class="btn-action">
                       <ion-icon name="heart-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="eye-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="repeat-outline"></ion-icon>
                     </button>
-              
+
                     <button class="btn-action">
                       <ion-icon name="bag-add-outline"></ion-icon>
                     </button>
                   </div>
                 </div>
-              
+
                 <div class="showcase-content">
                   <a href="#" class="showcase-category">shorts</a>
-              
+
                   <h3>
                     <a href="#" class="showcase-title">Better Basics French Terry Sweatshorts</a>
                   </h3>
-              
+
                   <div class="showcase-rating">
                     <ion-icon name="star"></ion-icon>
                     <ion-icon name="star"></ion-icon>
@@ -3105,14 +3060,14 @@
                     <ion-icon name="star-outline"></ion-icon>
                     <ion-icon name="star-outline"></ion-icon>
                   </div>
-              
+
                   <div class="price-box">
                     <p class="price">$78.00</p>
                     <del>$85.00</del>
                   </div>
-              
+
                 </div>
-              
+
               </div>
 
             </div>
@@ -3120,7 +3075,7 @@
           </div>
 
         </div>
-
+      
       </div>
 
     </div>
@@ -3129,277 +3084,57 @@
 
 
 
-    <!--- TESTIMONIALS, CTA & SERVICE  
-  
-
     <div>
+    
 
       <div class="container">
+        <div class="modal2 border-new">
+          <div class="modal-content2">
 
-        <div class="testimonials-box">
+            <div class="newsletter2">
 
-        
+              <form action="#">
 
-          <div class="testimonial">
+                <div class="newsletter-header2">
 
-            <h2 class="title">testimonial</h2>
+                  <h3 class="newsletter-title2">Suscribirse al boletín informativo.</h3>
 
-            <div class="testimonial-card">
+                  <p class="newsletter-desc2">
+                    Subscribe the <b>13.
 
-              <img src="./assets/images/testimonial-1.jpg" alt="alan doe" class="testimonial-banner" width="80" height="80">
 
-              <p class="testimonial-name">Alan Doe</p>
 
-              <p class="testimonial-title">CEO & Founder Invision</p>
 
-              <img src="./assets/images/icons/quotes.svg" alt="quotation" class="quotation-img" width="26">
+                    </b> to get latest products and discount update.
+                  </p>
+                  <p> Quisiera recibir actualizaciones y materiales de mercadotecnia relacionados con la Investigación
+                    de Usuario Google, tales como nuevos lanzamiento, ofertas y eventos.
+                  </p>
+                  <p>Le informamos que sus datos personales serán tratados por Envialov. con la finalidad de enviarte
+                    mis publicaciones, noticias, vídeos, imágenes y cualquier novedad relacionada con Dragon Ball, en
+                    base al consentimiento otorgado por usted. Del mismo modo le informamos que puede ejercer los
+                    derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad de sus datos en
+                    shenronz.db@gmail.com
 
-              <p class="testimonial-desc">
-                Lorem ipsum dolor sit amet consectetur Lorem ipsum
-                dolor dolor sit amet.
-              </p>
+                    • Su participación en nuestros estudios de Investigación de experiencia del usuario es totalmente
+                    voluntaria, y puede optar por no ser contactado para estos estudios en cualquier momento en este
+                    sitio web. Su elección de no participar entrará en vigor en 10 días hábiles.
+                    También reconoce que usted tiene por lo menos 18 años de edad.</p>
+
+                </div>
+
+                <input type="email" name="email" class="email-field2" placeholder="Email Address" required>
+
+                <button type="submit" class="btn-newsletter2">Subscribe</button>
+
+              </form>
 
             </div>
-
           </div>
-
-
-
-
-          <div class="cta-container">
-
-            <img src="./assets/images/cta-banner.jpg" alt="summer collection" class="cta-banner">
-
-            <a href="#" class="cta-content">
-
-              <p class="discount">25% Discount</p>
-
-              <h2 class="cta-title">Summer collection</h2>
-
-              <p class="cta-text">Starting @ $10</p>
-
-              <button class="cta-btn">Shop now</button>
-
-            </a>
-
-          </div>
-
-
-
-       
-
-          <div class="service">
-
-            <h2 class="title">Our Services</h2>
-
-            <div class="service-container">
-
-              <a href="#" class="service-item">
-
-                <div class="service-icon">
-                  <ion-icon name="boat-outline"></ion-icon>
-                </div>
-
-                <div class="service-content">
-
-                  <h3 class="service-title">Worldwide Delivery</h3>
-                  <p class="service-desc">For Order Over $100</p>
-
-                </div>
-
-              </a>
-
-              <a href="#" class="service-item">
-              
-                <div class="service-icon">
-                  <ion-icon name="rocket-outline"></ion-icon>
-                </div>
-              
-                <div class="service-content">
-              
-                  <h3 class="service-title">Next Day delivery</h3>
-                  <p class="service-desc">UK Orders Only</p>
-              
-                </div>
-              
-              </a>
-
-              <a href="#" class="service-item">
-              
-                <div class="service-icon">
-                  <ion-icon name="call-outline"></ion-icon>
-                </div>
-              
-                <div class="service-content">
-              
-                  <h3 class="service-title">Best Online Support</h3>
-                  <p class="service-desc">Hours: 8AM - 11PM</p>
-              
-                </div>
-              
-              </a>
-
-              <a href="#" class="service-item">
-              
-                <div class="service-icon">
-                  <ion-icon name="arrow-undo-outline"></ion-icon>
-                </div>
-              
-                <div class="service-content">
-              
-                  <h3 class="service-title">Return Policy</h3>
-                  <p class="service-desc">Easy & Free Return</p>
-              
-                </div>
-              
-              </a>
-
-              <a href="#" class="service-item">
-              
-                <div class="service-icon">
-                  <ion-icon name="ticket-outline"></ion-icon>
-                </div>
-              
-                <div class="service-content">
-              
-                  <h3 class="service-title">30% money back</h3>
-                  <p class="service-desc">For Order Over $100</p>
-              
-                </div>
-              
-              </a>
-
-            </div>
-
-          </div>
-
         </div>
-
       </div>
 
     </div>
-    -->
-
-    <div>
-          <style>
-        
-        .modal2 {
-  width: 100%;
-  display: block;
-  justify-content: center;
-  align-items: center;
-
-}
-
-            .modal-content2 {
-              position: relative;
-              max-width: 100%;
-              margin: 20px;
-              background: var(--white);
-              border-radius: var(--border-radius-md);
-              overflow: hidden;
-              z-index: 5;
-         
-            }
-            
-            
-            .newsletter2 {
-              padding: 50px 30px;
-              text-align: center;
-            }
-            
-            .newsletter-header2 { margin-bottom: 20px; }
-            
-            .newsletter-title2 {
-              color: var(--onyx);
-              font-size: var(--fs-2);
-              font-weight: var(--weight-600);
-              margin-bottom: 10px;
-            }
-            
-            .newsletter-desc2 {
-              color: var(--sonic-silver);
-              font-size: var(--fs-7);
-              line-height: 1.6;
-            }
-            
-            .email-field2 {
-              font-size: var(--fs-7);
-              padding: 8px 16px;
-              border-radius: var(--border-radius-sm);
-              border: 1px solid var(--cultured);
-              margin-bottom: 16px;
-            }
-            
-            .btn-newsletter2 {
-              background: var(--eerie-black);
-              color: var(--white);
-              font-size: var(--fs-7);
-              font-weight: var(--weight-600);
-              text-transform: uppercase;
-              padding: 10px 15px;
-              border-radius: var(--border-radius-sm);
-              margin: auto;
-              transition: var(--transition-timing);
-            }
-            
-            .btn-newsletter2:hover { background: var(--salmon-pink); }
-            
-            .border-new{  padding: 20px;
-    margin-bottom: 30px;
-    border: 1px solid var(--cultured);
-    background-color:  rgba(255, 102, 102, 0.295);
-
-    border-radius: var(--border-radius-md);}
-    .el-border{  padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid var(--cultured);   
-
-    border-radius: var(--border-radius-md);}
-            
-            </style>
-              
-        <div class="container">
-          <div class="modal2 border-new">
-            <div class="modal-content2">
-             
-              <div class="newsletter2">
-          
-                <form action="#">
-          
-                  <div class="newsletter-header2">
-          
-                    <h3 class="newsletter-title2">Suscribirse al boletín informativo.</h3>
-          
-                    <p class="newsletter-desc2">
-                      Subscribe the <b>13.
-
-
-
-                        
-                      </b> to get latest products and discount update.
-                    </p>
-                    <p> Quisiera recibir actualizaciones y materiales de mercadotecnia relacionados con la Investigación de Usuario Google, tales como nuevos lanzamiento, ofertas y eventos.                          
-                    </p>
-                    <p>Le informamos que sus datos personales serán tratados por Envialov. con la finalidad de enviarte mis publicaciones, noticias, vídeos, imágenes y cualquier novedad relacionada con Dragon Ball, en base al consentimiento otorgado por usted. Del mismo modo le informamos que puede ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad de sus datos en shenronz.db@gmail.com
-
-                      • Su participación en nuestros estudios de Investigación de experiencia del usuario es totalmente voluntaria, y puede optar por no ser contactado para estos estudios en cualquier momento en este sitio web. Su elección de no participar entrará en vigor en 10 días hábiles.
-                      También reconoce que usted tiene por lo menos 18 años de edad.</p>
-          
-                  </div>
-          
-                  <input type="email" name="email" class="email-field2" placeholder="Email Address" required>
-          
-                  <button type="submit" class="btn-newsletter2">Subscribe</button>
-          
-                </form>
-          
-              </div>                                         
-            </div>
-          </div>
-        </div>
-      
-    </div>      
 
 
     <!-- - BLOG  -->
@@ -3413,7 +3148,8 @@
           <div class="blog-card">
 
             <a href="#">
-              <img src="./assets/images/blog-1.jpg" alt="Clothes Retail KPIs 2021 Guide for Clothes Executives" width="300" class="blog-banner">
+              <img src="./assets/images/blog-1.jpg" alt="Clothes Retail KPIs 2021 Guide for Clothes Executives"
+                width="300" class="blog-banner">
             </a>
 
             <div class="blog-content">
@@ -3433,72 +3169,72 @@
           </div>
 
           <div class="blog-card">
-          
+
             <a href="#">
               <img src="./assets/images/blog-2.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."
                 class="blog-banner" width="300">
             </a>
-          
+
             <div class="blog-content">
-          
+
               <a href="#" class="blog-category">&nbsp;&nbsp; Clothes</a>
-          
+
               <h3>
                 <a href="#" class="blog-title">&nbsp;&nbsp; Curbside fashion Trends: How to Win the Pickup Battle.</a>
               </h3>
-          
+
               <p class="blog-meta">
                 &nbsp;&nbsp; By <cite>Mr Robin</cite> / <time datetime="2022-01-18">Jan 18, 2022</time>
               </p>
-          
+
             </div>
-          
+
           </div>
 
           <div class="blog-card">
-          
+
             <a href="#">
               <img src="./assets/images/blog-3.jpg" alt="EBT vendors: Claim Your Share of SNAP Online Revenue."
                 class="blog-banner" width="300">
             </a>
-          
+
             <div class="blog-content">
-          
+
               <a href="#" class="blog-category">&nbsp;&nbsp; Shoes</a>
-          
+
               <h3>
-                  <a href="#" class="blog-title">&nbsp;&nbsp; EBT vendors: Claim Your Share of SNAP Online Revenue.</a>
+                <a href="#" class="blog-title">&nbsp;&nbsp; EBT vendors: Claim Your Share of SNAP Online Revenue.</a>
               </h3>
-          
+
               <p class="blog-meta">
                 &nbsp;&nbsp; By <cite>Mr Selsa</cite> / <time datetime="2022-02-10">Feb 10, 2022</time>
               </p>
-          
+
             </div>
-          
+
           </div>
 
           <div class="blog-card">
-          
+
             <a href="#">
               <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."
                 class="blog-banner" width="300">
             </a>
-          
+
             <div class="blog-content">
-          
+
               <a href="#" class="blog-category">&nbsp;&nbsp; Electronics</a>
-          
+
               <h3>
-               <a href="#" class="blog-title">&nbsp;&nbsp; Curbside fashion Trends: How to Win the Pickup Battle.</a>
+                <a href="#" class="blog-title">&nbsp;&nbsp; Curbside fashion Trends: How to Win the Pickup Battle.</a>
               </h3>
-          
+
               <p class="blog-meta">
                 &nbsp;&nbsp; By <cite>Mr Pawar</cite> / <time datetime="2022-03-15">Mar 15, 2022</time>
               </p>
-          
+
             </div>
-          
+
           </div>
 
         </div>
@@ -3509,109 +3245,73 @@
 
   </main>
 
-<main>
-  
-        
-  <div class="container">
-    <div class="el-border">
-      <div  style="text-align: justify; margin: 40px;">      
-        <h1  style="text-align: center;">Terms And Conditions</h1>
-    
-       <br>
-      <p class="">
-        Subscribe the <b>Anon</b> to get latest products and discount update.
-      </p>
-                                         
-      </div>
-    </div>
-  </div>
+  <main>
 
-  <div class="banner">
 
     <div class="container">
+      <div class="el-border">
+        <div style="text-align: justify; margin: 40px;">
+          <h1 style="text-align: center;">Terms And Conditions</h1>
 
-      <div class="slider-container ">
+          <br>
+          <p class="">
+            Subscribe the <b>Anon</b> to get latest products and discount update.
+          </p>
 
-        <div class="slider-item">
+        </div>
+      </div>
+    </div>
 
-          <img src="./assets/images/banner-1.jpg" alt="women's latest fashion sale" class="banner-img">
+    <div class="banner">
 
-          <div class="banner-content">
+      <div class="container">
 
-            <p class="banner-subtitle" style="display: none;">Trending item</p>
+        <div class="slider-container ">
 
-            <h2 class="banner-title">Women's latest fashion sale</h2>
-<style>
-  
-  .blog-text {
-    display: block;
-    color: var(--sonic-silver);
-    font-size: var(--fs-6);
-    font-weight: var(--weight-500);
-    margin-bottom: 10px;
-  }
-  
-  @media (min-width: 480px) {
-    .blog-text {display: block;color: var(--sonic-silver);font-size: var(--fs-6);font-weight: var(--weight-500);margin-bottom: 10px;}
-    .el-border{  padding: 0px;margin-bottom: 20px;}
-  }
+          <div class="slider-item">
 
+            <img src="./assets/images/banner-1.jpg" alt="women's latest fashion sale" class="banner-img">
 
- 
-@media (min-width: 768px) {
+            <div class="banner-content">
 
-.blog-text { --fs-6: 1rem; }
+              <p class="banner-subtitle" style="display: none;">Trending item</p>
 
-.el-border{  padding: 5px;    margin-bottom: 20px;    }
-}
+              <h2 class="banner-title">Women's latest fashion sale</h2>
+            
+              <p class="banner-text">
+                Autor: Equipo Envialove
+              </p>
 
-@media (min-width: 1024px) {
+              <p class="banner-btn" style="display: none;">Autor: Equipo Envialove</p>
 
-.blog-text { --fs-6: 1.125rem; }
-
-}
-
-
-@media (min-width: 480px) {
-  .container { padding: 0 0px; }
-}
-
-
-</style>
-            <p class="banner-text">
-              Autor: Equipo Envialove
-            </p>
-
-            <p class="banner-btn" style="display: none;">Autor: Equipo Envialove</p>
+            </div>
 
           </div>
 
+
+
+
         </div>
 
-  
-
-  
       </div>
 
     </div>
 
-  </div>
-  
 
-  <div class="container">
-    <div class="el-border">
-      <div  style="text-align: justify; margin: 10px;">          
-        <h1  style="text-align: center;">Terms And Conditions</h1>
-        <p class="">
-        Subscribe the <b>Anon</b> to get latest products and discount update.
-      </p>      
-                                         
+    <div class="container">
+      <div class="el-border">
+        <div style="text-align: justify; margin: 10px;">
+          <h1 style="text-align: center;">Terms And Conditions</h1>
+          <p class="">
+            Subscribe the <b>Anon</b> to get latest products and discount update.
+          </p>
+
+        </div>
       </div>
     </div>
-  </div>
 
 
-</main>
+  </main>
 
 
 
@@ -3619,89 +3319,13 @@
     - FOOTER
   -->
 
-  <footer>
-
-   <!-- <div class="footer-category">
-
-      <div class="container">
-
-        <h2 class="footer-category-title">Brand directory</h2>
-
-        <div class="footer-category-box">
-
-          <h3 class="category-box-title">Fashion :</h3>
-
-          <a href="#" class="footer-category-link">T-shirt</a>
-          <a href="#" class="footer-category-link">Shirts</a>
-          <a href="#" class="footer-category-link">shorts & jeans</a>
-          <a href="#" class="footer-category-link">jacket</a>
-          <a href="#" class="footer-category-link">dress & frock</a>
-          <a href="#" class="footer-category-link">innerwear</a>
-          <a href="#" class="footer-category-link">hosiery</a>
-
-        </div>
-
-        <div class="footer-category-box">
-          <h3 class="category-box-title">footwear :</h3>
-        
-          <a href="#" class="footer-category-link">sport</a>
-          <a href="#" class="footer-category-link">formal</a>
-          <a href="#" class="footer-category-link">Boots</a>
-          <a href="#" class="footer-category-link">casual</a>
-          <a href="#" class="footer-category-link">cowboy shoes</a>
-          <a href="#" class="footer-category-link">safety shoes</a>
-          <a href="#" class="footer-category-link">Party wear shoes</a>
-          <a href="#" class="footer-category-link">Branded</a>
-          <a href="#" class="footer-category-link">Firstcopy</a>
-          <a href="#" class="footer-category-link">Long shoes</a>
-        </div>
-
-        <div class="footer-category-box">
-          <h3 class="category-box-title">jewellery :</h3>
-        
-          <a href="#" class="footer-category-link">Necklace</a>
-          <a href="#" class="footer-category-link">Earrings</a>
-          <a href="#" class="footer-category-link">Couple rings</a>
-          <a href="#" class="footer-category-link">Pendants</a>
-          <a href="#" class="footer-category-link">Crystal</a>
-          <a href="#" class="footer-category-link">Bangles</a>
-          <a href="#" class="footer-category-link">bracelets</a>
-          <a href="#" class="footer-category-link">nosepin</a>
-          <a href="#" class="footer-category-link">chain</a>
-          <a href="#" class="footer-category-link">Earrings</a>
-          <a href="#" class="footer-category-link">Couple rings</a>
-        </div>
-
-        <div class="footer-category-box">
-          <h3 class="category-box-title">cosmetics :</h3>
-        
-          <a href="#" class="footer-category-link">Shampoo</a>
-          <a href="#" class="footer-category-link">Bodywash</a>
-          <a href="#" class="footer-category-link">Facewash</a>
-          <a href="#" class="footer-category-link">makeup kit</a>
-          <a href="#" class="footer-category-link">liner</a>
-          <a href="#" class="footer-category-link">lipstick</a>
-          <a href="#" class="footer-category-link">prefume</a>
-          <a href="#" class="footer-category-link">Body soap</a>
-          <a href="#" class="footer-category-link">scrub</a>
-          <a href="#" class="footer-category-link">hair gel</a>
-          <a href="#" class="footer-category-link">hair colors</a>
-          <a href="#" class="footer-category-link">hair dye</a>
-          <a href="#" class="footer-category-link">sunscreen</a>
-          <a href="#" class="footer-category-link">skin loson</a>
-          <a href="#" class="footer-category-link">liner</a>
-          <a href="#" class="footer-category-link">lipstick</a>
-        </div>
-
-      </div>
-
-    </div> -->
+ 
 
     <div class="footer-nav">
 
       <div class="container">
 
-        <ul class="footer-nav-list" >
+        <ul class="footer-nav-list">
 
           <li class="footer-nav-item">
             <h2 class="nav-title">&nbsp; Popular Categories</h2>
@@ -3729,51 +3353,51 @@
 
         </ul>
 
-        <ul class="footer-nav-list"  >
-        
+        <ul class="footer-nav-list">
+
           <li class="footer-nav-item">
             <h2 class="nav-title">&nbsp; Products</h2>
           </li>
-        
+
           <li class="footer-nav-item">
             <a href="#" class="footer-nav-link">&nbsp; Prices drop</a>
           </li>
-        
+
           <li class="footer-nav-item">
             <a href="#" class="footer-nav-link">&nbsp; New products</a>
           </li>
-        
+
           <li class="footer-nav-item">
             <a href="#" class="footer-nav-link">&nbsp; Best sales</a>
           </li>
-        
+
           <li class="footer-nav-item">
             <a href="#" class="footer-nav-link">&nbsp; Contact us</a>
           </li>
-        
+
           <li class="footer-nav-item">
             <a href="#" class="footer-nav-link">&nbsp; Sitemap</a>
           </li>
-        
+
         </ul>
 
         <ul class="footer-nav-list">
-        
+
           <li class="footer-nav-item">
             <h2 class="nav-title">&nbsp; Sobre nosotros</h2>
           </li>
 
           <li class="footer-nav-item">
             <a href="#SingIn " class="footer-nav-link">&nbsp; Sing in </a>
-          </li> 
+          </li>
           <li class="footer-nav-item">
             <a href="#SingUp " class="footer-nav-link">&nbsp; Sing up </a>
-          </li> 
+          </li>
 
           <li class="footer-nav-item">
-            <a href="#PreguntasFrecuentes"  class="footer-nav-link">&nbsp; Preguntas frecuentes </a>
-          </li> 
-        
+            <a href="#PreguntasFrecuentes" class="footer-nav-link">&nbsp; Preguntas frecuentes </a>
+          </li>
+
           <li class="footer-nav-item">
             <a href="#" class="footer-nav-link">&nbsp; Entregas discretas </a>
           </li>
@@ -3783,68 +3407,68 @@
           </li>
 
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">&nbsp; All products  </a>
+            <a href="#" class="footer-nav-link">&nbsp; All products </a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">&nbsp; Our favorites   </a>
+            <a href="#" class="footer-nav-link">&nbsp; Our favorites </a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">&nbsp; Featured Partners   </a>
+            <a href="#" class="footer-nav-link">&nbsp; Featured Partners </a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">&nbsp; Acerca de   </a>
+            <a href="#" class="footer-nav-link">&nbsp; Acerca de </a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">&nbsp; Politica de privacidad    </a>
+            <a href="#" class="footer-nav-link">&nbsp; Politica de privacidad </a>
           </li>
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">&nbsp; Raestrear mi pedido   </a>
+            <a href="#" class="footer-nav-link">&nbsp; Raestrear mi pedido </a>
           </li>
-        
+
 
           <li class="footer-nav-item">
             <a href="#" class="footer-nav-link">&nbsp; Aviso Legal </a>
           </li>
-          
+
           <li class="footer-nav-item">
             <a href="#" class="footer-nav-link">&nbsp; Terminos de servicio </a>
           </li>
-        
+
           <li class="footer-nav-item">
             <a href="#" class="footer-nav-link">&nbsp; About us</a>
           </li>
-        
+
           <li class="footer-nav-item">
             <a href="#" class="footer-nav-link">&nbsp; Secure payment</a>
           </li>
-        
+
         </ul>
 
         <ul class="footer-nav-list">
-         
-          
-          
+
+
+
           <li class="footer-nav-item">
             <h2 class="nav-title"> &nbsp; SELL </h2>
           </li>
-        
+
           <li class="footer-nav-item">
-            <a href="#" class="footer-nav-link">&nbsp;  Submit a desing</a>
+            <a href="#" class="footer-nav-link">&nbsp; Submit a desing</a>
           </li>
-        
+
           <li class="footer-nav-item">
             <a href="#" class="footer-nav-link">&nbsp; How it works </a>
           </li>
-        
+
           <li class="footer-nav-item">
             <a href="#" class="footer-nav-link">&nbsp; Best sales</a>
           </li>
-        
+
           <li class="footer-nav-item">
             <a href="#" class="footer-nav-link">&nbsp; Contact us</a>
           </li>
-        
-                
+
+
         </ul>
 
         <ul class="footer-nav-list">
@@ -3854,8 +3478,8 @@
           </li>
 
           <li class="footer-nav-item flex">
-            &nbsp;   <div class="icon-box">
-            <ion-icon name="location-outline"></ion-icon>
+            &nbsp; <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
             </div>
 
             <address class="content">
@@ -3865,16 +3489,16 @@
           </li>
 
           <li class="footer-nav-item flex">
-            &nbsp;   <div class="icon-box">
-               <ion-icon name="call-outline"></ion-icon>
+            &nbsp; <div class="icon-box">
+              <ion-icon name="call-outline"></ion-icon>
             </div>
 
             <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
           </li>
 
           <li class="footer-nav-item flex">
-            &nbsp;   <div class="icon-box">
-             <ion-icon name="mail-outline"></ion-icon>
+            &nbsp; <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
             </div>
 
             <a href="mailto:example@gmail.com" class="footer-nav-link">example@gmail.com</a>
@@ -3896,25 +3520,25 @@
 
               <li class="footer-nav-item">
                 <a href="#" class="footer-nav-link">
-                   <ion-icon name="logo-facebook"></ion-icon>
+                  <ion-icon name="logo-facebook"></ion-icon>
                 </a>
               </li>
 
               <li class="footer-nav-item">
                 <a href="#" class="footer-nav-link">
-                <ion-icon name="logo-twitter"></ion-icon>
+                  <ion-icon name="logo-twitter"></ion-icon>
                 </a>
               </li>
 
               <li class="footer-nav-item">
-               <a href="#" class="footer-nav-link">
+                <a href="#" class="footer-nav-link">
                   <ion-icon name="logo-linkedin"></ion-icon>
                 </a>
               </li>
 
               <li class="footer-nav-item">
-               <a href="#" class="footer-nav-link">
-                 <ion-icon name="logo-instagram"></ion-icon>
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
                 </a>
               </li>
 
@@ -3927,79 +3551,210 @@
 
     </div>
 
-  
+
 
   </footer>
 
   <footer style="background-color: white;">
 
-    
-     <div class="footer-bottom" style="background-color: white;">
-       <link rel="stylesheet " href="assets/pago/style.css">
-       <div class="container">         
-    
-     
-           <i class="font-size-100 pago-apple-pay "></i>&nbsp;
-        
-           <i class="font-size-100 pago-si-vale "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span></i>&nbsp;
-       
-  
-           <i class="font-size-100 pago-edenred "></i>&nbsp;
-         
-           <i class="font-size-100 pago-toka "></i>&nbsp;
-        
-      
-           <i class="font-size-100 pago-samsung-pay "></i>&nbsp;
- 
-     
-           <i class="font-size-100 pago-oxxo "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span></i>&nbsp;  
-    
-           <i class="font-size-100 pago-mercado-pago-letras "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span><span class="path7
-           "></span><span class="path8 "></span><span class="path9 "></span><span class="path10 "></span><span class="path11 "></span></i>&nbsp;
-    
-    
-           <i class="font-size-100 pago-mercado-pago "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span><span class="path7
-           "></span><span class="path8 "></span><span class="path9 "></span><span class="path10 "></span><span class="path11 "></span><span class="path12 "></span><span class="path13 "></span><span class="path14 "></span><span class="path15 "></span><span class="path16
-           "></span><span class="path17 "></span></i>&nbsp;
-      
-   
-           <i class="font-size-100 pago-mercado-pago-logo "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span></i>&nbsp;
-        
-      
-           <i class="font-size-100 pago-clip "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span></i>&nbsp;
-         
- 
-           <i class="font-size-100 pago-mastercard "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span></i>&nbsp;
- 
-    
-           <i class="font-size-100 pago-visa "></i>&nbsp;
-    <i class="font-size-100 pago-american-express "><span class="path1 "></span><span class="path2 "></span></i>&nbsp;     
-     
-           <i class="font-size-100 pago-banco-azteca "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span><span class="path7
-           "></span><span class="path8 "></span><span class="path9 "></span><span class="path10 "></span><span class="path11 "></span><span class="path12 "></span><span class="path13 "></span></i>&nbsp;
-      
-     
-           <i class="font-size-100 pago-carnet "></i>&nbsp;         
-           <i class="font-size-100 pago-sodexo "><span class="path1 "></span><span class="path2 "></span></i>&nbsp;       
-    
- 
-       
-         <i class="font-size-100 pago-oxxo "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span></i><br>
-         <!-- img src="./assets/images/payment.png" alt="payment method" class="payment-img"-->
- <br>
-         <p class="copyright" style="color: grey;">          
- 
-           Copyright &copy; <a href="#">Yapyap</a> all rights reserved.
-         </p>
- 
-       </div>
- 
-     </div>
- 
-   </footer>
 
+    <div class="footer-bottom" style="background-color: white;">
+      <link rel="stylesheet " href="assets/pago/style.css">
+      <div class="container">
+
+
+        <i class="font-size-100 pago-apple-pay "></i>&nbsp;
+
+        <i class="font-size-100 pago-si-vale "><span class="path1 "></span><span class="path2 "></span><span
+            class="path3 "></span></i>&nbsp;
+
+
+        <i class="font-size-100 pago-edenred "></i>&nbsp;
+
+        <i class="font-size-100 pago-toka "></i>&nbsp;
+
+
+        <i class="font-size-100 pago-samsung-pay "></i>&nbsp;
+
+
+        <i class="font-size-100 pago-oxxo "><span class="path1 "></span><span class="path2 "></span><span
+            class="path3 "></span><span class="path4 "></span><span class="path5 "></span></i>&nbsp;
+
+        <i class="font-size-100 pago-mercado-pago-letras "><span class="path1 "></span><span class="path2 "></span><span
+            class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span
+            class="path6 "></span><span class="path7
+           "></span><span class="path8 "></span><span class="path9 "></span><span class="path10 "></span><span
+            class="path11 "></span></i>&nbsp;
+
+
+        <i class="font-size-100 pago-mercado-pago "><span class="path1 "></span><span class="path2 "></span><span
+            class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span
+            class="path6 "></span><span class="path7
+           "></span><span class="path8 "></span><span class="path9 "></span><span class="path10 "></span><span
+            class="path11 "></span><span class="path12 "></span><span class="path13 "></span><span
+            class="path14 "></span><span class="path15 "></span><span class="path16
+           "></span><span class="path17 "></span></i>&nbsp;
+
+
+        <i class="font-size-100 pago-mercado-pago-logo "><span class="path1 "></span><span class="path2 "></span><span
+            class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span
+            class="path6 "></span></i>&nbsp;
+
+
+        <i class="font-size-100 pago-clip "><span class="path1 "></span><span class="path2 "></span><span
+            class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span
+            class="path6 "></span></i>&nbsp;
+
+
+        <i class="font-size-100 pago-mastercard "><span class="path1 "></span><span class="path2 "></span><span
+            class="path3 "></span><span class="path4 "></span></i>&nbsp;
+
+
+        <i class="font-size-100 pago-visa "></i>&nbsp;
+        <i class="font-size-100 pago-american-express "><span class="path1 "></span><span
+            class="path2 "></span></i>&nbsp;
+
+        <i class="font-size-100 pago-banco-azteca "><span class="path1 "></span><span class="path2 "></span><span
+            class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span
+            class="path6 "></span><span class="path7
+           "></span><span class="path8 "></span><span class="path9 "></span><span class="path10 "></span><span
+            class="path11 "></span><span class="path12 "></span><span class="path13 "></span></i>&nbsp;
+
+
+        <i class="font-size-100 pago-carnet "></i>&nbsp;
+        <i class="font-size-100 pago-sodexo "><span class="path1 "></span><span class="path2 "></span></i>&nbsp;
+
+
+
+        <i class="font-size-100 pago-oxxo "><span class="path1 "></span><span class="path2 "></span><span
+            class="path3 "></span><span class="path4 "></span><span class="path5 "></span></i><br>
+        <br>
+        <p class="copyright" style="color: grey;">
+
+          Copyright &copy; <a href="#">Yapyap</a> all rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+ent="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Modal Full</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
   
-    
+      html,
+      body {
+       /* background-color: #000;
+        color: white;*/
+        height: 100%;
+        width: 100%;
+      }
+  
+      a {
+        color: white;
+      }
+  
+      .modalFull {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        display: none;
+        -webkit-overflow-scrolling: touch;
+        outline: 0;
+        overflow: hidden;
+      }
+  
+      .closeModalFull {
+        font-size: 50px;
+        font-weight: 900;
+        line-height: 1;
+        color: #aaaaaa;
+        text-shadow: 0 1px 0 #fff;
+        filter: alpha(opacity=20);
+        opacity: 0.5;
+        position: fixed;
+        top: 30px;
+        right: 40px;
+        -webkit-appearance: none;
+        padding: 0;
+        cursor: pointer;
+        background: 0 0;
+        border: none;
+      }
+  
+      .closeModalFull:hover,
+      .closeModalFull:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        filter: alpha(opacity=50);
+        opacity: 0.5;
+      }
+  
+      .closeModalFull:focus {
+        outline: none;
+      }
+  
+      #modalContent {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+ 
+    <span id="myBtnFull">Home</span>
+    <div id="myModalFull" class="modalFull">
+      <span class="closeModalFull">&times;</span>
+      <iframe id="modalContent" src="" name="iframe_a" frameborder="0" style="border:0;"></iframe>
+    </div>
+  
+   
+  
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModalFull");
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtnFull");
+      // Get the <span> element that closes the modal
+      var span = document.querySelector(".closeModalFull");
+      // Get all modal links
+      var modalLinks = document.querySelectorAll(".modalLink");
+      // Get the iframe
+      var iframe = document.getElementById("modalContent");
+      // When the user clicks the button, open the modal
+      btn.addEventListener("click", function() {
+        modal.style.display = "block";
+      });
+      // When the user clicks on <span> (x), close the modal
+      span.addEventListener("click", function() {
+        modal.style.display = "none";
+      });
+      // When the user clicks anywhere outside of the modal, close it
+      window.addEventListener("click", function(event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+      // Add event listeners to modal links
+      modalLinks.forEach(function(link) {
+        link.addEventListener("click", function(e) {
+          e.preventDefault();
+          var src = this.getAttribute("data-src");
+          iframe.src = src;
+          modal.style.display = "block";
+        });
+      });
+    </script>
+
 
 
 
@@ -4008,9 +3763,7 @@
   -->
   <script src="./assets/js/script.js"></script>
 
-  <!--
-    - ionicon link   <script type="module" src="./assets/js/ionicons.esm.js"></script>  <script nomodule src="./assets/js/ionicons.js"></script>
-  -->
+
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
