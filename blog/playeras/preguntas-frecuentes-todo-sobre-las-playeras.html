@@ -1,0 +1,2441 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eCommerce Website</title>
+  <link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://luisangelmaciel.github.io/anon-ecommerce-website/assets/css/style-prefix.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+ <style>
+      .containerimg {
+        position: relative;
+        /*width: 50%;*/
+      }
+      
+      .imageimg {
+        display: block;
+      /*  width: 100%;
+        height: auto;*/
+      }
+      
+      .overlayimg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+      }
+      
+      .containerimg:hover .overlayimg {
+        opacity: 1;
+      }
+      
+      
+      </style>
+</head>
+
+<body>
+  <div class="containerimg"  style="display: none;">
+    <img src="./assets/images/banner-1.jpg" alt="Avatar" class="imageimg">
+    <div class="overlayimg">
+       <img src="https://www.w3schools.com/howto/pineapple.jpg" alt="Avatar" class="imageimg" style="  opacity: 0;">
+    </div>
+  </div>      
+
+
+
+
+
+  <!--- HEADER-->
+  <div style="display: none;">
+    <style>
+    .headersticky {
+      background-color: #f1f1f1;
+      padding: 30px;
+      text-align: center;
+    }
+    
+    #navbarsticky {
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    #navbarsticky a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    #navbarsticky a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    #navbarsticky a.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+    
+    .contentsticky {
+      padding: 16px;
+    }
+    
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    
+    .sticky + .contentsticky {
+      padding-top: 60px;
+    }
+    </style>
+    
+    
+    
+    <div class="headersticky">
+      <h2>Scroll Down</h2>
+      <p>Scroll down to see the sticky effect.</p>
+    </div>
+    
+    <div id="navbarsticky">
+      <a class="active" href="javascript:void(0)">Home</a>
+      <a href="javascript:void(0)">News</a>
+      <a href="javascript:void(0)">Contact</a>
+    </div>
+    
+    <div class="contentsticky">
+      <h3>Sticky Navigation Example</h3>
+      <p>The navbar will stick to the top when you reach its scroll position.</p>
+      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    </div>
+    
+    <script>
+    window.onscroll = function() {myFunction()};
+    
+    var navbar = document.getElementById("navbarsticky");
+    var sticky = navbar.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+    </script>
+    
+    </div>
+    
+  <header class=" ">
+
+    <div class="header-top w3-hide-small">
+
+      <div class="container">
+
+
+            <a href="#" class="header-social-container header-logo">
+                <img src="./assets/images/logo/logo.svg" alt="Anon's logo" width="120" height="36">
+              </a>
+
+    
+
+        <div class="header-alert-news">
+            <nav class="desktop-navigation-menu">
+
+                <div class="container">
+          
+                  <ul class="desktop-menu-category-list">
+          
+                    <li class="menu-category">
+                      <a href="#" class="menu-title">Inicio</a>
+                    </li>
+          
+                    <li class="menu-category">
+                      <a href="#" class="menu-title">Categorias</a>
+          
+                      <div class="dropdown-panel">
+          
+                        <ul class="dropdown-panel-list">
+          
+                          <li class="menu-title">
+                            <a href="#gorras">Gorras</a>
+                          </li>
+          
+                          <li class="panel-list-item">
+                            <a href="#">Pokémon</a>
+                          </li>
+          
+                          <li class="panel-list-item">
+                            <a href="#">Harry Potter</a>
+                          </li>
+                        
+          
+                          <li class="panel-list-item">
+                            <a href="#">Solicita tu diseño</a>
+                          </li>
+          
+                          <li class="panel-list-item">
+                            <a href="#">
+                              <img src="./assets/images/electronics-banner-1.jpg" alt="headphone collection" width="250"
+                                height="119">
+                            </a>
+                          </li>
+          
+                        </ul>
+          
+                        <ul class="dropdown-panel-list">
+          
+                          <li class="menu-title">
+                            <a href="#">Termos y tazas</a>
+                          </li>
+          
+                          <li class="panel-list-item">
+                            <a href="#">Dragon Ball</a>
+                          </li>
+          
+                          <li class="panel-list-item">
+                            <a href="#">Snoopy</a>
+                          </li>
+          
+                          <li class="panel-list-item">
+                            <a href="#">Obras de arte</a>
+                          </li>
+          
+                          <li class="panel-list-item">
+                            <a href="#">
+                              <img src="./assets/images/mens-banner.jpg" alt="men's fashion" width="250" height="119">
+                            </a>
+                          </li>
+          
+                        </ul>
+          
+                        <ul class="dropdown-panel-list">
+          
+                          <li class="menu-title">
+                            <a href="#">Colchas y cobertores</a>
+                          </li>
+          
+                          <li class="panel-list-item">
+                            <a href="#">Stitch</a>
+                          </li>
+          
+                          <li class="panel-list-item">
+                            <a href="#">Power Ranger</a>
+                          </li>
+          
+                          <li class="panel-list-item">
+                            <a href="#">Piratas del Caribe</a>
+                          </li>
+          
+                        
+                          <li class="panel-list-item">
+                            <a href="#">
+                              <img src="./assets/images/womens-banner.jpg" alt="women's fashion" width="250" height="119">
+                            </a>
+                          </li>
+          
+                        </ul>
+          
+                        <ul class="dropdown-panel-list">
+          
+                          <li class="menu-title">
+                            <a href="#">Playeras</a>
+                          </li>
+          
+                          <li class="panel-list-item">
+                            <a href="#">Iron Man</a>
+                          </li>
+          
+                          <li class="panel-list-item">
+                            <a href="#">Goku</a>
+                          </li>
+          
+                          <li class="panel-list-item">
+                            <a href="#">Spiderman</a>
+                          </li>
+                      
+          
+                          <li class="panel-list-item">
+                            <a href="#">
+                              <img src="./assets/images/electronics-banner-2.jpg" alt="mouse collection" width="250" height="119">
+                            </a>
+                          </li>
+          
+                        </ul>
+          
+                      </div>
+                    </li>
+          
+                    <li class="menu-category">
+                      <a href="#" class="menu-title">Termos y tazas</a>
+          
+                      <ul class="dropdown-list">
+          
+                        <li class="dropdown-item">
+                          <a href="#">Blancas</a>
+                        </li>
+          
+                        <li class="dropdown-item">
+                          <a href="#">Mágicas</a>
+                        </li>
+          
+                        <li class="dropdown-item">
+                          <a href="#">Canonicas</a>
+                        </li>
+          
+                        <li class="dropdown-item">
+                          <a href="#">Color interior</a>
+                        </li>
+          
+                      </ul>
+                    </li>
+          
+                    <li class="menu-category">
+                      <a href="#" class="menu-title">Playeras</a>
+          
+                      <ul class="dropdown-list">
+          
+                        <li class="dropdown-item">
+                          <a href="#">Caballero</a>
+                        </li>
+          
+                        <li class="dropdown-item">
+                          <a href="#">Dama</a>
+                        </li>
+          
+                        <li class="dropdown-item">
+                          <a href="#">Niño</a>
+                        </li>
+          
+                        <li class="dropdown-item">
+                          <a href="#">Juvenil</a>
+                        </li>
+          
+                      </ul>
+                    </li>
+          
+          
+                    <li class="menu-category">
+                      <a href="#" class="menu-title">Blog</a>
+                    </li>
+          
+                    <li class="menu-category">
+                      <a href="#" class="menu-title">Ofertas especiales</a>
+                    </li>
+          
+                    <li class="menu-category">
+                        <div class="header-user-actions">
+
+                            <button class="action-btn">
+                              <ion-icon name="person-outline"></ion-icon>
+                            </button>
+                  
+                            <button class="action-btn">
+                              <ion-icon name="heart-outline"></ion-icon>
+                              <span class="count">0</span>
+                            </button>
+                  
+                            <button class="action-btn">
+                              <ion-icon name="bag-handle-outline"></ion-icon>
+                              <span class="count">0</span>
+                            </button>
+                  
+                          </div>
+                    </li>
+          
+          
+                  </ul>
+          
+                </div>
+          
+              </nav>
+          
+        </div>
+
+        <div class="header-top-actions" style="display:none">
+
+          <select name="currency">
+            <option value="mx">MX &dollar;</option>
+            <option value="usd">USD &dollar;</option>
+            <option value="eur">EUR &euro;</option>
+
+          </select>
+
+          <select name="language">
+            <option value="es-ES">Espa&ntilde;ol</option>
+            <option value="en-US">English</option>            
+            <option value="fr">Fran&ccedil;ais</option>
+          </select>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="header-main desktop-navigation-menu">
+
+      <div class="container">
+
+       
+
+        <div class="header-search-container">
+          <input type="search" name="search" class="search-field" placeholder="Buscar...">
+
+          <button class="search-btn">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+   
+
+    <div class="mobile-bottom-navigation" style:"" >
+
+      <button class="action-btn" data-mobile-menu-open-btn  onclick="openNav()" >
+        <ion-icon name="menu-outline"  ></ion-icon>
+        
+      </button>
+
+      <button class="action-btn">
+        <ion-icon name="bag-handle-outline"></ion-icon>
+
+        <span class="count">0</span>
+      </button>
+
+      <button class="action-btn">
+        <ion-icon name="home-outline"></ion-icon>
+      </button>
+
+      <button class="action-btn">
+        <ion-icon name="heart-outline"></ion-icon>
+
+        <span class="count">0</span>
+      </button>
+
+      <button class="action-btn" data-mobile-menu-open-btn  class="openBtn" onclick="openSearch()">
+        <ion-icon name="search-outline" ></ion-icon>
+      </button>
+
+    </div>
+
+   
+
+  </header>
+
+  <div>
+    
+    <style>
+    body {
+    * {
+      box-sizing: border-box;
+    }
+    
+    .openBtn {
+      background: #f1f1f1;
+      border: none;
+      padding: 10px 15px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    
+    .openBtn:hover {
+      background: #bbb;
+    }
+    
+    .overlays {
+      height: 100%;
+      width: 100%;
+      display: none;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0, 0.9);
+    }
+    
+    .overlays-content {
+      position: relative;
+      top: 46%;
+      width: 80%;
+      text-align: center;
+      margin-top: 30px;
+      margin: auto;
+    }
+    
+    .overlays .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+      cursor: pointer;
+      color: white;
+    }
+    
+    .overlays .closebtn:hover {
+      color: #ccc;
+    }
+    
+    .overlays input[type=text] {
+      padding: 15px;
+      font-size: 17px;
+      border: none;
+      float: left;
+      width: 75%;
+      background: white;
+      height: 50px;
+    }
+    
+    .overlays input[type=text]:hover {
+      background: #f1f1f1;height: 50px;
+    }
+    
+   /* .overlays button {
+      float: left;
+      width: 25%;
+      padding: 15px;
+      background: #ddd;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;height: 40px;
+    }
+    
+    .overlay button:hover {
+      background: #bbb;height: 40px;
+    }*/
+    </style>
+
+    
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  
+  /*the container must be positioned relative:*/
+  .autocomplete {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+ 
+  input {
+    border: 1px solid transparent;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;  width: 100%;
+  }
+  
+  input[type=text] {
+    background-color: #f1f1f1;
+    width: 100%;
+  }
+  
+  input[type=submit] {
+    background-color: DodgerBlue;
+    color: #fff;
+   cursor: pointer;width: 100%;
+  }
+  
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;  width: 100%;
+  }
+  
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff; 
+    border-bottom: 1px solid #d4d4d4;   width: 100%;
+  }
+  
+  /*when hovering an item:*/
+  .autocomplete-items div:hover {
+    background-color: #e9e9e9;   width: 100%;
+  }
+  
+  /*when navigating through the items using the arrow keys:*/
+  .autocomplete-active {
+    background-color: DodgerBlue !important; 
+    color: #ffffff;   width: 100%;
+  }
+  </style>
+  
+  
+
+  
+      
+    
+    <div id="myOverlay" class="overlays">
+      <span class="closebtn" onclick="closeSearch()" title="Close Overlays">×</span>
+      <div class="overlays-content">
+  <form autocomplete="off" >
+    <div class="autocomplete" style="width: 100%;">
+      <input id="myInput" type="text" name="myCountry" placeholder="Buscar" style="width: 100%;">
+    </div>
+    <input type="submit">
+  </form>
+
+        <!--input type="search" name="search" class="email-field" placeholder="Buscar" required>
+        <button type="submit" class="btn-search">       Buscar </button-->      
+      </div>         
+    </div>    
+    
+  
+    
+    <script>
+    function openSearch() {
+      document.getElementById("myOverlay").style.display = "block";
+    }
+    
+    function closeSearch() {
+      document.getElementById("myOverlay").style.display = "none";
+    }
+    </script>
+<script>
+  function autocomplete(inp, arr) {
+    /*the autocomplete function takes two arguments,
+    the text field element and an array of possible autocompleted values:*/
+    var currentFocus;
+    /*execute a function when someone writes in the text field:*/
+    inp.addEventListener("input", function(e) {
+        var a, b, i, val = this.value;
+        /*close any already open lists of autocompleted values*/
+        closeAllLists();
+        if (!val) { return false;}
+        currentFocus = -1;
+        /*create a DIV element that will contain the items (values):*/
+        a = document.createElement("DIV");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        /*append the DIV element as a child of the autocomplete container:*/
+        this.parentNode.appendChild(a);
+        /*for each item in the array...*/
+        for (i = 0; i < arr.length; i++) {
+          /*check if the item starts with the same letters as the text field value:*/
+          if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+            /*create a DIV element for each matching element:*/
+            b = document.createElement("DIV");
+            /*make the matching letters bold:*/
+            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+            b.innerHTML += arr[i].substr(val.length);
+            /*insert a input field that will hold the current array item's value:*/
+            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+            /*execute a function when someone clicks on the item value (DIV element):*/
+            b.addEventListener("click", function(e) {
+                /*insert the value for the autocomplete text field:*/
+                inp.value = this.getElementsByTagName("input")[0].value;
+                /*close the list of autocompleted values,
+                (or any other open lists of autocompleted values:*/
+                closeAllLists();
+            });
+            a.appendChild(b);
+          }
+        }
+    });
+    /*execute a function presses a key on the keyboard:*/
+    inp.addEventListener("keydown", function(e) {
+        var x = document.getElementById(this.id + "autocomplete-list");
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode == 40) {
+          /*If the arrow DOWN key is pressed,
+          increase the currentFocus variable:*/
+          currentFocus++;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 38) { //up
+          /*If the arrow UP key is pressed,
+          decrease the currentFocus variable:*/
+          currentFocus--;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 13) {
+          /*If the ENTER key is pressed, prevent the form from being submitted,*/
+          e.preventDefault();
+          if (currentFocus > -1) {
+            /*and simulate a click on the "active" item:*/
+            if (x) x[currentFocus].click();
+          }
+        }
+    });
+    function addActive(x) {
+      /*a function to classify an item as "active":*/
+      if (!x) return false;
+      /*start by removing the "active" class on all items:*/
+      removeActive(x);
+      if (currentFocus >= x.length) currentFocus = 0;
+      if (currentFocus < 0) currentFocus = (x.length - 1);
+      /*add class "autocomplete-active":*/
+      x[currentFocus].classList.add("autocomplete-active");
+    }
+    function removeActive(x) {
+      /*a function to remove the "active" class from all autocomplete items:*/
+      for (var i = 0; i < x.length; i++) {
+        x[i].classList.remove("autocomplete-active");
+      }
+    }
+    function closeAllLists(elmnt) {
+      /*close all autocomplete lists in the document,
+      except the one passed as an argument:*/
+      var x = document.getElementsByClassName("autocomplete-items");
+      for (var i = 0; i < x.length; i++) {
+        if (elmnt != x[i] && elmnt != inp) {
+          x[i].parentNode.removeChild(x[i]);
+        }
+      }
+    }
+    /*execute a function when someone clicks in the document:*/
+    document.addEventListener("click", function (e) {
+        closeAllLists(e.target);
+    });
+  }
+  
+  /*An array containing all the country names in the world:*/
+  var countries = ["Gorras","Tazas", "Termos"];
+  
+  /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+  autocomplete(document.getElementById("myInput"), countries);
+  </script>
+         
+    </div>
+    
+
+
+
+  <!--
+    - MAIN-->
+
+  <main>
+
+    <!--
+      - BANNER
+    -->
+
+     
+      
+      
+      
+     
+     
+      
+   
+
+
+
+    <!--
+      - PRODUCT
+    -->
+
+    <div class="product-container">
+
+      <div class="container">
+
+
+        <!--
+          - SIDEBAR -->
+
+        <div class="sidebar  has-scrollbar" data-mobile-menu>
+
+          <div class="sidebar-category">
+
+           
+            <ul class="sidebar-menu-category-list">
+
+            
+
+              
+              <div class="sidebar-menu-category">
+                <div class="blog-card">
+
+                    <a href="#">
+                      <img src="./assets/images/blog-1.jpg" alt="Clothes Retail KPIs 2021 Guide for Clothes Executives" width="300" class="blog-banner">
+                    </a>
+        
+                    <div class="blog-content">
+        
+                      <a href="#" class="blog-category">Fashion</a>
+        
+                      <a href="#">
+                        <h3 class="blog-title">Clothes Retail KPIs 2021 Guide for Clothes Executives.</h3>
+                      </a>
+                      <p class="blog-meta">
+                        By <cite>Mr Selsa</cite> / <time datetime="2022-02-10">Feb 10, 2022</time>
+                       </p>
+                    
+                    </div>
+        
+                  </div>
+                <br>
+                <div class="blog-card">         
+                  
+                  
+                    <div class="blog-content">
+                  
+                      <a href="#" class="blog-category">Shoes</a>
+                  
+                      <h3>
+                          <a href="#" class="blog-title"> EBT vendors: Claim Your Share of SNAP Online Revenue.</a>
+                      </h3>
+                  
+                      <p class="blog-meta">
+                       By <cite>Mr Selsa</cite> / <time datetime="2022-02-10">Feb 10, 2022</time>
+                      </p>
+                  
+                    </div>
+                  
+                  </div>
+                  <br>
+                  <div class="blog-card">
+                  
+                    <a href="#">
+                      <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."
+                        class="blog-banner" width="300">
+                    </a>
+                  
+                    <div class="blog-content">
+                  
+                      <a href="#" class="blog-category"> Electronics</a>
+                  
+                      <h3>
+                       <a href="#" class="blog-title"> Curbside fashion Trends: How to Win the Pickup Battle.</a>
+                      </h3>
+                  
+                      <p class="blog-meta">
+                       By <cite>Mr Pawar</cite> / <time datetime="2022-03-15">Mar 15, 2022</time>
+                      </p>
+                  
+                    </div>
+                  
+                  </div>
+
+              </div>
+
+
+            </ul>
+
+          </div>
+
+          <div class="product-showcase">
+
+            <h3 class="showcase-heading">Los más regalados</h3>
+
+            <div class="showcase-wrapper">
+
+              <div class="showcase-container">
+
+                <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg" >
+                    <img src="./assets/images/products/1.jpg" alt="baby fabric shoes" width="75" height="75"
+                      class="showcase-img">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">baby fabric shoes</h4>
+                    </a>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$5.00</del>
+                      <p class="price">$4.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase">
+
+                    <a href="#" class="showcase-img-box containerimg" >
+                    <img src="./assets/images/products/2.jpg" alt="men's hoodies t-shirt" class="showcase-img"
+                      width="75" height="75">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">men's hoodies t-shirt</h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-half-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$17.00</del>
+                      <p class="price">$7.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase">
+
+                  <a href="#" class="showcase-img-box">
+                    <img src="./assets/images/products/3.jpg" alt="girls t-shirt" class="showcase-img" width="75"
+                      height="75">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">girls t-shirt</h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-half-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$5.00</del>
+                      <p class="price">$3.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase">
+
+                  <a href="#" class="showcase-img-box">
+                    <img src="./assets/images/products/4.jpg" alt="woolen hat for men" class="showcase-img" width="75"
+                      height="75">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">woolen hat for men</h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$15.00</del>
+                      <p class="price">$12.00</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="product-box">
+
+       
+
+
+       
+
+
+          <!-- - PRODUCT GRID -->
+
+          <div class="product-main">
+
+            <div class="">
+
+              <div class="">
+                <div class="el-border">
+                  <div  style="text-align: justify; margin: 20px;">      
+                    <h1  style="text-align: center;"> FAQS</h1>        <br>         
+                    <h2  style="text-align: center;"> La diferencia entre las playeras de 100% poliéster, 100% algodón y la mezcla de 50% algodón y 50% poliéster</h2>      
+                   <br>
+                   La diferencia entre las playeras de 100% poliéster, 100% algodón y la mezcla de 50% algodón y 50% poliéster radica en sus propiedades y usos:
+                   <br> <br>
+                   <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."  class="blog-banner" width="300">
+                   <ul><li> <b> 100% Poliéster</b></br>  Este material es sintético, derivado del petróleo, y es conocido por su durabilidad y resistencia al desgarro. Las playeras de poliéster son menos propensas a arrugarse y secan rápido, lo que las hace ideales para ropa deportiva o para actividades que requieren un secado rápido.</li> 
+                    <br>
+                        <li>  <b>    100% Algodón</b> </br> El algodón es una fibra natural que es muy suave y cómoda al tacto. Permite una buena transpiración, haciéndola adecuada para climas cálidos y para personas con piel sensible. Sin embargo, las prendas de algodón puro tienden a arrugarse fácilmente y pueden tardar más en secarse.</li>
+                        <br>
+                            <li>  <b>    50% Algodón 50% Poliéster</b> </br> La mezcla de estas dos fibras busca combinar lo mejor de ambos mundos. La playera resultante es más resistente al desgarro que el algodón puro, pero más transpirable que el poliéster puro. Además, esta mezcla suele ser menos costosa que el algodón 100% y ofrece una comodidad comparable, con la ventaja adicional de un secado más rápido y menos arrugas.</li>
+                   </ul><br> <br>
+                   Cada tipo de playera tiene sus ventajas y puede ser la mejor opción dependiendo de tus necesidades específicas.         
+
+                   <p class="sr-only" hidden>
+                   Origen: 
+                   (1) Qué es mejor Algodón o Poliéster Diferencias Ventajas Desventajas. https://worko.es/blog/algodon-o-poliester-diferencias-ventajas-desventajas/.
+                   (2) Algodón o poliéster: guía de tipos de telas para ropa | Printful. https://www.printful.com/es/blog/guia-algodon-poliester-telas-mixtas.
+                   (3) Cuál es la diferencia entre las camisetas de algodón 100% y las de .... https://info-cafe-wuppertal.org/es/cu%C3%A1l-es-la-diferencia-entre-las-camisetas-de-algod%C3%B3n-100-y-las-de-mezcla-de-algod%C3%B3n-y-poli%C3%A9ster-5050-y-c%C3%B3mo-afectan-a-la-serigraf%C3%ADa/.
+                   (4) Cómo elegir una playera 100% algodón o 100% poliéster - Euro Cotton. https://blog.eurocotton.com.mx/como-elegir-una-playera-100-algodon-o-100-poliester.
+                   (5) Descubre el nombre de la tela perfecta: 50% algodón y 50% poliéster. https://mascostura.com/descubre-el-nombre-de-la-tela-perfecta-50-algodon-y-50-poliester/.
+                    </p>   
+                    <br><br>  
+                    
+                    <h2  style="text-align: center;">¿Cómo se deben lavar y cuidar estas playeras? </h2>                
+                    <br>
+                    El cuidado y lavado de las playeras varía según el material del que están hechas. Aquí tienes algunas recomendaciones generales para cada tipo de playera:
+                    <br> <br>
+                    <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."  class="blog-banner" width="300">
+                  
+                    <ul><li> <b>
+                    100% Poliéster</b> </br>
+                      - Lava con agua tibia para mantener la calidad de la tela.</br>
+                      - Usa ciclos de lavado suaves y evita la lejía para proteger el material.</br>
+                      - Dale la vuelta a la prenda antes de lavarla para evitar daños.</br>
+                      - Puedes secar al aire libre o en secadora a baja temperatura.</li> 
+                      <br>
+                      <li>  <b> 100% Algodón</b> </br>
+                      - Lava con agua fría para evitar el encogimiento y la pérdida de color.</br>
+                      - Utiliza un ciclo suave y detergente suave.</br>
+                      - Seca al aire libre para preservar la suavidad de la fibra.</br>
+                      - Plancha a temperatura media si es necesario.</li> 
+                      <br>
+                      <li>  <b> 50% Algodón 50% Poliéster</b> </br>
+                      - Lava con agua tibia y utiliza un ciclo normal.</br>
+                      - Esta mezcla reduce la posibilidad de arrugas, facilitando el cuidado.</br>
+                      - Seca en secadora a temperatura media o al aire libre.</li> </br>
+                      <br>
+                    Recuerda siempre revisar las etiquetas de cuidado de tus prendas para instrucciones específicas del fabricante.
+                    
+                    
+                    <p class="sr-only" hidden>
+                      Origen: Conversación con Bing, 3/4/2024
+                      (1) Cómo lavar el poliéster: 11 Pasos (con imágenes). https://es.wikihow.com/lavar-el-poli%C3%A9ster.
+                      (2) Cómo lavar poliéster y cuidar estas prendas |AEG. https://www.aeg.com.es/local/tu-lavado-dia-a-dia/como-lavar-y-cuidar-las-prendas-de-poliester/.
+                      (3) Cómo lavar las prendas de 100% poliéster - 7 pasos - Mundo Deportivo. https://www.mundodeportivo.com/uncomo/hogar/articulo/como-lavar-las-prendas-de-100-poliester-10870.html.
+                      (4) 10 consejos para lavar y cuidar la ropa de poliéster. https://mejorconsalud.as.com/consejos-lavar-cuidar-ropa-poliester/.  
+   
+                     </p>  
+                     <br>  <br>  
+                     
+
+
+
+
+                     <h2  style="text-align: center;"> ¿Cómo puedo quitar manchas difíciles de estas playeras?</h2>                
+                    <br>
+                    Para quitar manchas difíciles de playeras de diferentes materiales, aquí tienes algunos consejos generales:
+                    <br> <br>
+                    <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."  class="blog-banner" width="300">
+                         
+                    <ul><li> <b>
+                    Poliéster</b> </br>
+                      - Pretrata la mancha con un detergente líquido adecuado.  <br>
+                      - Si es una mancha de grasa, aplica directamente el detergente sobre la mancha y deja actuar unos minutos antes de lavar.  <br>
+                      - Lava la prenda a la temperatura recomendada en la etiqueta.  <br>
+                      - Revisa la mancha antes de secar, ya que el calor puede fijarla permanentemente.</li> 
+                      <br>
+                    
+                      <ul><li> <b>Algodón</b> </br>
+                      - Para manchas de sudor, prepara una solución de partes iguales de agua y vinagre blanco y aplica sobre la mancha.  <br>
+                      - Para manchas de proteínas como sangre, utiliza un detergente a base de enzimas.  <br>
+                      - Lava con agua fría y revisa la mancha antes de secar.</li> 
+                      <br>
+                    
+                      <ul><li> <b> Mezcla de Algodón y Poliéster</b> </br>
+                      - Utiliza un tratamiento similar al del algodón para manchas orgánicas.  <br>
+                      - Para manchas de grasa, sigue el procedimiento del poliéster.  </li> </br>
+                    
+                    Recuerda siempre probar el método de limpieza en una parte discreta de la prenda para asegurarte de que no dañará el tejido. Además, es importante consultar las instrucciones de cuidado del fabricante que vienen en la etiqueta de la prenda.
+                    
+                  
+                    <p class="sr-only" hidden>
+                      Origen: Conversación con Bing, 3/4/2024
+                      (1) ¿Cómo eliminar manchas del poliéster? - Persil. https://www.persil.com.mx/experto-en-manchas/articulos/como-eliminar-manchas-del-poliester.html.
+                      (2) Cómo quitar manchas de las playeras. Nike MX. https://www.nike.com/mx/a/como-quitar-manchas-playeras.
+                      (3) ¿Cómo eliminar manchas del poliéster? - Persil. https://bing.com/search?q=c%c3%b3mo+quitar+manchas+dif%c3%adciles+de+playeras+de+poli%c3%a9ster%2c+algod%c3%b3n+y+mezcla.
+                      (4) Cómo quitar las manchas de poliéster | Ropadetrabajo.club. https://ropadetrabajo.club/como-quitar-las-manchas-de-poliester/.
+                      (5) Cómo eliminar manchas del poliéster - Wipp Express. https://www.wippexpress.es/guia-de-lavado/tips-quitamanchas/articulos/como-eliminar-manchas-del-poliester.html.
+                      (6) undefined. https://bing.com/search?q=.
+                     </p>  
+                     <br>  <br>  
+
+
+
+
+                     
+                     <h2  style="text-align: center;"> ¿Qué hacer si la mancha no sale después del lavado?</h2>                
+                    <br>
+                     Si una mancha persiste después del lavado, aquí tienes algunos pasos que puedes seguir para intentar eliminarla:
+                    <br> <br>
+                    <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."  class="blog-banner" width="300">
+                         
+                   
+                    <ul><l> 
+                      <b>  1. Revisa la etiqueta de la prenda</b>  para asegurarte de que no estás utilizando un método de limpieza que pueda dañar el tejido.</br>
+                        <b>  2. Pretrata la mancha con un detergente líquido,</b>  aplicándolo directamente sobre la mancha y dejándolo actuar durante unos minutos antes de lavar.</br>
+                          <b>  3. Lava la prenda nuevamente,</b>  utilizando la temperatura máxima permitida según la etiqueta de cuidado.</br>
+                            <b>  4. Utiliza un ciclo de lavado</b>  intensivo si tu lavadora lo permite.</br>
+                              <b>  5. No uses la secadora </b> hasta que la mancha haya desaparecido, ya que el calor puede fijar la mancha permanentemente.</br>
+                                <b>  6. Si la mancha es de grasa o aceite,</b>  deja la prenda en remojo con detergente durante la noche antes de lavarla.</br>
+                                  <b>  7. Repite el proceso </b> si es necesario, comprobando siempre entre lavados si la mancha se ha eliminado.</br>
+                    </li> </ul> </br>
+                    Si después de varios intentos la mancha sigue sin salir, puede ser necesario llevar la prenda a una tintorería profesional para un tratamiento más especializado¹. Recuerda que algunas manchas, como las de tinta, grasa, tinte y aceite, pueden ser particularmente difíciles de eliminar y podrían requerir tratamientos específicos.
+                    
+                  
+                    <p class="sr-only" hidden>
+                      Origen: Conversación con Bing, 3/4/2024
+                      (1) ¿Cómo eliminar las manchas de la ropa después del lavado y ... - Persil. https://www.persil.com.mx/experto-en-manchas/articulos/como-eliminar-las-manchas-de-la-ropa-despues-del-lavado-y-secado.html.
+                      (2) Qué causa las manchas en la ropa después del lavado (y cómo quitarlas). https://www.viviendohoy.com/que-causa-las-manchas-en-la-ropa-despues-del-lavado-y-como-quitarlas/.
+                      (3) Manchas después del lavado: cuando la ropa está sucia después del .... https://bricolajecasero.es/manchas-despues-del-lavado/.
+                      (4) Cómo eliminar las manchas en la ropa de la lavadora: guía paso a paso .... https://electrorimar.es/manchas-en-la-ropa-de-la-lavadora/.
+                     </p>  
+                     <br>   <br>
+
+                        
+                     <h2  style="text-align: center;">¿Qué hacer si la mancha es de tinta o vino? </h2>                
+                     <br>
+                     Para tratar manchas de tinta o vino en playeras, aquí tienes algunos métodos efectivos: 
+                    <br> <br>
+                    <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."  class="blog-banner" width="300">
+                   
+                    **Manchas de Tinta**:
+                    - **Alcohol Isopropílico**: Aplica alcohol directamente sobre la mancha y deja que penetre. Luego, lava la prenda normalmente³.
+                    - **Leche**: Sumerge la parte manchada en leche caliente y luego lava la prenda³.
+                    
+                    **Manchas de Vino**:
+                    - **Sal**: Cubre la mancha con sal y deja que absorba el vino. Luego, limpia y lava la prenda².
+                    - **Leche Caliente**: Hierve leche y sumerge la prenda manchada, luego lava⁷.
+                    - **Vinagre Blanco y Bicarbonato de Sodio**: Crea una pasta con estos ingredientes, aplícala sobre la mancha, deja actuar y lava⁵.
+                    
+                    Recuerda siempre probar primero en un área pequeña y discreta para asegurarte de que el método no dañe la tela, y sigue las instrucciones de cuidado de la prenda. Si la mancha persiste, considera llevar la prenda a una tintorería profesional.
+                    
+             
+                    <p class="sr-only" hidden>
+                      Origen: Conversación con Bing, 3/4/2024
+                      (1) Cómo eliminar las manchas de tinta de pluma de las camisas. https://www.eluniversal.com.mx/de-ultima/como-eliminar-las-manchas-de-tinta-de-pluma-de-las-camisas/.
+                      (2) Cómo Quitar Las Manchas De Vino Tinto. https://www.msn.com/es-mx/video/noticias/c%c3%b3mo-quitar-las-manchas-de-vino-tinto/vi-AA1cEdcx.
+                      (3) ¿Cómo quitar la mancha de vino? ¡Vea algunos consejos!. https://www.wine.com.mx/blogs/wineverso/como-quitar-la-mancha-de-vino-vea-algunos-consejos.
+                      (4) Cómo quitar las manchas de vino tinto de la ropa con estos prácticos .... https://www.directoalpaladar.com.mx/directo-al-paladar-mexico/como-quitar-manchas-vino-tinto-ropa-estos-practicos-consejos-expertos.
+                      (5) 6 tips para eliminar manchas de vino tinto de tus prendas. https://www.excelsior.com.mx/trending/6-tips-para-eliminar-manchas-de-vino-tinto-de-tus-prendas/1367685.
+                      (6) 8 trucos para quitar las manchas de vino de los textiles - Hogarmania. https://www.hogarmania.com/hogar/limpieza-orden/ropa-tejidos/como-quitar-manchas-vino-facilmente.html.
+                      (7) Cómo quitar las manchas de vino tinto de manera sencilla. https://mejorconsalud.as.com/como-quitar-manchas-vino-tinto/.
+   
+                     </p>  
+                     <br>  <br>  
+
+                     <h2  style="text-align: center;"> ¿Cómo quitar manchas de aceite o grasa?</h2>                
+                     <br>
+                    
+                    <br> <br>
+                    <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."  class="blog-banner" width="300">
+                    
+
+                    1. **Aplica detergente lavavajillas líquido** directamente sobre la mancha. Los detergentes diseñados para combatir la grasa son muy efectivos¹.
+                    2. **Frota suavemente** la mancha con un cepillo de dientes viejo o un cepillo para uñas para ayudar a desincrustar la grasa¹.
+                    3. **Enjuaga con agua** y, si lo deseas, puedes aplicar vinagre diluido (una parte de vinagre por dos de agua) como tratamiento adicional antes de lavar¹.
+                    4. **Lava la prenda** en la lavadora a la temperatura recomendada en la etiqueta de cuidado¹.
+                    5. **Revisa la mancha** antes de secar, ya que el calor de la secadora puede fijarla permanentemente¹.
+                    
+                    Si la mancha persiste, puedes intentar otros métodos caseros como aplicar talco de bebé, bicarbonato de sodio o incluso usar un poco de aceite multiusos o líquido para encendedores en manchas muy resistentes¹⁴. Recuerda siempre probar primero en un área pequeña y discreta para asegurarte de que el método no dañe la tela.
+                    
+                    
+ 
+                    <p class="sr-only" hidden>
+                      Origen: Conversación con Bing, 3/4/2024
+                      (1) 4 formas de quitar manchas de grasa y aceite de la ropa - wikiHow. https://es.wikihow.com/quitar-manchas-de-grasa-y-aceite-de-la-ropa.
+                      (2) ¡Comprobado! El truco fácil y casero para quitar las manchas de grasa y .... https://www.elmueble.com/orden-limpieza-ahorro/comprobado-truco-facil-y-casero-para-quitar-manchas-grasa-y-aceite-ropa-sin-estropearla_47913.
+                      (3) Cómo quitar manchas de aceite o grasa de la ropa en cuestión de minutos. https://www.diariofemenino.com/hogar/como-quitar-manchas-de-aceite-o-grasa-de-la-ropa-en-cuestion-de-minutos/.
+                      (4) 6 trucos para remover las manchas de aceite en la ropa. https://bing.com/search?q=c%c3%b3mo+quitar+manchas+de+aceite+o+grasa+de+playeras.
+                      (5) Cómo quitar las manchas de aceite de la ropa - Hogarmania. https://www.hogarmania.com/hogar/limpieza-orden/ropa-tejidos/como-quitar-manchas-aceite-ropa.html.
+                      (6) Cómo quitar pintura, aceite y grasa de la ropa | Dr. Beckmann. https://dr-beckmannlatam.com/clinica-de-manchas/quitar-manchas-ropa/ropa-impecable-consejos-eliminar-manchas-de-aceite-grasa-y-pintura-de-la-ropa/.   
+                     </p>  
+                     <br>  <br>  
+
+                     <h2  style="text-align: center;">Cuantos minutos debe durar la lavadora tallando la ropa y cuantas veces se debe repetir el ciclo </h2>                
+                     <br>
+                     La duración del ciclo de lavado y la cantidad de veces que se debe repetir dependen de varios factores, como el tipo de ropa, el nivel de suciedad y las especificaciones de tu lavadora. Aquí tienes algunas pautas generales:
+                    <br> <br>
+                    <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."  class="blog-banner" width="300">
+                         
+                
+
+                    - **Duración del Ciclo de Lavado**: Los ciclos de lavado pueden variar desde **15 minutos** para un ciclo rápido hasta más de **una hora** para ciclos más intensivos¹. La mayoría de las lavadoras ofrecen una gama de ciclos que se adaptan a diferentes necesidades, como ropa delicada, ropa muy sucia o lavado diario.
+                    
+                    - **Repetición del Ciclo de Lavado**: Generalmente, no es necesario repetir un ciclo de lavado a menos que la ropa esté extremadamente sucia o si las manchas no se han eliminado en el primer intento. Si necesitas repetir el ciclo, asegúrate de que la ropa aún tenga manchas y considera pretratar las áreas afectadas antes de volver a lavar².
+                    
+                    Es importante revisar las instrucciones de tu lavadora y las etiquetas de cuidado de la ropa para obtener recomendaciones específicas. Además, para conservar la ropa y ahorrar energía, es mejor usar el ciclo adecuado para el nivel de suciedad y el tipo de tela, en lugar de lavar varias veces.
+                    
+
+                    <p class="sr-only" hidden>
+                      Origen: Conversación con Bing, 3/4/2024
+                      (1) Aprendé qué significan el ciclo y símbolos de lavado | Cleanipedia. https://www.cleanipedia.com/ar/lavanderia/como-usar-el-ciclo-de-lavado-del-lavarropas.html.
+                      (2) Programas de la lavadora: guía, consejos y buen uso - Hogarmania. https://www.hogarmania.com/hogar/limpieza-orden/ropa-tejidos/ciclo-lavado-utilizar-cada-momento-23233.html.
+                      (3) ¿Cuántos ciclos de lavado dura una prenda de ropa?. https://limpiezaeficiente.com/cuantos-ciclos-de-lavado-dura-una-prenda-de-ropa/.
+                      (4) Con cuánta frecuencia debes lavar tu ropa, según los expertos .... https://www.businessinsider.es/cuanta-frecuencia-debes-lavar-ropa-expertos-1150375.
+                      (5) ¿Cuánto dura cada ciclo de lavado? - TodoRespondio.es. https://todorespondio.es/cuanto-dura-cada-ciclo-de-lavado.
+                     </p>  
+                     <br>  <br>  
+
+                     <h2  style="text-align: center;">como debo elegir el ciclo de lavado adecuado para telas:
+                      100% Poliéster ,
+                      100% Algodón y 
+                      50% Algodón 50% Poliéster </h2>                
+                     <br>
+                    
+                    <br> <br>
+                    <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."  class="blog-banner" width="300">
+                         
+                    Para elegir el ciclo de lavado adecuado para diferentes tipos de telas, aquí tienes algunas recomendaciones basadas en las propiedades de cada material:
+
+                    - **100% Poliéster**: Se recomienda usar agua fría y un ciclo suave para evitar dañar las fibras. Evita el uso de blanqueadores y secadoras de alta temperatura¹²⁴.
+                    
+                    - **100% Algodón**: Utiliza agua tibia o fría y un ciclo de lavado suave o delicado para minimizar el riesgo de encogimiento y para proteger la calidad de la tela⁶⁷⁸⁹.
+                    
+                    - **50% Algodón 50% Poliéster**: Puedes lavar estas prendas con un ciclo normal. Las altas temperaturas pueden acelerar el proceso de deformación del algodón, por lo que se recomienda evitarlas. Este tipo de tela se puede secar en secadora, ya que se seca rápidamente¹¹¹²¹⁴¹⁵.
+                    
+                    Recuerda siempre revisar las etiquetas de cuidado de tus prendas para obtener instrucciones específicas del fabricante.
+                    
+                    
+                    <p class="sr-only" hidden>
+                      Origen: Conversación con Bing, 3/4/2024
+                      (1) Consejos para lavar la tela 100% poliéster correctamente en casa. https://www.lamansiondelasideas.com/hogar-y-manualidades/lavar-100-poliester/.
+                      (2) Cómo lavar prendas 100 % poliéster: la guía completa. https://ropadetrabajo.club/como-lavar-prendas-100-poliester-la-guia-completa/.
+                      (3) Descubre cómo lavar fácilmente tus prendas de 100% poliéster en .... https://facilycity.es/lavado/se-puede-lavar-100-poliester-en-lavadora/.
+                      (4) Cómo lavar 100% algodón: útiles consejos de limpieza (guía). https://entretenimientodigital.net/como-lavar-100-algodon-utiles-consejos-de-limpieza-guia/.
+                      (5) Guía completa para el lavado de prendas de algodón: consejos ... - MONOIC. https://monoicstudios.com/blogs/blog/guia-completa-para-el-lavado-de-prendas-de-algodon-consejos-y-trucos.
+                      (6) Consejos para el cuidado de textiles 100% algodón: una opción natural .... https://myc-homelinens.com/blogs/myc-blog/consejos-para-el-cuidado-de-textiles-100-algodon-una-opcion-natural-para-tu-hogar.
+                      (7) Qué tela es 100% algodón: Descubre sus propiedades y usos. https://tejidostrapitos.es/que-tela-es-100-algodon/.
+                      (8) TABLA INSTRUCCIONES DE LAVADO WEB - Santana. https://www.santana.co/wp-content/uploads/2019/09/instrucciones-lavado.pdf.
+                      (9) Guía para elegir sábanas: Algodón 100% vs Mezcla 50/50 | Consejos y .... https://eiffeltextile.com/blogs/news/guia-para-elegir-sabanas-algodon-100-vs-mezcla-50-50-consejos-y-recomendaciones.
+                      (10) Corte de tela 50/50, 50% algodón 50% poliéster - Todoexpertos.com. https://www.todoexpertos.com/categorias/ciencias-e-ingenieria/ingenieria-textil/respuestas/ffi9nw3egzxbc/corte-de-tela-50-50-50-algodon-50-poliester.
+                      (11) ¿El poliéster encoge si se lava? - Mundo Deportivo. https://www.mundodeportivo.com/uncomo/hogar/articulo/el-poliester-encoge-si-se-lava-50814.html.
+                      (12) Descubre cómo lavar fácilmente tus prendas de 100% poliéster en .... https://bing.com/search?q=ciclo+de+lavado+adecuado+para+telas+100%25+Poli%c3%a9ster.
+                      (13) 10 consejos para lavar y cuidar la ropa de poliéster. https://mejorconsalud.as.com/consejos-lavar-cuidar-ropa-poliester/.
+                      (14) ¿Qué tipo de tejidos encogen al lavarlos y cómo evitarlo?. https://recovo.co/es/blog/que-tipo-de-tejido-se-encoge-cuando-se-lava-y-como-evitarlo/.
+                      (15) TABLA INSTRUCCIONES DE LAVADO WEB - Santana. https://bing.com/search?q=ciclo+de+lavado+adecuado+para+telas+50%25+Algod%c3%b3n+50%25+Poli%c3%a9ster.
+                      (16) undefined. https://bing.com/search?q=.
+                     </p>  
+                     <br>  <br>  
+
+                     <h2  style="text-align: center;">¿Qué hacer si la ropa sigue oliendo a sudor después del lavado? </h2>                
+                     <br>
+                    
+                    <br> <br>
+                    <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."  class="blog-banner" width="300">
+                         
+ 
+                    <p class="sr-only" hidden>
+                 
+                     </p>  
+                     <br>  <br>  
+
+                     <h2  style="text-align: center;"> </h2>                
+                     <br>
+                     Si la ropa sigue oliendo a sudor después del lavado, puedes intentar los siguientes métodos para eliminar el mal olor:
+
+                   
+                    <br> <br>
+                    <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."  class="blog-banner" width="300">
+                         
+                    1. **Asegúrate de que la ropa esté completamente seca** antes de doblarla o guardarla. El secado al aire libre puede ser especialmente efectivo¹.
+                    2. **Utiliza un desinfectante para ropa** como Clorox® Laundry Sanitizer, que mata las bacterias causantes del mal olor. Añádelo en el compartimiento para el suavizante de telas de tu lavadora y lava como de costumbre¹.
+                    3. **Lava la ropa sudada lo antes posible** para evitar que el olor se vuelva persistente y difícil de eliminar².
+                    4. **Considera usar remedios caseros** como el vinagre o el bicarbonato de sodio, que pueden ayudar a neutralizar los olores².
+                    
+                    Recuerda siempre revisar las etiquetas de cuidado de tus prendas para seguir las instrucciones.
+                    <p class="sr-only" hidden>
+                      nstrucciones específicas del fabricante y evitar dañar la tela.
+                     
+                      Origen: Conversación con Bing, 3/4/2024
+                      (1) Cómo eliminar el mal olor de la ropa después de lavarla. https://www.clorox.com/es/aprender/eliminar-el-mal-olor-de-la-ropa-despues-del-lavado/.
+                      (2) Por qué persiste el olor a sudor en la ropa · Sanytol. https://sanytol.es/blog/mal-olor/por-que-persiste-olor-sudor-en-ropa/.
+                      (3) Cómo quitar el olor a sudor de tu ropa en la lavadora: ¡Adiós al mal olor!. https://www.grundig.com/es-es/blog/quitar-olor-a-sudor-de-ropa-en-lavadora.
+                      (4) undefined. https://www.nytimes.com/2020/05/29/science/laundry-smell-line.html.
+                     </p>  
+                     <br>  <br>  
+
+                     <h2  style="text-align: center;">¿Cómo evitar que la ropa se decolore durante el lavado? </h2>                
+                     <br>
+                     Para evitar que la ropa se decolore durante el lavado, puedes seguir estos consejos:
+                    <br> <br>
+                    <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."  class="blog-banner" width="300">
+                         
+
+
+                    1. **Separa la ropa por colores**: Agrupa las prendas por colores similares para evitar la transferencia de tintes entre ellas².
+                    2. **Voltea las prendas del revés**: Esto ayuda a reducir el roce de las fibras y minimiza el contacto directo con el agua y el detergente².
+                    3. **Utiliza bolsas de lavado**: Para prendas más delicadas o con colores intensos, el uso de bolsas de lavado puede proteger la ropa durante el lavado².
+                    4. **Selecciona el detergente adecuado**: Utiliza detergentes específicos para ropa de colores que están diseñados para mantener la intensidad del color y prevenir la decoloración².
+                    5. **Lava con agua fría**: El agua caliente tiende a acelerar la pérdida de color. Opta por agua fría o tibia para conservar los tintes².
+                    6. **Añade vinagre blanco**: Agregar media taza de vinagre blanco al ciclo de enjuague puede ayudar a fijar los colores y eliminar residuos de detergente².
+                    7. **Evita el exceso de detergente**: Utilizar demasiado detergente puede contribuir a la decoloración de la ropa. Sigue las instrucciones del fabricante y mide cuidadosamente la cantidad de detergente que utilizas².
+                    8. **No sobrecargues la lavadora**: La sobrecarga de la lavadora aumenta la fricción entre las prendas, lo que puede provocar la decoloración².
+                    
+                    Estos pasos pueden ayudarte a mantener el color de tus prendas vibrante y duradero.
+                    
+                  
+                    <p class="sr-only" hidden>
+                      Origen: Conversación con Bing, 3/4/2024
+                      (1) Cómo evitar que la ropa se destiña en la lavadora - Vanguardia. https://www.vanguardia.com/entretenimiento/tendencias/2024/02/02/como-evitar-que-la-ropa-se-destina-en-la-lavadora/.
+                      (2) ¿Cómo evitar que la ropa se decolore con el lavado? - Testex. https://www.testextextile.com/es/c%C3%B3mo-evitar-que-la-ropa-se-decolore-con-el-lavado/.
+                      (3) Trucos para evitar que tu ropa se decolore en la lavadora - Okdiario. https://okdiario.com/curiosidades/trucos-evitar-que-tu-ropa-decolore-lavadora-6428105.
+                      (4) Consejos de lavado para evitar que los colores destiñan - eHow en Español. https://www.ehowenespanol.com/consejos-lavado-evitar-colores-destinan-manera_171046/.
+                      (5) Mejor evite la práctica: esta es la ropa que no se debe lavar en agua .... https://www.elpais.com.co/como-hacer/mejor-evite-la-practica-esta-es-la-ropa-que-no-se-debe-lavar-en-agua-caliente-1338.html.
+                     </p>  
+                     <br>  <br>  
+                     <h2  style="text-align: center;">¿Qué hacer si las manchas de sudor son persistentes en ciertas prendas? </h2>                
+                     <br>
+                     Para tratar manchas de sudor persistentes en la ropa, puedes probar los siguientes métodos:
+                    <br> <br>
+                    <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."  class="blog-banner" width="300">
+                         
+                
+
+                    1. **Vinagre Blanco**: Aplica vinagre blanco directamente sobre la mancha y deja actuar durante 15 minutos antes de lavar¹.
+                    2. **Bicarbonato de Sodio y Agua Oxigenada**: Haz una pasta con bicarbonato de sodio y agua oxigenada, aplícala sobre la mancha, deja actuar durante unos minutos y luego lava la prenda¹.
+                    3. **Agua Oxigenada**: Humedece la mancha con agua oxigenada, frota suavemente y deja actuar antes de lavar¹.
+                    4. **Aspirina**: Disuelve una aspirina en agua y aplica la solución sobre la mancha antes de lavar³.
+                    5. **Sal**: Aplica sal directamente sobre la mancha húmeda para absorber el sudor antes de lavar³.
+                    6. **Limón y Bicarbonato de Sodio**: Mezcla jugo de limón con bicarbonato de sodio, aplica sobre la mancha, deja actuar y lava³.
+                    
+                    Recuerda siempre probar primero en un área pequeña y discreta para asegurarte de que el método no dañe la tela, y sigue las instrucciones de cuidado de la prenda. Si las manchas persisten después de estos tratamientos, considera llevar la ropa a una tintorería profesional para un tratamiento más especializado.
+                    
+                    
+                    <p class="sr-only" hidden>
+                      Origen: Conversación con Bing, 3/4/2024
+                      (1) 6 trucos para quitar las manchas de sudor fácilmente - EL ESPAÑOL. https://www.elespanol.com/como/trucos-quitar-manchas-sudor-facilmente/505200240_0.html.
+                      (2) 6 trucos para quitar las manchas de sudor fácilmente - EL ESPAÑOL. https://bing.com/search?q=eliminar+manchas+de+sudor+persistentes+en+ropa.
+                      (3) Cómo quitar las manchas de sudor en la ropa - Mejor con Salud. https://mejorconsalud.as.com/quitar-manchas-de-sudor-en-la-ropa/.
+                      (4) Cómo quitar las manchas amarillas de sudor en la ropa: 7 trucos .... https://www.elmundo.es/como/2023/04/25/64479f2ee4d4d83c758b45ba.html.
+                     </p>  
+                     <br>  <br>  
+
+                     <h2  style="text-align: center;"> </h2>                
+                     <br>
+                    
+                    <br> <br>
+                    <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."  class="blog-banner" width="300">
+                         
+ 
+                    <p class="sr-only" hidden>
+                 
+                     </p>  
+                     <br>  <br>  
+                     <h2  style="text-align: center;"> </h2>                
+                     <br>
+                    
+                    <br> <br>
+                    <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."  class="blog-banner" width="300">
+                         
+ 
+                    <p class="sr-only" hidden>
+                 
+                     </p>  
+                     <br>  <br>  
+                     <h2  style="text-align: center;"> </h2>                
+                     <br>
+                    
+                    <br> <br>
+                    <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."  class="blog-banner" width="300">
+                         
+ 
+                    <p class="sr-only" hidden>
+                 
+                     </p>  
+                     <br>  <br>  
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+   
+
+    <!-- - BLOG  -->
+
+    <div class="blog">
+
+      <div class="container">
+
+        <div class="blog-container has-scrollbar">
+
+          <div class="blog-card">
+
+            <a href="#">
+              <img src="./assets/images/blog-1.jpg" alt="Clothes Retail KPIs 2021 Guide for Clothes Executives" width="300" class="blog-banner">
+            </a>
+
+            <div class="blog-content">
+
+              <a href="#" class="blog-category">&nbsp;&nbsp;&nbsp; Fashion</a>
+
+              <a href="#">
+                <h3 class="blog-title">&nbsp;&nbsp;&nbsp; Clothes Retail KPIs 2021 Guide for Clothes Executives.</h3>
+              </a>
+
+              <p class="blog-meta">
+                &nbsp; &nbsp; By <cite>Mr Admin</cite> / <time datetime="2022-04-06">Apr 06, 2022</time>
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="blog-card">
+          
+            <a href="#">
+              <img src="./assets/images/blog-2.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."
+                class="blog-banner" width="300">
+            </a>
+          
+            <div class="blog-content">
+          
+              <a href="#" class="blog-category">&nbsp;&nbsp; Clothes</a>
+          
+              <h3>
+                <a href="#" class="blog-title">&nbsp;&nbsp; Curbside fashion Trends: How to Win the Pickup Battle.</a>
+              </h3>
+          
+              <p class="blog-meta">
+                &nbsp;&nbsp; By <cite>Mr Robin</cite> / <time datetime="2022-01-18">Jan 18, 2022</time>
+              </p>
+          
+            </div>
+          
+          </div>
+
+          <div class="blog-card">
+          
+            <a href="#">
+              <img src="./assets/images/blog-3.jpg" alt="EBT vendors: Claim Your Share of SNAP Online Revenue."
+                class="blog-banner" width="300">
+            </a>
+          
+            <div class="blog-content">
+          
+              <a href="#" class="blog-category">&nbsp;&nbsp; Shoes</a>
+          
+              <h3>
+                  <a href="#" class="blog-title">&nbsp;&nbsp; EBT vendors: Claim Your Share of SNAP Online Revenue.</a>
+              </h3>
+          
+              <p class="blog-meta">
+                &nbsp;&nbsp; By <cite>Mr Selsa</cite> / <time datetime="2022-02-10">Feb 10, 2022</time>
+              </p>
+          
+            </div>
+          
+          </div>
+
+          <div class="blog-card">
+          
+            <a href="#">
+              <img src="./assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."
+                class="blog-banner" width="300">
+            </a>
+          
+            <div class="blog-content">
+          
+              <a href="#" class="blog-category">&nbsp;&nbsp; Electronics</a>
+          
+              <h3>
+               <a href="#" class="blog-title">&nbsp;&nbsp; Curbside fashion Trends: How to Win the Pickup Battle.</a>
+              </h3>
+          
+              <p class="blog-meta">
+                &nbsp;&nbsp; By <cite>Mr Pawar</cite> / <time datetime="2022-03-15">Mar 15, 2022</time>
+              </p>
+          
+            </div>
+          
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+<main>
+  
+      
+  <div class="banner w3-hide-small" >
+
+    <div class="container">
+
+      <div class="slider-container ">
+
+        <div class="slider-item">
+
+          <img src="./assets/images/banner-1.jpg" alt="women's latest fashion sale" class="banner-img">
+
+          <div class="banner-content">
+
+            <p class="banner-subtitle" style="display: none;">Trending item</p>
+
+            <h2 class="banner-title">Women's latest fashion sale</h2>
+<style>
+  
+  .blog-text {
+    display: block;
+    color: var(--sonic-silver);
+    font-size: var(--fs-6);
+    font-weight: var(--weight-500);
+    margin-bottom: 10px;
+  }
+  
+  @media (min-width: 480px) {
+    .blog-text {display: block;color: var(--sonic-silver);font-size: var(--fs-6);font-weight: var(--weight-500);margin-bottom: 10px;}
+    .el-border{  padding: 0px;margin-bottom: 20px;}
+  }
+
+
+ 
+@media (min-width: 768px) {
+
+.blog-text { --fs-6: 1rem; }
+
+.el-border{  padding: 5px;    margin-bottom: 20px;    }
+}
+
+@media (min-width: 1024px) {
+
+.blog-text { --fs-6: 1.125rem; }
+
+}
+
+
+@media (min-width: 480px) {
+  .container { padding: 0 0px; }
+}
+
+
+</style>
+            <p class="banner-text">
+              Autor: Equipo Envialove
+            </p>
+
+            <p class="banner-btn" style="display: none;">Autor: Equipo Envialove</p>
+
+          </div>
+
+        </div>
+
+  
+
+  
+      </div>
+
+    </div>
+
+  </div>
+  
+
+
+
+</main>
+
+<br><br>
+
+  <!--
+    - FOOTER
+  -->
+
+  <footer class="w3-hide-medium w3-hide-small">
+
+   <!-- <div class="footer-category">
+
+      <div class="container">
+
+        <h2 class="footer-category-title">Brand directory</h2>
+
+        <div class="footer-category-box">
+
+          <h3 class="category-box-title">Fashion :</h3>
+
+          <a href="#" class="footer-category-link">T-shirt</a>
+          <a href="#" class="footer-category-link">Shirts</a>
+          <a href="#" class="footer-category-link">shorts & jeans</a>
+          <a href="#" class="footer-category-link">jacket</a>
+          <a href="#" class="footer-category-link">dress & frock</a>
+          <a href="#" class="footer-category-link">innerwear</a>
+          <a href="#" class="footer-category-link">hosiery</a>
+
+        </div>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">footwear :</h3>
+        
+          <a href="#" class="footer-category-link">sport</a>
+          <a href="#" class="footer-category-link">formal</a>
+          <a href="#" class="footer-category-link">Boots</a>
+          <a href="#" class="footer-category-link">casual</a>
+          <a href="#" class="footer-category-link">cowboy shoes</a>
+          <a href="#" class="footer-category-link">safety shoes</a>
+          <a href="#" class="footer-category-link">Party wear shoes</a>
+          <a href="#" class="footer-category-link">Branded</a>
+          <a href="#" class="footer-category-link">Firstcopy</a>
+          <a href="#" class="footer-category-link">Long shoes</a>
+        </div>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">jewellery :</h3>
+        
+          <a href="#" class="footer-category-link">Necklace</a>
+          <a href="#" class="footer-category-link">Earrings</a>
+          <a href="#" class="footer-category-link">Couple rings</a>
+          <a href="#" class="footer-category-link">Pendants</a>
+          <a href="#" class="footer-category-link">Crystal</a>
+          <a href="#" class="footer-category-link">Bangles</a>
+          <a href="#" class="footer-category-link">bracelets</a>
+          <a href="#" class="footer-category-link">nosepin</a>
+          <a href="#" class="footer-category-link">chain</a>
+          <a href="#" class="footer-category-link">Earrings</a>
+          <a href="#" class="footer-category-link">Couple rings</a>
+        </div>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">cosmetics :</h3>
+        
+          <a href="#" class="footer-category-link">Shampoo</a>
+          <a href="#" class="footer-category-link">Bodywash</a>
+          <a href="#" class="footer-category-link">Facewash</a>
+          <a href="#" class="footer-category-link">makeup kit</a>
+          <a href="#" class="footer-category-link">liner</a>
+          <a href="#" class="footer-category-link">lipstick</a>
+          <a href="#" class="footer-category-link">prefume</a>
+          <a href="#" class="footer-category-link">Body soap</a>
+          <a href="#" class="footer-category-link">scrub</a>
+          <a href="#" class="footer-category-link">hair gel</a>
+          <a href="#" class="footer-category-link">hair colors</a>
+          <a href="#" class="footer-category-link">hair dye</a>
+          <a href="#" class="footer-category-link">sunscreen</a>
+          <a href="#" class="footer-category-link">skin loson</a>
+          <a href="#" class="footer-category-link">liner</a>
+          <a href="#" class="footer-category-link">lipstick</a>
+        </div>
+
+      </div>
+
+    </div> -->
+
+    <div class="footer-nav">
+
+      <div class="container">
+
+        <ul class="footer-nav-list" >
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">&nbsp; Popular Categories</h2>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Fashion</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Electronic</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Cosmetic</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Health</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Watches</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-nav-list"  >
+        
+          <li class="footer-nav-item">
+            <h2 class="nav-title">&nbsp; Products</h2>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Prices drop</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; New products</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Best sales</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Contact us</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Sitemap</a>
+          </li>
+        
+        </ul>
+
+        <ul class="footer-nav-list">
+        
+          <li class="footer-nav-item">
+            <h2 class="nav-title">&nbsp; Sobre nosotros</h2>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#SingIn " class="footer-nav-link">&nbsp; Sing in </a>
+          </li> 
+          <li class="footer-nav-item">
+            <a href="#SingUp " class="footer-nav-link">&nbsp; Sing up </a>
+          </li> 
+
+          <li class="footer-nav-item">
+            <a href="#PreguntasFrecuentes"  class="footer-nav-link">&nbsp; Preguntas frecuentes </a>
+          </li> 
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Entregas discretas </a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Devoluciones </a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; All products  </a>
+          </li>
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Our favorites   </a>
+          </li>
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Featured Partners   </a>
+          </li>
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Acerca de   </a>
+          </li>
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Politica de privacidad    </a>
+          </li>
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Raestrear mi pedido   </a>
+          </li>
+        
+
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Aviso Legal </a>
+          </li>
+          
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Terminos de servicio </a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; About us</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Secure payment</a>
+          </li>
+        
+        </ul>
+
+        <ul class="footer-nav-list">
+         
+          
+          
+          <li class="footer-nav-item">
+            <h2 class="nav-title"> &nbsp; SELL </h2>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp;  Submit a desing</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; How it works </a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Best sales</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">&nbsp; Contact us</a>
+          </li>
+        
+                
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">&nbsp; Contacto</h2>
+          </li>
+
+          <li class="footer-nav-item flex">
+            &nbsp;   <div class="icon-box">
+            <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <address class="content">
+              419 State 414 Rte
+              Beaver Dams, New York(NY), 14812, USA
+            </address>
+          </li>
+
+          <li class="footer-nav-item flex">
+            &nbsp;   <div class="icon-box">
+               <ion-icon name="call-outline"></ion-icon>
+            </div>
+
+            <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
+          </li>
+
+          <li class="footer-nav-item flex">
+            &nbsp;   <div class="icon-box">
+             <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <a href="mailto:example@gmail.com" class="footer-nav-link">example@gmail.com</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">&nbsp; Follow Us</h2>
+          </li>
+
+          <li>
+            <ul class="social-link">
+              <li class="footer-nav-item">
+                &nbsp;
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                   <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+               <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+               <a href="#" class="footer-nav-link">
+                 <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  
+
+  </footer>
+
+  <footer style="background-color: white;" class="w3-hide-medium w3-hide-small">
+
+    
+     <div class="footer-bottom" style="background-color: white;">
+       <link rel="stylesheet " href="assets/pago/style.css">
+       <div class="container">         
+    
+     
+           <i class="font-size-100 pago-apple-pay "></i>&nbsp;
+        
+           <i class="font-size-100 pago-si-vale "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span></i>&nbsp;
+       
+  
+           <i class="font-size-100 pago-edenred "></i>&nbsp;
+         
+           <i class="font-size-100 pago-toka "></i>&nbsp;
+        
+      
+           <i class="font-size-100 pago-samsung-pay "></i>&nbsp;
+ 
+     
+           <i class="font-size-100 pago-oxxo "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span></i>&nbsp;  
+    
+           <i class="font-size-100 pago-mercado-pago-letras "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span><span class="path7
+           "></span><span class="path8 "></span><span class="path9 "></span><span class="path10 "></span><span class="path11 "></span></i>&nbsp;
+    
+    
+           <i class="font-size-100 pago-mercado-pago "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span><span class="path7
+           "></span><span class="path8 "></span><span class="path9 "></span><span class="path10 "></span><span class="path11 "></span><span class="path12 "></span><span class="path13 "></span><span class="path14 "></span><span class="path15 "></span><span class="path16
+           "></span><span class="path17 "></span></i>&nbsp;
+      
+   
+           <i class="font-size-100 pago-mercado-pago-logo "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span></i>&nbsp;
+        
+      
+           <i class="font-size-100 pago-clip "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span></i>&nbsp;
+         
+ 
+           <i class="font-size-100 pago-mastercard "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span></i>&nbsp;
+ 
+    
+           <i class="font-size-100 pago-visa "></i>&nbsp;
+    <i class="font-size-100 pago-american-express "><span class="path1 "></span><span class="path2 "></span></i>&nbsp;     
+     
+           <i class="font-size-100 pago-banco-azteca "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span><span class="path7
+           "></span><span class="path8 "></span><span class="path9 "></span><span class="path10 "></span><span class="path11 "></span><span class="path12 "></span><span class="path13 "></span></i>&nbsp;
+      
+     
+           <i class="font-size-100 pago-carnet "></i>&nbsp;         
+           <i class="font-size-100 pago-sodexo "><span class="path1 "></span><span class="path2 "></span></i>&nbsp;       
+    
+ 
+       
+         <i class="font-size-100 pago-oxxo "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span></i><br>
+         <!-- img src="./assets/images/payment.png" alt="payment method" class="payment-img"-->
+ <br>
+         <p class="copyright" style="color: grey;">          
+ 
+           Copyright &copy; <a href="#">Yapyap</a> all rights reserved.
+         </p>
+ 
+       </div>
+ 
+     </div>
+ 
+   </footer>
+
+  
+   <div> <style>
+
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      /*padding-top: 60px;*/
+      /*text-align:center;*/
+    }
+    /*
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    
+    }
+    
+    .sidenav a:hover{
+      color: #f1f1f1;
+    }*/
+    
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+    </style>
+    
+    
+    <div id="mySidenav" class="sidenav" onclick="closeNav()">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+     
+  <footer>
+
+    <!-- <div class="footer-category">
+ 
+       <div class="container">
+ 
+         <h2 class="footer-category-title">Brand directory</h2>
+ 
+         <div class="footer-category-box">
+ 
+           <h3 class="category-box-title">Fashion :</h3>
+ 
+           <a href="#" class="footer-category-link">T-shirt</a>
+           <a href="#" class="footer-category-link">Shirts</a>
+           <a href="#" class="footer-category-link">shorts & jeans</a>
+           <a href="#" class="footer-category-link">jacket</a>
+           <a href="#" class="footer-category-link">dress & frock</a>
+           <a href="#" class="footer-category-link">innerwear</a>
+           <a href="#" class="footer-category-link">hosiery</a>
+ 
+         </div>
+ 
+         <div class="footer-category-box">
+           <h3 class="category-box-title">footwear :</h3>
+         
+           <a href="#" class="footer-category-link">sport</a>
+           <a href="#" class="footer-category-link">formal</a>
+           <a href="#" class="footer-category-link">Boots</a>
+           <a href="#" class="footer-category-link">casual</a>
+           <a href="#" class="footer-category-link">cowboy shoes</a>
+           <a href="#" class="footer-category-link">safety shoes</a>
+           <a href="#" class="footer-category-link">Party wear shoes</a>
+           <a href="#" class="footer-category-link">Branded</a>
+           <a href="#" class="footer-category-link">Firstcopy</a>
+           <a href="#" class="footer-category-link">Long shoes</a>
+         </div>
+ 
+         <div class="footer-category-box">
+           <h3 class="category-box-title">jewellery :</h3>
+         
+           <a href="#" class="footer-category-link">Necklace</a>
+           <a href="#" class="footer-category-link">Earrings</a>
+           <a href="#" class="footer-category-link">Couple rings</a>
+           <a href="#" class="footer-category-link">Pendants</a>
+           <a href="#" class="footer-category-link">Crystal</a>
+           <a href="#" class="footer-category-link">Bangles</a>
+           <a href="#" class="footer-category-link">bracelets</a>
+           <a href="#" class="footer-category-link">nosepin</a>
+           <a href="#" class="footer-category-link">chain</a>
+           <a href="#" class="footer-category-link">Earrings</a>
+           <a href="#" class="footer-category-link">Couple rings</a>
+         </div>
+ 
+         <div class="footer-category-box">
+           <h3 class="category-box-title">cosmetics :</h3>
+         
+           <a href="#" class="footer-category-link">Shampoo</a>
+           <a href="#" class="footer-category-link">Bodywash</a>
+           <a href="#" class="footer-category-link">Facewash</a>
+           <a href="#" class="footer-category-link">makeup kit</a>
+           <a href="#" class="footer-category-link">liner</a>
+           <a href="#" class="footer-category-link">lipstick</a>
+           <a href="#" class="footer-category-link">prefume</a>
+           <a href="#" class="footer-category-link">Body soap</a>
+           <a href="#" class="footer-category-link">scrub</a>
+           <a href="#" class="footer-category-link">hair gel</a>
+           <a href="#" class="footer-category-link">hair colors</a>
+           <a href="#" class="footer-category-link">hair dye</a>
+           <a href="#" class="footer-category-link">sunscreen</a>
+           <a href="#" class="footer-category-link">skin loson</a>
+           <a href="#" class="footer-category-link">liner</a>
+           <a href="#" class="footer-category-link">lipstick</a>
+         </div>
+ 
+       </div>
+ 
+     </div> -->
+ 
+     <div class="footer-nav">
+ 
+       <div class="container">
+ 
+         <ul class="footer-nav-list" >
+ 
+           <li class="footer-nav-item">
+             <h2 class="nav-title">&nbsp; Popular Categories</h2>
+           </li>
+ 
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Fashion</a>
+           </li>
+ 
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Electronic</a>
+           </li>
+ 
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Cosmetic</a>
+           </li>
+ 
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Health</a>
+           </li>
+ 
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Watches</a>
+           </li>
+ 
+         </ul>
+ 
+         <ul class="footer-nav-list"  >
+         
+           <li class="footer-nav-item">
+             <h2 class="nav-title">&nbsp; Products</h2>
+           </li>
+         
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Prices drop</a>
+           </li>
+         
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; New products</a>
+           </li>
+         
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Best sales</a>
+           </li>
+         
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Contact us</a>
+           </li>
+         
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Sitemap</a>
+           </li>
+         
+         </ul>
+ 
+         <ul class="footer-nav-list">
+         
+           <li class="footer-nav-item">
+             <h2 class="nav-title">&nbsp; Sobre nosotros</h2>
+           </li>
+ 
+           <li class="footer-nav-item">
+             <a href="#SingIn " class="footer-nav-link">&nbsp; Sing in </a>
+           </li> 
+           <li class="footer-nav-item">
+             <a href="#SingUp " class="footer-nav-link">&nbsp; Sing up </a>
+           </li> 
+ 
+           <li class="footer-nav-item">
+             <a href="#PreguntasFrecuentes"  class="footer-nav-link">&nbsp; Preguntas frecuentes </a>
+           </li> 
+         
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Entregas discretas </a>
+           </li>
+ 
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Devoluciones </a>
+           </li>
+ 
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; All products  </a>
+           </li>
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Our favorites   </a>
+           </li>
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Featured Partners   </a>
+           </li>
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Acerca de   </a>
+           </li>
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Politica de privacidad    </a>
+           </li>
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Raestrear mi pedido   </a>
+           </li>
+         
+ 
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Aviso Legal </a>
+           </li>
+           
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Terminos de servicio </a>
+           </li>
+         
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; About us</a>
+           </li>
+         
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Secure payment</a>
+           </li>
+         
+         </ul>
+ 
+         <ul class="footer-nav-list">
+          
+           
+           
+           <li class="footer-nav-item">
+             <h2 class="nav-title"> &nbsp; SELL </h2>
+           </li>
+         
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp;  Submit a desing</a>
+           </li>
+         
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; How it works </a>
+           </li>
+         
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Best sales</a>
+           </li>
+         
+           <li class="footer-nav-item">
+             <a href="#" class="footer-nav-link">&nbsp; Contact us</a>
+           </li>
+         
+                 
+         </ul>
+ 
+         <ul class="footer-nav-list">
+ 
+           <li class="footer-nav-item">
+             <h2 class="nav-title">&nbsp; Contacto</h2>
+           </li>
+ 
+           <li class="footer-nav-item flex">
+             &nbsp;   <div class="icon-box">
+             <ion-icon name="location-outline"></ion-icon>
+             </div>
+ 
+             <address class="content">
+               419 State 414 Rte
+               Beaver Dams, New York(NY), 14812, USA
+             </address>
+           </li>
+ 
+           <li class="footer-nav-item flex">
+             &nbsp;   <div class="icon-box">
+                <ion-icon name="call-outline"></ion-icon>
+             </div>
+ 
+             <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
+           </li>
+ 
+           <li class="footer-nav-item flex">
+             &nbsp;   <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+             </div>
+ 
+             <a href="mailto:example@gmail.com" class="footer-nav-link">example@gmail.com</a>
+           </li>
+ 
+         </ul>
+ 
+         <ul class="footer-nav-list">
+ 
+           <li class="footer-nav-item">
+             <h2 class="nav-title">&nbsp; Follow Us</h2>
+           </li>
+ 
+           <li>
+             <ul class="social-link">
+               <li class="footer-nav-item">
+                 &nbsp;
+               </li>
+ 
+               <li class="footer-nav-item">
+                 <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                 </a>
+               </li>
+ 
+               <li class="footer-nav-item">
+                 <a href="#" class="footer-nav-link">
+                 <ion-icon name="logo-twitter"></ion-icon>
+                 </a>
+               </li>
+ 
+               <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                   <ion-icon name="logo-linkedin"></ion-icon>
+                 </a>
+               </li>
+ 
+               <li class="footer-nav-item">
+                <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                 </a>
+               </li>
+ 
+             </ul>
+           </li>
+ 
+         </ul>
+ 
+       </div>
+ 
+     </div>
+ 
+   
+ 
+   </footer>
+ 
+   <footer style="background-color: white;">
+ 
+     
+      <div class="footer-bottom" style="background-color: white;">
+        <link rel="stylesheet " href="assets/pago/style.css">
+        <div class="container">         
+     
+      
+            <i class="font-size-100 pago-apple-pay "></i>&nbsp;
+         
+            <i class="font-size-100 pago-si-vale "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span></i>&nbsp;
+        
+   
+            <i class="font-size-100 pago-edenred "></i>&nbsp;
+          
+            <i class="font-size-100 pago-toka "></i>&nbsp;
+         
+       
+            <i class="font-size-100 pago-samsung-pay "></i>&nbsp;
+  
+      
+            <i class="font-size-100 pago-oxxo "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span></i>&nbsp;  
+     
+            <i class="font-size-100 pago-mercado-pago-letras "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span><span class="path7
+            "></span><span class="path8 "></span><span class="path9 "></span><span class="path10 "></span><span class="path11 "></span></i>&nbsp;
+     
+     
+            <i class="font-size-100 pago-mercado-pago "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span><span class="path7
+            "></span><span class="path8 "></span><span class="path9 "></span><span class="path10 "></span><span class="path11 "></span><span class="path12 "></span><span class="path13 "></span><span class="path14 "></span><span class="path15 "></span><span class="path16
+            "></span><span class="path17 "></span></i>&nbsp;
+       
+    
+            <i class="font-size-100 pago-mercado-pago-logo "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span></i>&nbsp;
+         
+       
+            <i class="font-size-100 pago-clip "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span></i>&nbsp;
+          
+  
+            <i class="font-size-100 pago-mastercard "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span></i>&nbsp;
+  
+     
+            <i class="font-size-100 pago-visa "></i>&nbsp;
+     <i class="font-size-100 pago-american-express "><span class="path1 "></span><span class="path2 "></span></i>&nbsp;     
+      
+            <i class="font-size-100 pago-banco-azteca "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span><span class="path7
+            "></span><span class="path8 "></span><span class="path9 "></span><span class="path10 "></span><span class="path11 "></span><span class="path12 "></span><span class="path13 "></span></i>&nbsp;
+       
+      
+            <i class="font-size-100 pago-carnet "></i>&nbsp;         
+            <i class="font-size-100 pago-sodexo "><span class="path1 "></span><span class="path2 "></span></i>&nbsp;       
+     
+  
+        
+          <i class="font-size-100 pago-oxxo "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span></i><br>
+          <!-- img src="./assets/images/payment.png" alt="payment method" class="payment-img"-->
+  <br>
+          <p class="copyright" style="color: grey;">          
+  
+            Copyright &copy; <a href="#">Yapyap</a> all rights reserved.
+          </p>
+  
+        </div>
+  
+      </div>
+  
+    </footer>
+    </div>
+    
+
+    
+    <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "100%";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+       
+    </div> 
+      
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link   <script type="module" src="./assets/js/ionicons.esm.js"></script>  <script nomodule src="./assets/js/ionicons.js"></script>
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
