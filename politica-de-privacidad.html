@@ -1,39 +1,499 @@
-Política de privacidad
-AVISO DE PRIVACIDAD
-GUARROMÁNTICO, S.A. DE C.V.
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eCommerce Website</title>
+  <!--  ¡Artículos de edición limitada, hechos en México y con Envío Gratis!
+Productos exclusivos fabricados en México, disponibles con entrega sin costo adicional.
+
+ Manténgase al tanto! ¡Habilite las notificaciones automáticas y sea el primero en descubrir nuevos estilos y muchos más!
+
  
-GUARROMÁNTICO, S.A. DE C.V. (en lo sucesivo “GUARROMÁNTICO") en cumplimiento con lo establecido en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (en lo sucesivo la “Ley”) pone a su disposición el presente aviso de privacidad y le solicita leerlo con atención, ya que con la aportación de sus datos personales en la página de internet www.guarromantico.com, usted acepta y reconoce la obtención, uso, divulgación, almacenamiento, transferencia y protección de su información conforme a los siguientes términos y condiciones:
+Goku en el tunel del tiempo
+https://www.redbubble.com/es/shop/ap/160000747
+Paulina, bailarina 
+https://www.redbubble.com/es/shop/ap/159967409
+Ivan
+https://www.redbubble.com/es/shop/ap/159967237
+Pikachu Pokemon - a guebo chinga! https://www.redbubble.com/es/shop/ap/159869013
+Goku en el tunel del tiempo https://www.redbubble.com/es/shop/ap/160000747
+Nazi - https://www.redbubble.com/es/shop/ap/159958502 
+Mr. Pig Top https://www.redbubble.com/es/shop/ap/159952965
+Axxel - https://www.redbubble.com/es/shop/ap/159952146
+Eres un cerdo de la creación https://www.redbubble.com/es/shop/ap/159952015
+Mike de monster in como Pikachu https://www.redbubble.com/es/shop/ap/159951595
+Hunahpu e Ixbalanque: Luz de Xibalba https://www.redbubble.com/es/shop/ap/159949367
+Joshua https://www.redbubble.com/es/shop/ap/159922183
+Corre corre corre https://www.redbubble.com/es/shop/ap/159918286
+Rowlet - Pokémon - A guevo Chinga! https://www.redbubble.com/es/shop/ap/159917712
+Es Snoopy , no es Pikachu https://www.redbubble.com/es/shop/ap/159869086 
+
+ -->
+  <link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style-prefix.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    .containerimg {
+      position: relative;
+      /*width: 50%;*/
+    }
+
+    .imageimg {
+      display: block;
+      /*  width: 100%;
+        height: auto;*/
+    }
+
+    .overlayimg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .5s ease;
+    }
+
+    .containerimg:hover .overlayimg {
+      opacity: 1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  </style>
+  
+  <style>
+    body {
+      * {
+        box-sizing: border-box;
+      }
+
+      .openBtn {
+        background: #f1f1f1;
+        border: none;
+        padding: 10px 15px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .openBtn:hover {
+        background: #bbb;
+      }
+
+      .overlays {
+        height: 100%;
+        width: 100%;
+        display: none;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+
+      .overlays-content {
+        position: relative;
+        top: 46%;
+        width: 80%;
+        text-align: center;
+        margin-top: 30px;
+        margin: auto;
+      }
+
+      .overlays .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+        cursor: pointer;
+        color: white;
+      }
+
+      .overlays .closebtn:hover {
+        color: #ccc;
+      }
+
+      .overlays input[type=text] {
+        padding: 15px;
+        font-size: 17px;
+        border: none;
+        float: left;
+        width: 75%;
+        background: white;
+        height: 50px;
+      }
+
+      .overlays input[type=text]:hover {
+        background: #f1f1f1;
+        height: 50px;
+      }
+
+      /* .overlays button {
+    float: left;
+    width: 25%;
+    padding: 15px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;height: 40px;
+  }
+  
+  .overlay button:hover {
+    background: #bbb;height: 40px;
+  }*/
+  </style>
+
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+
+    /*the container must be positioned relative:*/
+    .autocomplete {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    input {
+      border: 1px solid transparent;
+      background-color: #f1f1f1;
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    input[type=text] {
+      background-color: #f1f1f1;
+      width: 100%;
+    }
+
+    input[type=submit] {
+      background-color: DodgerBlue;
+      color: #fff;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .autocomplete-items {
+      position: absolute;
+      border: 1px solid #d4d4d4;
+      border-bottom: none;
+      border-top: none;
+      z-index: 99;
+      /*position the autocomplete items to be the same width as the container:*/
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+
+    .autocomplete-items div {
+      padding: 10px;
+      cursor: pointer;
+      background-color: #fff;
+      border-bottom: 1px solid #d4d4d4;
+      width: 100%;
+    }
+
+    /*when hovering an item:*/
+    .autocomplete-items div:hover {
+      background-color: #e9e9e9;
+      width: 100%;
+    }
+
+    /*when navigating through the items using the arrow keys:*/
+    .autocomplete-active {
+      background-color: DodgerBlue !important;
+      color: #ffffff;
+      width: 100%;
+    }
+  </style>
+
+<style>
+  .blog-text {
+    display: block;
+    color: var(--sonic-silver);
+    font-size: var(--fs-6);
+    font-weight: var(--weight-500);
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: 480px) {
+    .blog-text {
+      display: block;
+      color: var(--sonic-silver);
+      font-size: var(--fs-6);
+      font-weight: var(--weight-500);
+      margin-bottom: 10px;
+    }
+
+    .el-border {
+      padding: 0px;
+      margin-bottom: 20px;
+    }
+  }
+
+
+
+  @media (min-width: 768px) {
+
+    .blog-text {
+      --fs-6: 1rem;
+    }
+
+    .el-border {
+      padding: 5px;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+
+    .blog-text {
+      --fs-6: 1.125rem;
+    }
+
+  }
+
+
+  @media (min-width: 480px) {
+    .container {
+      padding: 0 0px;
+    }
+  }
+</style>
+<style>
+  .modal2 {
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .modal-content2 {
+    position: relative;
+    max-width: 100%;
+    margin: 20px;
+    background: var(--white);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    z-index: 5;
+
+  }
+
+
+  .newsletter2 {
+    padding: 50px 30px;
+    text-align: center;
+  }
+
+  .newsletter-header2 {
+    margin-bottom: 20px;
+  }
+
+  .newsletter-title2 {
+    color: var(--onyx);
+    font-size: var(--fs-2);
+    font-weight: var(--weight-600);
+    margin-bottom: 10px;
+  }
+
+  .newsletter-desc2 {
+    color: var(--sonic-silver);
+    font-size: var(--fs-7);
+    line-height: 1.6;
+  }
+
+  .email-field2 {
+    font-size: var(--fs-7);
+    padding: 8px 16px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--cultured);
+    margin-bottom: 16px;
+  }
+
+  .btn-newsletter2 {
+    background: var(--eerie-black);
+    color: var(--white);
+    font-size: var(--fs-7);
+    font-weight: var(--weight-600);
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border-radius: var(--border-radius-sm);
+    margin: auto;
+    transition: var(--transition-timing);
+  }
+
+  .btn-newsletter2:hover {
+    background: var(--salmon-pink);
+  }
+
+  .border-new {
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid var(--cultured);
+    background-color: rgba(255, 102, 102, 0.295);
+
+    border-radius: var(--border-radius-md);
+  }
+
+  .el-border {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--cultured);
+
+    border-radius: var(--border-radius-md);
+  }
+</style>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+  /*  background-color: #000;
+    color: white;*/
+    height: 100%;
+    width: 100%;
+  }
+
+  .modalFull {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    overflow: hidden;
+  }
+
+  .closeModalFull {
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 1;
+    color: #aaaaaa;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: 0.5;
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: none;
+  }
+
+  .closeModalFull:hover,
+  .closeModalFull:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }
+
+  .closeModalFull:focus {
+    outline: none;
+  }
+</style>
+
+
+</head>
+
+<body>
  
-a) Identidad y domicilio del responsable que recaba sus datos personales:
-GUARROMÁNTICO, con domicilio en: Calle Avena 434. Colonia Granjas México. Alcaldía Iztacalco. Código Postal 08400. Ciudad de México, México; a través de la oficina de datos personales se encargará de recabar y proteger todos sus datos personales.
-b) Finalidad del tratamiento de sus datos personales:
-GUARROMÁNTICO solicitará sus datos personales, con el objetivo de cumplir de manera satisfactoria con las obligaciones y servicios originados y pactados en la página de internet www.guarromantico.com. De igual manera, dicha información se utilizará para poder emitir órdenes de compra, realizar su respectiva facturación y cobranza e identificar a los correspondientes usuarios y/o clientes. Los datos que se le solicitarán son los siguientes: nombre, fecha de nacimiento, sexo, domicilio, RFC, número telefónico y dirección de correo electrónico.
-GUARROMÁNTICO en ningún caso y bajo ninguna circunstancia solicitará datos personales sensibles. Serán considerados como datos personales sensibles los establecidos en el artículo 3 fracción VI de la Ley, es decir aquellos que puedan revelar aspectos como origen racial o étnico, estado de salud presente y futura, información genética, creencias religiosas, filosóficas y morales, afiliación sindical, opiniones políticas y de preferencia sexual.
- 
-c) Control y seguridad de sus datos personales:
-Después de que usted aporte sus datos personales en la página de internet www.guarromantico.com, su información será almacenada bajo todas las medidas de seguridad que la tecnología permita y su acceso estará limitado a las personas (trabajadores y/o colaboradores) con las que GUARROMÁNTICO tenga alguna relación jurídica.
-En caso de que a pesar de los esfuerzos, un tercero no autorizado obtenga acceso a sus datos personales, GUARROMÁNTICO conforme al artículo 20 de la Ley se lo comunicará de manera inmediata para que usted pueda tomar las medidas correspondientes.
- 
-d) Opciones y medios que ofrece GUARROMÁNTICO para limitar el uso y/o divulgación de sus datos personales:
-En cualquier momento usted o su representante pueden limitar el uso y/o divulgación de sus datos personales a través de una solicitud que deberá ser firmada por el titular de la información o por su representante y enviada a la siguiente cuenta de correo electrónico: hola@guarromantico.com
-La solicitud en comento deberá contener la siguiente información: i) Nombre del titular de los datos personales; ii) Correo electrónico para recibir notificaciones; iii) Copia simple de la documentación oficial (credencial de elector, cédula, pasaporte o licencia de conducir) que acredite la identidad del titular de la información o en su caso documento con el que se acredite la personalidad del representante; iv) Descripción clara y precisa de los datos personales de los que se pretende limitar su uso y/o divulgación; y, v) Cualquier otro elemento o documento que facilite la localización de los datos personales del titular.
-Si su solicitud no contiene alguno de los datos o documentos señalados en el párrafo anterior, GUARROMÁNTICO contará con un plazo de diez días hábiles para requerirle presentar vía correo electrónico la información o documentación necesaria para cumplir con el trámite en comento.
-Derivado de lo anterior, a partir de la recepción de dicho requerimiento usted contará con un plazo de cinco días hábiles para desahogarlo, en caso de no dar respuesta en ese lapso, se tendrá como no presentada la solicitud correspondiente.
-En caso de que resulte procedente su solicitud o de que haya desahogado de forma adecuada el requerimiento emitido, GUARROMÁNTICO contará con diez días hábiles para enviar la respuesta al correo electrónico que haya proporcionado para recibir notificaciones.
- 
-e) Medios para ejercer los derechos de acceso, rectificación, cancelación u oposición de sus daos personales:
-El acceso, rectificación, cancelación u oposición de sus datos personales lo podrá hacer mediante una solicitud que cumpla con los requisitos establecidos en el inciso anterior y será respondida en los términos ahí señalados.
-Es importante mencionar que exclusivamente en los casos de solicitudes de rectificación de datos personales, se deberá indicar las modificaciones a realizarse, además de aportar la documentación que sustente dicha petición.
-Por otro lado, GUARROMÁNTICO no estará obligado a cancelar los datos personales en los casos establecidos en el artículo 26 de la Ley, asimismo, podrá negar el acceso a los datos personales o abstenerse de realizar la rectificación, cancelación y/o conceder la oposición al tratamiento de éstos en los supuestos establecidos en el artículo 34 de la Ley.
- 
-f) Transferencia de sus datos personales:
-GUARROMÁNTICO podrá transferir sus datos personales a trabajadores y/o colaboradores con los que tenga alguna relación jurídica, con la finalidad de cumplir de manera satisfactoria con las obligaciones y servicios originados y pactados en la página de internet www.guarromantico.com.
-g) Newsletter:
-Usted podrá suscribirse a nuestro newsletter en la página de internet www.guarromantico.com para recibir un boletín informativo vía correo electrónico de manera periódica, en donde se le informará sobre el lanzamiento de nuevos productos, servicios, ofertas, descuentos y noticias que pueden ser de su agrado y/o interés.
-Asimismo, podrá cancelar la suscripción en comento pulsando la opción “Cancela tu suscripción aquí”, la cual se encontrará en los correos electrónicos relacionados con el newsletter que le enviaremos o contactándonos en hola@guarromantico.com.
- 
-h) Cambios, modificaciones y/o actualizaciones al aviso de privacidad:
-GUARROMÁNTICO se reserva el derecho de efectuar en cualquier momento en que lo estime conveniente, necesario o cuando las leyes de la materia lo requieran: cambios, modificaciones y/o actualizaciones al presente aviso de privacidad. Dichos cambios, modificaciones y/o actualizaciones se pondrán a disposición de los usuarios en la página de internet www.guarromantico.com.
- 
-i) Contacto:
-En caso de que tenga alguna duda relacionada con el presente aviso de privacidad, podrá dirigirla al siguiente correo electrónico: hola@guarromantico.com.
+     
+
+
+
+    <div class="container">
+        <div class="el-border">
+          <div style="text-align: justify; margin: 40px;">
+            <h1 style="text-align: center;">Política de privacidad</h1>
+  
+            <br>
+           
+  
+            <h2>Aviso de Privacidad</h2>
+            <h3>Yapyap y articulos promocionales</h3> <br>
+            
+            <p>En cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (la “Ley”), Yapyap y articulos promocionales 
+              (en adelante “Yapyap”) le proporciona este aviso de privacidad. Al proporcionar sus datos personales en <a href="http://www.yarticulospromocionales.com" class="inline ">www.yarticulospromocionales.com</a>, usted acepta y reconoce el uso, divulgación, almacenamiento, transferencia y protección de su información bajo los términos siguientes:</p> <br>
+            
+            <h3>a) Responsable de sus datos personales:</h3>
+            <p>La empresa Yapyap y articulos promocionales, ubicada en Reforma 115, Colonia Lomas de Chapultepec, Alcaldía  Miguel Hidalgo, C.P. 01100, Ciudad de México, México, se encarga de recopilar y proteger sus datos personales.</p>
+            <br>
+            <h3>b) Uso de sus datos personales:</h3>
+            <p>Yapyap y articulos promocionales recopila sus datos para cumplir con los servicios ofrecidos en <a href="http://www.yarticulospromocionales.com" class="inline ">www.yarticulospromocionales.com</a>, 
+              incluyendo la emisión de órdenes de compra, facturación, cobranza e identificación de usuarios y/o clientes. Los datos solicitados incluyen nombre, fecha de nacimiento, sexo, domicilio, RFC, número telefónico y correo electrónico. Yapyap y articulos promocionales no solicitará datos personales sensibles.</p>
+              <br>
+            <h3>c) Seguridad de sus datos personales:</h3>
+            <p>Su información será almacenada con las medidas de seguridad adecuadas y el acceso estará restringido a personal autorizado. En caso de acceso no autorizado, Yapyap y articulos promocionales le informará inmediatamente para que tome las medidas correspondientes.</p>
+            <br>
+            <h3>d) Opciones para limitar el uso de sus datos:</h3>
+            <p>Puede solicitar la limitación del uso y divulgación de sus datos personales enviando una solicitud a <a href="mailto:hola@yarticulospromocionales.com" class="inline ">hola@yarticulospromocionales.com</a>. Esta solicitud debe incluir su nombre, correo electrónico, copia de una identificación oficial, descripción de los datos a limitar y cualquier otro documento que facilite la localización de sus datos. Yapyap y articulos promocionales tiene 10 días hábiles para solicitar información adicional y 5 días hábiles para responder a su solicitud.</p>
+            <br>
+            <h3>e) Derechos de acceso, rectificación, cancelación u oposición:</h3>
+            <p>Puede ejercer sus derechos de acceso, rectificación, cancelación u oposición enviando una solicitud que cumpla con los requisitos mencionados anteriormente. Para solicitudes de rectificación, debe indicar las modificaciones y proporcionar la documentación correspondiente. Yapyap y articulos promocionales puede negar ciertos derechos en casos específicos según la Ley.</p>
+            <br>
+            <h3>f) Transferencia de sus datos personales:</h3>
+            <p>Yapyap y articulos promocionales puede transferir sus datos personales a colaboradores con los que tenga una relación jurídica para cumplir con los servicios ofrecidos en <a href="http://www.yarticulospromocionales.com" class="inline ">www.yarticulospromocionales.com</a>.</p>
+            <br>
+            <h3>g) Newsletter:</h3>
+            <p>Puede suscribirse al newsletter en <a href="http://www.yarticulospromocionales.com" class="inline ">www.yarticulospromocionales.com</a> para recibir información sobre nuevos productos, servicios, ofertas y noticias. Puede cancelar la suscripción en cualquier momento pulsando “Cancela tu suscripción aquí” en los correos del newsletter o contactando a <a href="mailto:hola@yarticulospromocionales.com" class="inline ">hola@yarticulospromocionales.com</a>.</p>
+            <br>
+            <h3>h) Cambios al aviso de privacidad:</h3>
+            <p>Yapyap y articulos promocionales se reserva el derecho de realizar cambios al aviso de privacidad, los cuales estarán disponibles en <a href="http://www.yarticulospromocionales.com" class="inline ">www.yarticulospromocionales.com</a>.</p>
+            <br>
+            <h3>i) Contacto:</h3>
+            <p>Si tiene preguntas sobre esta política de privacidad, puede contactarnos en <a href="mailto:hola@yarticulospromocionales.com" class="inline ">hola@yarticulospromocionales.com</a>.</p>
+            
+  
+          </div>
+        </div>
+      </div>
+  
+
+    
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1995,7 +1995,11 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
 }
 
 .blog-card {
-  min-width: 100%;
+  min-width: 50%;
+  scroll-snap-align: start;
+}
+.blog-card2 {
+  min-width: 40% ;
   scroll-snap-align: start;
 }
 
@@ -2005,7 +2009,12 @@ body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
           border-radius: var(--border-radius-md);
   margin-bottom: 20px;
 }
-
+.blog-banner2 {
+  width: 100%;
+  -webkit-border-radius: var(--border-radius-md);
+          border-radius: var(--border-radius-md);
+          margin-bottom: 20px;
+}
 .blog-category {
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -2481,8 +2490,8 @@ footer {
 
   .blog-container { gap: 30px; }
 
-  .blog-card { min-width: -webkit-calc(50% - 15px); min-width: calc(50% - 15px); }
-
+  
+  .blog-card { min-width: -webkit-calc(25% - 22.5px); min-width: calc(25% - 22.5px); }
 }
 
 
