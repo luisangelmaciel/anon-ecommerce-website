@@ -882,12 +882,65 @@ Es Snoopy , no es Pikachu https://www.redbubble.com/es/shop/ap/159869086
   
 
     <div class="mobile-bottom-navigation" style:"" >
+      <style>
 
+        .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          /*padding-top: 60px;*/
+          /*text-align:center;*/
+        }
+        /*
+        .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 18px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        
+        }
+        
+        .sidenav a:hover{
+          color: #f1f1f1;
+        }*/
+        
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+        </style>
+        
       <button class="action-btn" data-mobile-menu-open-btn  onclick="openNav()" >
         <ion-icon name="menu-outline"  ></ion-icon>
         
       </button>
 
+      <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "100%";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+           
       <button class="action-btn">
 
         <a href="#" class="modalLink" data-src="./recursos.html">
@@ -899,13 +952,17 @@ Es Snoopy , no es Pikachu https://www.redbubble.com/es/shop/ap/159869086
       </button>
 
       <button class="action-btn">
+        <a href="#" class="modalLink" data-src="./preguntas-frecuentes.html">
         <ion-icon name="home-outline"></ion-icon>
+      </a>
       </button>
 
       <button class="action-btn">
+        <a href="#" class="modalLink" data-src=".//blog/vasos-y-termos/guia-completa-de-festivales-de-bebidas-en-mexico-fechas-y-celebraciones-imperdibles.html">
         <ion-icon name="heart-outline"></ion-icon>
 
         <span class="count">0</span>
+      </a>
       </button>
 
       <button class="action-btn" data-mobile-menu-open-btn  class="openBtn" onclick="openSearch()">
@@ -913,6 +970,9 @@ Es Snoopy , no es Pikachu https://www.redbubble.com/es/shop/ap/159869086
       </button>
 
     </div>
+    
+
+
 
     <nav class="mobile-navigation-menu  has-scrollbar" data-mobile-menu>
 
@@ -1155,13 +1215,398 @@ Es Snoopy , no es Pikachu https://www.redbubble.com/es/shop/ap/159869086
 
   </header>
 
+  
+  <div id="mySidenav" class="sidenav" onclick="closeNav()" style="z-index:99999999">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+   
+<footer>
+
+  <!-- <div class="footer-category">
+
+     <div class="container">
+
+       <h2 class="footer-category-title">Brand directory</h2>
+
+       <div class="footer-category-box">
+
+         <h3 class="category-box-title">Fashion :</h3>
+
+         <a href="#" class="footer-category-link">T-shirt</a>
+         <a href="#" class="footer-category-link">Shirts</a>
+         <a href="#" class="footer-category-link">shorts & jeans</a>
+         <a href="#" class="footer-category-link">jacket</a>
+         <a href="#" class="footer-category-link">dress & frock</a>
+         <a href="#" class="footer-category-link">innerwear</a>
+         <a href="#" class="footer-category-link">hosiery</a>
+
+       </div>
+
+       <div class="footer-category-box">
+         <h3 class="category-box-title">footwear :</h3>
+       
+         <a href="#" class="footer-category-link">sport</a>
+         <a href="#" class="footer-category-link">formal</a>
+         <a href="#" class="footer-category-link">Boots</a>
+         <a href="#" class="footer-category-link">casual</a>
+         <a href="#" class="footer-category-link">cowboy shoes</a>
+         <a href="#" class="footer-category-link">safety shoes</a>
+         <a href="#" class="footer-category-link">Party wear shoes</a>
+         <a href="#" class="footer-category-link">Branded</a>
+         <a href="#" class="footer-category-link">Firstcopy</a>
+         <a href="#" class="footer-category-link">Long shoes</a>
+       </div>
+
+       <div class="footer-category-box">
+         <h3 class="category-box-title">jewellery :</h3>
+       
+         <a href="#" class="footer-category-link">Necklace</a>
+         <a href="#" class="footer-category-link">Earrings</a>
+         <a href="#" class="footer-category-link">Couple rings</a>
+         <a href="#" class="footer-category-link">Pendants</a>
+         <a href="#" class="footer-category-link">Crystal</a>
+         <a href="#" class="footer-category-link">Bangles</a>
+         <a href="#" class="footer-category-link">bracelets</a>
+         <a href="#" class="footer-category-link">nosepin</a>
+         <a href="#" class="footer-category-link">chain</a>
+         <a href="#" class="footer-category-link">Earrings</a>
+         <a href="#" class="footer-category-link">Couple rings</a>
+       </div>
+
+       <div class="footer-category-box">
+         <h3 class="category-box-title">cosmetics :</h3>
+       
+         <a href="#" class="footer-category-link">Shampoo</a>
+         <a href="#" class="footer-category-link">Bodywash</a>
+         <a href="#" class="footer-category-link">Facewash</a>
+         <a href="#" class="footer-category-link">makeup kit</a>
+         <a href="#" class="footer-category-link">liner</a>
+         <a href="#" class="footer-category-link">lipstick</a>
+         <a href="#" class="footer-category-link">prefume</a>
+         <a href="#" class="footer-category-link">Body soap</a>
+         <a href="#" class="footer-category-link">scrub</a>
+         <a href="#" class="footer-category-link">hair gel</a>
+         <a href="#" class="footer-category-link">hair colors</a>
+         <a href="#" class="footer-category-link">hair dye</a>
+         <a href="#" class="footer-category-link">sunscreen</a>
+         <a href="#" class="footer-category-link">skin loson</a>
+         <a href="#" class="footer-category-link">liner</a>
+         <a href="#" class="footer-category-link">lipstick</a>
+       </div>
+
+     </div>
+
+   </div> -->
+
+   <div class="footer-nav">
+
+     <div class="container">
+
+       <ul class="footer-nav-list" >
+
+         <li class="footer-nav-item">
+           <h2 class="nav-title">&nbsp; Popular Categories</h2>
+         </li>
+
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Fashion</a>
+         </li>
+
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Electronic</a>
+         </li>
+
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Cosmetic</a>
+         </li>
+
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Health</a>
+         </li>
+
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Watches</a>
+         </li>
+
+       </ul>
+
+       <ul class="footer-nav-list"  >
+       
+         <li class="footer-nav-item">
+           <h2 class="nav-title">&nbsp; Products</h2>
+         </li>
+       
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Prices drop</a>
+         </li>
+       
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; New products</a>
+         </li>
+       
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Best sales</a>
+         </li>
+       
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Contact us</a>
+         </li>
+       
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Sitemap</a>
+         </li>
+       
+       </ul>
+
+       <ul class="footer-nav-list">
+       
+         <li class="footer-nav-item">
+           <h2 class="nav-title">&nbsp; Sobre nosotros</h2>
+         </li>
+
+         <li class="footer-nav-item">
+           <a href="#SingIn " class="footer-nav-link">&nbsp; Sing in </a>
+         </li> 
+         <li class="footer-nav-item">
+           <a href="#SingUp " class="footer-nav-link">&nbsp; Sing up </a>
+         </li> 
+
+         <li class="footer-nav-item">
+           <a href="#PreguntasFrecuentes"  class="footer-nav-link">&nbsp; Preguntas frecuentes </a>
+         </li> 
+       
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Entregas discretas </a>
+         </li>
+
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Devoluciones </a>
+         </li>
+
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; All products  </a>
+         </li>
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Our favorites   </a>
+         </li>
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Featured Partners   </a>
+         </li>
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Acerca de   </a>
+         </li>
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Politica de privacidad    </a>
+         </li>
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Raestrear mi pedido   </a>
+         </li>
+       
+
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Aviso Legal </a>
+         </li>
+         
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Terminos de servicio </a>
+         </li>
+       
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; About us</a>
+         </li>
+       
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Secure payment</a>
+         </li>
+       
+       </ul>
+
+       <ul class="footer-nav-list">
+        
+         
+         
+         <li class="footer-nav-item">
+           <h2 class="nav-title"> &nbsp; SELL </h2>
+         </li>
+       
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp;  Submit a desing</a>
+         </li>
+       
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; How it works </a>
+         </li>
+       
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Best sales</a>
+         </li>
+       
+         <li class="footer-nav-item">
+           <a href="#" class="footer-nav-link">&nbsp; Contact us</a>
+         </li>
+       
+               
+       </ul>
+
+       <ul class="footer-nav-list">
+
+         <li class="footer-nav-item">
+           <h2 class="nav-title">&nbsp; Contacto</h2>
+         </li>
+
+         <li class="footer-nav-item flex">
+           &nbsp;   <div class="icon-box">
+           <ion-icon name="location-outline"></ion-icon>
+           </div>
+
+           <address class="content">
+             419 State 414 Rte
+             Beaver Dams, New York(NY), 14812, USA
+           </address>
+         </li>
+
+         <li class="footer-nav-item flex">
+           &nbsp;   <div class="icon-box">
+              <ion-icon name="call-outline"></ion-icon>
+           </div>
+
+           <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
+         </li>
+
+         <li class="footer-nav-item flex">
+           &nbsp;   <div class="icon-box">
+            <ion-icon name="mail-outline"></ion-icon>
+           </div>
+
+           <a href="mailto:example@gmail.com" class="footer-nav-link">example@gmail.com</a>
+         </li>
+
+       </ul>
+
+       <ul class="footer-nav-list">
+
+         <li class="footer-nav-item">
+           <h2 class="nav-title">&nbsp; Follow Us</h2>
+         </li>
+
+         <li>
+           <ul class="social-link">
+             <li class="footer-nav-item">
+               &nbsp;
+             </li>
+
+             <li class="footer-nav-item">
+               <a href="#" class="footer-nav-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+               </a>
+             </li>
+
+             <li class="footer-nav-item">
+               <a href="#" class="footer-nav-link">
+               <ion-icon name="logo-twitter"></ion-icon>
+               </a>
+             </li>
+
+             <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">
+                 <ion-icon name="logo-linkedin"></ion-icon>
+               </a>
+             </li>
+
+             <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+               </a>
+             </li>
+
+           </ul>
+         </li>
+
+       </ul>
+
+     </div>
+
+   </div>
+
+ 
+
+ </footer>
+
+ <footer style="background-color: white;">
+
+   
+    <div class="footer-bottom" style="background-color: white;">
+      <link rel="stylesheet " href="assets/pago/style.css">
+      <div class="container">         
+   
+    
+          <i class="font-size-100 pago-apple-pay "></i>&nbsp;
+       
+          <i class="font-size-100 pago-si-vale "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span></i>&nbsp;
+      
+ 
+          <i class="font-size-100 pago-edenred "></i>&nbsp;
+        
+          <i class="font-size-100 pago-toka "></i>&nbsp;
+       
+     
+          <i class="font-size-100 pago-samsung-pay "></i>&nbsp;
+
+    
+          <i class="font-size-100 pago-oxxo "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span></i>&nbsp;  
+   
+          <i class="font-size-100 pago-mercado-pago-letras "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span><span class="path7
+          "></span><span class="path8 "></span><span class="path9 "></span><span class="path10 "></span><span class="path11 "></span></i>&nbsp;
+   
+   
+          <i class="font-size-100 pago-mercado-pago "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span><span class="path7
+          "></span><span class="path8 "></span><span class="path9 "></span><span class="path10 "></span><span class="path11 "></span><span class="path12 "></span><span class="path13 "></span><span class="path14 "></span><span class="path15 "></span><span class="path16
+          "></span><span class="path17 "></span></i>&nbsp;
+     
+  
+          <i class="font-size-100 pago-mercado-pago-logo "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span></i>&nbsp;
+       
+     
+          <i class="font-size-100 pago-clip "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span></i>&nbsp;
+        
+
+          <i class="font-size-100 pago-mastercard "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span></i>&nbsp;
+
+   
+          <i class="font-size-100 pago-visa "></i>&nbsp;
+   <i class="font-size-100 pago-american-express "><span class="path1 "></span><span class="path2 "></span></i>&nbsp;     
+    
+          <i class="font-size-100 pago-banco-azteca "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span><span class="path6 "></span><span class="path7
+          "></span><span class="path8 "></span><span class="path9 "></span><span class="path10 "></span><span class="path11 "></span><span class="path12 "></span><span class="path13 "></span></i>&nbsp;
+     
+    
+          <i class="font-size-100 pago-carnet "></i>&nbsp;         
+          <i class="font-size-100 pago-sodexo "><span class="path1 "></span><span class="path2 "></span></i>&nbsp;       
+   
+
+      
+        <i class="font-size-100 pago-oxxo "><span class="path1 "></span><span class="path2 "></span><span class="path3 "></span><span class="path4 "></span><span class="path5 "></span></i><br>
+        <!-- img src="./assets/images/payment.png" alt="payment method" class="payment-img"-->
+<br>
+        <p class="copyright" style="color: grey;">          
+
+          Copyright &copy; <a href="#">Yapyap</a> all rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+  </div>
+  
+
   <div>
 
 
 
 
 
-    <div id="myOverlay" class="overlays">
+    <div id="myOverlay" class="overlays" style="z-index: 99999999;">
       <span class="closebtn" onclick="closeSearch()" title="Close Overlays">×</span>
       <div class="overlays-content">
         <form autocomplete="off">
@@ -2014,14 +2459,14 @@ Es Snoopy , no es Pikachu https://www.redbubble.com/es/shop/ap/159869086
 
                   <div class="showcase">
 
-                    <a href="#" class="showcase-img-box containerimg modalLink" data-src="https://www.redbubble.com/es/shop/ap/159869013">
+                    <a href="#" class="showcase-img-box containerimg modalLink" data-src="go/pikachu/index.html">
                       <img src="https://ih1.redbubble.net/image.5494818926.9013/gptr,1400x,front,black-c,188,133,1000,1000-bg,f8f8f8.u5.jpg" alt="pocket watch leather pouch"
                         class="showcase-img" width="70">
                     </a>
 
                     <div class="showcase-content">
 
-                      <a href="#" class="modalLink" data-src="https://www.redbubble.com/es/shop/ap/159869013">
+                      <a href="#" class="modalLink" data-src="go/pikachu/index.html">
                         <h4 class="showcase-title">Pikachu</h4>
                       </a>
 
