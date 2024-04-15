@@ -16,11 +16,11 @@
 :root {
 
   /**
-   * colors
+   * colors --sonic-silver: hsl(0, 0%, 47%);
    */
 
   --spanish-gray: hsl(0, 0%, 60%);
-  --sonic-silver: hsl(0, 0%, 47%);
+  --sonic-silver: hsl(0, 0%, 67%);
   --eerie-black: hsl(0, 0%, 13%);
   --salmon-pink: hsl(353, 100%, 78%);
   --sandy-brown: hsl(29, 90%, 65%);
